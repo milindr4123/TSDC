@@ -1,0 +1,12 @@
+[
+    {
+        "name": "Represent a superadmin user",
+        "email": "j.garcia55@uniandes.edu.co",
+        "password": "s3d7zGVjiQp6xF#",
+        "tagName": "TestNewTag",
+        "tagColor": "0000FF",
+        "tagDescription": "Este es un tag de prueba",
+        "changeTagName": "Nombre diferente"
+    }
+]
+  
