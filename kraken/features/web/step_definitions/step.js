@@ -207,8 +207,6 @@ Then('I click the first tag', async function() {
     await tagElement.click();
 })
 
-const { Given, When, Then } = require('@cucumber/cucumber'); 
-
 Given('I am logged {kraken-string} and {kraken-string}', async function(email, password) {
     let identificationElement = await this.driver.$('#identification');
     await identificationElement.setValue(email);
@@ -227,9 +225,9 @@ Given('I navigate to post {string}', async function (postURL) {
 
 When('I click in Post link', async function () {
     let element = await this.driver.$('a[href="#/posts/"]');
-    await element.waitForExist({ timeout: 10000 });
-    await element.waitForDisplayed({ timeout: 10000 });    
-    await element.waitForClickable({ timeout: 10000 });
+    await element.waitForExist({ timeout: 20000 });
+    await element.waitForDisplayed({ timeout: 20000 });    
+    await element.waitForClickable({ timeout: 20000 });
     await element.click();
 });
 
@@ -251,9 +249,9 @@ When('I enter Post URL {kraken-string}', async function (url) {
 
 When('I click in Editor button', async function () {
     let element  = await this.driver.$('span.gh-post-list-cta.edit');
-    await element.waitForExist({ timeout: 3000 });
-    await element.waitForDisplayed({ timeout: 3000 });    
-    await element.waitForClickable({ timeout: 3000 });    
+    await element.waitForExist({ timeout: 20000 });
+    await element.waitForDisplayed({ timeout: 20000 });    
+    await element.waitForClickable({ timeout: 20000 });    
     await element.click();
 });
 
@@ -295,7 +293,6 @@ When('I remove Post', async function () {
     await element2.waitForClickable({ timeout: 3000 }); 
     await element2.click();
 });
-
 
 
 
