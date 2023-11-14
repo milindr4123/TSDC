@@ -265,35 +265,29 @@ When('I Edit a Post {kraken-string}', async function (message) {
 
 When('I Publish Post', async function () {
     let element = await this.driver.$('button.gh-btn.gh-btn-editor.darkgrey.gh-publish-trigger');
+    await element.waitForExist({ timeout: 20000 });
+    await element.waitForDisplayed({ timeout: 20000 });    
+    await element.waitForClickable({ timeout: 20000 }); 
     await element.click();
     let element2 = await this.driver.$('button.gh-btn.gh-btn-black.gh-btn-large');
-    await element2.waitForExist({ timeout: 3000 });
-    await element2.waitForDisplayed({ timeout: 3000 });    
-    await element2.waitForClickable({ timeout: 3000 }); 
-    await element2.click();
-});
-
-
-When('I Publish Post', async function () {
-    let element = await this.driver.$('button.gh-btn.gh-btn-editor.darkgrey.gh-publish-trigger');
-    await element.click();
-    let element2 = await this.driver.$('button.gh-btn.gh-btn-black.gh-btn-large');
-    await element2.waitForExist({ timeout: 3000 });
-    await element2.waitForDisplayed({ timeout: 3000 });    
-    await element2.waitForClickable({ timeout: 3000 }); 
+    await element2.waitForExist({ timeout: 20000 });
+    await element2.waitForDisplayed({ timeout: 20000 });    
+    await element2.waitForClickable({ timeout: 20000 }); 
     await element2.click();
 });
 
 
 When('I remove Post', async function () {
-    let element = await this.driver.$('settings-menu-delete-button');
+    let element = await this.driver.$('button.gh-btn.gh-btn-outline.gh-btn-icon.gh-btn-fullwidth');
+    await element.waitForExist({ timeout: 20000 });
+    await element.waitForDisplayed({ timeout: 20000 });    
+    await element.waitForClickable({ timeout: 20000 }); 
     await element.click();
-    await element2.waitForExist({ timeout: 3000 });
-    await element2.waitForDisplayed({ timeout: 3000 });    
-    await element2.waitForClickable({ timeout: 3000 }); 
-    await element2.click();
+    let deleteElement = await this.driver.$('button.gh-btn.gh-btn-red.gh-btn-icon.ember-view');
+    await deleteElement.waitForExist({ timeout: 20000 });
+    await deleteElement.waitForDisplayed({ timeout: 20000 });    
+    await deleteElement.waitForClickable({ timeout: 20000 }); 
+    await deleteElement.click();
+    
 });
-
-
-
 
