@@ -43,9 +43,9 @@ function signIn(user, password){
         cy.wrap(inputPassword).type(password, {force: true});
         
     });
-    cy.wait(1000);
+    cy.wait(2000);
     cy.get('button#ember5').click()
-    cy.wait(1000);
+    cy.wait(2000);
     cy.url().then((url) => {
         if(url == 'http://localhost:2368/ghost/#/dashboard'){
             cy.url().should('eq', 'http://localhost:2368/ghost/#/dashboard');
@@ -73,60 +73,52 @@ function openPostView(){
 
 
 function openNewPostView(){
-    cy.contains('span', 'New tag').as('spanConTexto');
+    cy.contains('span', 'New post').as('spanConTexto');
     cy.get('@spanConTexto').click();
 }
 
 
-async function createPost(name, color, description){
+async function createPost(name, description){
     openPostView();
     openNewPostView();
-    cy.get('#tag-name').type(name, {force: true})
+    cy.get('[placeholder="Post title"]').type(name, {force: true})
     cy.wait(1000);
-    cy.get('.gh-input[name="accent-color"]').type(color, {force: true})
+    cy.get('p[data-koenig-dnd-droppable="true"]').type(description, {force: true})
     cy.wait(1000);
-    cy.get('#tag-description').type(description, {force: true})
+    cy.contains('span','Posts').click();
     cy.wait(1000);
-    cy.get('[data-test-button="save"]').click();
+    cy.get('div[class="gh-posts-list-item-group"]').eq(2).click();
     cy.wait(2000);
-    await cy.get('.ghost-url-preview').invoke('text').then((paragraphText) => {
-        let text = paragraphText.split('/')[2]
-        checkPostByName(text);
-    });
+    cy.get('button[title="Settings"]').click();
+    cy.wait(2000);   
+     
 }
 
-async function editPost(name, color, description, editName){
+async function editPost(name, description){
     openPostView();
     openNewPostView();
-    cy.get('#tag-name').type(name, {force: true})
+    cy.get('[placeholder="Post title"]').type(name, {force: true})
     cy.wait(1000);
-    cy.get('.gh-input[name="accent-color"]').type(color, {force: true})
+    cy.get('p[data-koenig-dnd-droppable="true"]').type(description, {force: true})
     cy.wait(1000);
-    cy.get('#tag-description').type(description, {force: true})
+    cy.contains('span','Posts').click();
     cy.wait(1000);
-    cy.get('[data-test-button="save"]').click();
-    cy.wait(2000);
-    await cy.get('.ghost-url-preview').invoke('text').then((paragraphText) => {
-        let text = paragraphText.split('/')[2]
-        checkPostByNameEdit(text, editName);
-    });
+    cy.get('div[class="gh-posts-list-item-group"]').eq(2).click();
+    cy.wait(1000);
+    cy.get('button[title="Settings"]').click();
+    cy.wait(1000);
 }
 
-async function editDeletePost(name, color, description, editName){
+async function editDeletePost(name, description){
     openPostView();
     openNewPostView();
-    cy.get('#tag-name').type(name, {force: true})
+    cy.get('[placeholder="Post title"]').type(name, {force: true})
     cy.wait(1000);
-    cy.get('.gh-input[name="accent-color"]').type(color, {force: true})
+    cy.get('p[data-koenig-dnd-droppable="true"]').type(description, {force: true})
     cy.wait(1000);
-    cy.get('#tag-description').type(description, {force: true})
-    cy.wait(1000);
-    cy.get('[data-test-button="save"]').click();
+    cy.contains('span','Posts').click();
     cy.wait(2000);
-    await cy.get('.ghost-url-preview').invoke('text').then((paragraphText) => {
-        let text = paragraphText.split('/')[2]
-        checkPostByNameDelete(text, editName);
-    });
+    cy.contains('span','Publish').click();    
 }
 
 function checkPostByName(namePost){
@@ -135,13 +127,13 @@ function checkPostByName(namePost){
     cy.get(`[title="${namePost}"]`).click();
 }
 
-function checkPostByNameEdit(namePost, editName){
+function checkPostByNameEdit(namePost){
     openPostView();
     cy.get(`[title="${namePost}"]`).should('exist')
     cy.get(`[title="${namePost}"]`).click();
-    cy.get('#tag-name').clear().type(editName, {force: true})
+    cy.get('[placeholder="Post title"]').clear().type(editName, {force: true})
     cy.wait(1000);
-    cy.get('[data-test-button="save"]').click();
+    cy.contains('span','Posts').click();
     cy.wait(2000);
 }
 
@@ -149,7 +141,7 @@ function checkPostByNameDelete(namePost, editName){
     openPostView();
     cy.get(`[title="${namePost}"]`).should('exist')
     cy.get(`[title="${namePost}"]`).click();
-    cy.get('#tag-name').type(editName, {force: true})
+    cy.get('[placeholder="Post title"]').type(editName, {force: true})
     cy.wait(1000);
     cy.get('[data-test-button="save"]').click();
     cy.wait(2000);
@@ -157,10 +149,8 @@ function checkPostByNameDelete(namePost, editName){
 }
 
 function deletePost(){
-    cy.get('[data-test-button="delete-tag"]').click();
+    cy.contains('span','Delete').click();
     cy.wait(2000);
-    cy.get('[data-test-button="confirm"]').click();
+    cy.get('button[class="gh-btn gh-btn-red gh-btn-icon ember-view"]').click();
     cy.wait(2000);
 }
-
-
