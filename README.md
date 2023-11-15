@@ -1,6 +1,12 @@
 # TSDC
 Proyecto para administrar las incidencias de Ghost
 
+## Integrantes:
+	- Erika Margarita Forero Sossa - j.corredore@uniandes.edu.co
+ 	- Jeniffer Corredor Enciso - j.corredore@uniandes.edu.co
+	- Brayan Ricardo García - br.garciam1@uniandes.edu.co
+ 	- Juan Diego García - j.garcia55@uniandes.edu.co
+
 ## Ejecución de pruebas
 
 Los siguientes pasos son una guía para correr los respectivos escenarios de pruebas utilizando las herramientas de Cypress y Kraken.
