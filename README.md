@@ -39,12 +39,12 @@ Luego use el comando: npx kraken-node run
 
 1. Asegúrate de tener Ghost instalado en su última versión.
 2. Inicia Ghost localmente utilizando el puerto por defecto (2368).
-2.1. En la caarpeta cypress ejecutar: npm install ghost-cli@latest -g
-2.2. En la caarpeta cypress ejecutar: ghost install local
-4. Instala la herramienta Cypress en el directorio donde está instalado Ghost.
-5. Agrega los archivos asociados a Cypress al directorio de Ghost (La carpeta "cypress").
-6. Abre la terminal y ejecuta el comando "cypress open".
-7. Selecciona el navegador "Chrome" en la ventana que se abre.
-8. En el menú izquierdo de la ventana de Cypress, elige la opción "Specs".
-9. Selecciona las pruebas que deseas ejecutar.
-10. (Paso adicional) Para las pruebas en los archivos "tags_testing.cy.js", "profile_testing.cy.js" y "members_testing.cy.js", modifica los atributos "email" y "password" en los archivos "members.json" y "tags.json" ubicados en la carpeta de fixtures. Utiliza las credenciales de superadmin creadas durante la instalación de Ghost.
+3. En la caarpeta cypress ejecutar: npm install ghost-cli@latest -g
+4. En la caarpeta cypress ejecutar: ghost install local
+5. Instala la herramienta Cypress en el directorio donde está instalado Ghost.
+6. Agrega los archivos asociados a Cypress al directorio de Ghost (La carpeta "cypress").
+7. Abre la terminal y ejecuta el comando "cypress open".
+8. Selecciona el navegador "Chrome" en la ventana que se abre.
+9. En el menú izquierdo de la ventana de Cypress, elige la opción "Specs".
+10. Selecciona las pruebas que deseas ejecutar.
+11. (Paso adicional) Para las pruebas en los archivos "tags_testing.cy.js", "profile_testing.cy.js" y "members_testing.cy.js", modifica los atributos "email" y "password" en los archivos "members.json" y "tags.json" ubicados en la carpeta de fixtures. Utiliza las credenciales de superadmin creadas durante la instalación de Ghost.
