@@ -1,12 +1,12 @@
 const { Given, When, Then } = require('@cucumber/cucumber');
-
+const assert = require('chai').assert;
 
 Given('I am logged', async function() {
     let identificationElement = await this.driver.$('#identification');
-    await identificationElement.setValue("br.garciam1@uniandes.edu.co");
+    await identificationElement.setValue("ingerika.forero@gmail.com");
 
     let passwordElement = await this.driver.$('#password');
-    await passwordElement.setValue("0123456789");
+    await passwordElement.setValue("388338593.21");
  
     let element = await this.driver.$('#ember5');
     return await element.click();
@@ -207,51 +207,45 @@ Then('I click the first tag', async function() {
     await tagElement.click();
 })
 
-Given('I am logged {kraken-string} and {kraken-string}', async function(email, password) {
-    let identificationElement = await this.driver.$('#identification');
-    await identificationElement.setValue(email);
-
-    let passwordElement = await this.driver.$('#password');
-    await passwordElement.setValue(password);
- 
-    let element = await this.driver.$('#ember5');
-    return await element.click();
-})
-
 Given('I navigate to post {string}', async function (postURL) {
     await this.driver.url(postURL);
 });
- 
 
-When('I click in Post link', async function () {
+Given('I click in Post link', async function () {
     let element = await this.driver.$('a[href="#/posts/"]');
-    await element.waitForExist({ timeout: 20000 });
-    await element.waitForDisplayed({ timeout: 20000 });    
-    await element.waitForClickable({ timeout: 20000 });
+    waitForElement(element)
     await element.click();
 });
 
-When('I click in New Post link {kraken-string}', async function (enlace) {
-    let element = await this.driver.$(enlace);
-    await element.click();
+Given('I click in New Post link', async function () {
+    let editor_post = await this.driver.$('a[href="#/editor/post/"]');
+    waitForElement(editor_post)
+    await editor_post.click();
 });
 
-When('I click the Post settings button', async function () {
+Given('I click the Post settings button', async function () {
     let element  = await this.driver.$('button.settings-menu-toggle');
-    element.click();
+    waitForElement(element)
+    await element.click();
 });
 
 When('I enter Post URL {kraken-string}', async function (url) {
     let element = await this.driver.$('#url');
+    waitForElement(element)
     await element.setValue(url);
 });
 
 
-When('I click in Editor button', async function () {
-    let element  = await this.driver.$('span.gh-post-list-cta.edit');
-    await element.waitForExist({ timeout: 20000 });
-    await element.waitForDisplayed({ timeout: 20000 });    
-    await element.waitForClickable({ timeout: 20000 });    
+Given('I check Post Saved', async function () {
+    let element = await this.driver.$('a.ember-view.permalink.gh-list-data.gh-post-list-button');    
+    waitForElement(element)
+    await element.click();       
+});
+
+When('I Fill Post', async function () {
+    let element  = await this.driver.$('textarea.gh-editor-title.ember-text-area.gh-input.ember-view');
+    waitForElement(element)
+    await element.setValue("Prueba");
     await element.click();
 });
 
@@ -259,35 +253,34 @@ When('I click in Editor button', async function () {
 //Escenario 2
 When('I Edit a Post {kraken-string}', async function (message) {
     let element = await this.driver.$('textarea.gh-editor-title.ember-text-area.gh-input.ember-view');
+    waitForElement(element)
     await element.click();
     await element.setValue(message);
 });
 
 When('I Publish Post', async function () {
     let element = await this.driver.$('button.gh-btn.gh-btn-editor.darkgrey.gh-publish-trigger');
-    await element.waitForExist({ timeout: 20000 });
-    await element.waitForDisplayed({ timeout: 20000 });    
-    await element.waitForClickable({ timeout: 20000 }); 
+    waitForElement(element)
     await element.click();
     let element2 = await this.driver.$('button.gh-btn.gh-btn-black.gh-btn-large');
-    await element2.waitForExist({ timeout: 20000 });
-    await element2.waitForDisplayed({ timeout: 20000 });    
-    await element2.waitForClickable({ timeout: 20000 }); 
+    waitForElement(element)
     await element2.click();
 });
 
 
 When('I remove Post', async function () {
     let element = await this.driver.$('button.gh-btn.gh-btn-outline.gh-btn-icon.gh-btn-fullwidth');
-    await element.waitForExist({ timeout: 20000 });
-    await element.waitForDisplayed({ timeout: 20000 });    
-    await element.waitForClickable({ timeout: 20000 }); 
+    waitForElement(element);
     await element.click();
     let deleteElement = await this.driver.$('button.gh-btn.gh-btn-red.gh-btn-icon.ember-view');
-    await deleteElement.waitForExist({ timeout: 20000 });
-    await deleteElement.waitForDisplayed({ timeout: 20000 });    
-    await deleteElement.waitForClickable({ timeout: 20000 }); 
+    waitForElement(element)
     await deleteElement.click();
     
 });
 
+async function waitForElement(element) {
+    await element.waitForExist({ timeout: 20000 });
+    await element.waitForDisplayed({ timeout: 20000 });    
+    await element.waitForClickable({ timeout: 20000 }); 
+  }
+  
