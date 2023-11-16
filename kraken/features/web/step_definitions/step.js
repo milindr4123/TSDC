@@ -3,10 +3,10 @@ const assert = require('chai').assert;
 
 Given('I am logged', async function() {
     let identificationElement = await this.driver.$('#identification');
-    await identificationElement.setValue("ingerika.forero@gmail.com");
+    await identificationElement.setValue("br.garciam1@uniandes.edu.co");
 
     let passwordElement = await this.driver.$('#password');
-    await passwordElement.setValue("388338593.21");
+    await passwordElement.setValue("0123456789");
  
     let element = await this.driver.$('#ember5');
     return await element.click();
