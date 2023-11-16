@@ -44,7 +44,11 @@ Instalación y set-up de Kraken:
 3. Inicializar Kraken: kraken-node gen
 4. Instalar Kraken en local: npm install kraken-node --force
 5. Instalar Appium en global: npm install -g appium --force
-6. Puede verificar que todo haya quedado instalado usando el comando kraken-node doctor
+6. Intalar faker: npm install faker
+7. Puede verificar que todo haya quedado instalado usando el comando kraken-node doctor
+8. Al ejecutar el paso 6. Se deberia visualizar una imagen como la siguiente:
+9. ![image](https://github.com/milindr4123/TSDC/assets/142748575/da940a6e-cc85-4085-a512-58a51e36296b)
+
 
 Ejecución: 
 1. Para ejecutar un feature en específico en Kraken, copie el contenido del feature que desea probar de la carpeta "lista_features" y peguelo en el archivo my_first.feature.
