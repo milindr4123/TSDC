@@ -1,0 +1,18 @@
+{
+  "dependencies": {
+    "@badeball/cypress-cucumber-preprocessor": "^19.1.0",
+    "@bahmutov/cypress-esbuild-preprocessor": "^2.2.0",
+    "@cypress/webpack-preprocessor": "^5.17.1",
+    "@shelex/cypress-allure-plugin": "^2.40.0",
+    "cypress": "^12.16.0",
+    "esbuild": "^0.18.10"
+  },
+  "devDependencies": {
+    "cypress": "^13.5.0",
+    "cypress-cucumber-preprocessor": "^4.3.1"
+  },
+  "cypress-cucumber-preprocessor": {
+    "nonGlobalStepDefinitions": true,
+    "stepDefinitions": "cypress/e2e/step_definition/*.js"
+  }
+}
