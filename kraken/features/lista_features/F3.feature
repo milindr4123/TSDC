@@ -24,3 +24,15 @@ Scenario: Como usuario elimino un tag
   Then I login with new credentials
   And I wait for 5 seconds
   And I click user settings
+  And I click to go to profile
+  And I wait for 3 seconds
+  And I click to change password
+  And I invert passwords
+  And I wait for 3 seconds
+  And I put my old password
+  And I put my new password
+  And I confirm my new password
+  And I click to accept change the password
+  And I click to save and close
+  And I wait for 2 seconds
+  And I click in done button

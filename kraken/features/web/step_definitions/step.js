@@ -3,10 +3,10 @@ const { Given, When, Then } = require('@cucumber/cucumber');
 
 Given('I am logged', async function() {
     let identificationElement = await this.driver.$('#identification');
-    await identificationElement.setValue("br.garciam1@uniandes.edu.co");
+    await identificationElement.setValue(this.email);
 
     let passwordElement = await this.driver.$('#password');
-    await passwordElement.setValue("0123456789");
+    await passwordElement.setValue(this.oldPassword);
  
     let element = await this.driver.$('#ember5');
     return await element.click();
@@ -290,4 +290,65 @@ When('I remove Post', async function () {
     await deleteElement.click();
     
 });
+
+// Change password scenary
+When('I click user settings', async function() {
+    let profileSettingsElement = await this.driver.$('div.gh-user-avatar.relative');
+    await profileSettingsElement.click();
+})
+When('I click to go to profile', async function() {
+    let profileSettingsElement = await this.driver.$('a[data-test-nav="user-profile"]');
+    await profileSettingsElement.click();
+})
+When('I click to change password', async function() {
+    let changePasswordElement = await this.driver.$('div.p-8.py-0 div.false button.cursor-pointer.bg-grey-100 span');
+    await changePasswordElement.click();
+})
+When('I put my old password', async function() {
+    let passwordsElement = await this.driver.$$('div.p-8.py-0 div.false div.relative.flex-col.gap-6 div.relative.order-2 input[type="password"]');
+    var oldPasswordElement = passwordsElement[0]
+    await oldPasswordElement.setValue(this.oldPassword);
+})
+When('I put my new password', async function() {
+    let passwordsElement = await this.driver.$$('div.p-8.py-0 div.false div.relative.flex-col.gap-6 div.relative.order-2 input[type="password"]');
+    var oldPasswordElement = passwordsElement[1]
+    await oldPasswordElement.setValue(this.newPassword);
+})
+When('I confirm my new password', async function() {
+    let passwordsElement = await this.driver.$$('div.p-8.py-0 div.false div.relative.flex-col.gap-6 div.relative.order-2 input[type="password"]');
+    var oldPasswordElement = passwordsElement[2]
+    await oldPasswordElement.setValue(this.newPassword);
+})
+When('I click to accept change the password', async function() {
+    let changePasswordElement = await this.driver.$('div.p-8.py-0 div.false button.cursor-pointer.bg-red span');
+    await changePasswordElement.click();
+})
+When('I click to save and close', async function() {
+    let changePasswordElement = await this.driver.$('div.p-8.py-6 div.flex.gap-3 button.cursor-pointer.bg-black span');
+    await changePasswordElement.click();
+})
+When('I click in done button', async function() {
+    let doneButtonElement = await this.driver.$('button[data-testid="exit-settings"]');
+    await doneButtonElement.click();
+})
+When('I click to logout', async function() {
+    let doneButtonElement = await this.driver.$('a[href="#/signout/"]');
+    await doneButtonElement.click();
+})
+Then('I login with new credentials', async function() {
+    let identificationElement = await this.driver.$('#identification');
+    await identificationElement.setValue(this.email);
+
+    let passwordElement = await this.driver.$('#password');
+    await passwordElement.setValue(this.newPassword);
+ 
+    let element = await this.driver.$('#ember5');
+    return await element.click();
+})
+Then('I invert passwords', async function() {
+    let auxPassword = this.oldPassword
+    this.oldPassword = this.newPassword
+    this.newPassword = auxPassword
+})
+
 
