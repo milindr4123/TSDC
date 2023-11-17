@@ -327,6 +327,13 @@ When('I click to logout', async function() {
     let doneButtonElement = await this.driver.$('a[href="#/signout/"]');
     await doneButtonElement.click();
 })
+When('I assign tag to post', async function() {
+    let membersElement = await this.driver.$("#tag-input");
+    await membersElement.click();
+    let elements = await this.driver.$$(".ember-power-select-option");
+    var element = elements[0]
+    await element.click();
+})
 Then('I login with new credentials', async function() {
     let identificationElement = await this.driver.$('#identification');
     await identificationElement.setValue(this.email);
@@ -342,4 +349,3 @@ Then('I invert passwords', async function() {
     this.oldPassword = this.newPassword
     this.newPassword = auxPassword
 })
-
