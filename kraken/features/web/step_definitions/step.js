@@ -263,9 +263,22 @@ When('I Publish Post', async function () {
     waitForElement(element)
     await element.click();
     let element2 = await this.driver.$('button.gh-btn.gh-btn-black.gh-btn-large');
-    waitForElement(element)
+    waitForElement(element2)
     await element2.click();
+    let element3 = await this.driver.$('button[data-test-button="confirm-publish"]');
+    waitForElement(element3)    
+    await element3.click();
 });
+
+When('I Unpublish Post', async function () {
+    let element = await this.driver.$('button[class="gh-btn gh-btn-editor darkgrey gh-unpublish-trigger"]');
+    waitForElement(element)    
+    await element.click();
+    let element1 = await this.driver.$('button[class="gh-revert-to-draft"]');
+    waitForElement(element1)    
+    await element1.click();
+});
+
 
 
 When('I remove Post', async function () {
@@ -348,4 +361,9 @@ Then('I invert passwords', async function() {
     let auxPassword = this.oldPassword
     this.oldPassword = this.newPassword
     this.newPassword = auxPassword
+})
+
+Then('I check posts published', async function() {
+    let element1 = await this.driver.$('a[title="Published"]');
+    await element1.click();
 })
