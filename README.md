@@ -81,7 +81,7 @@ Ejecución:
 ### Obstaculos
 
 Nombre funcionalidad | Dificultad | Ubicación
--- | --
+-- | -- | --
 Post | En algunos momentos identificaba correctamente el selector, pero en otros caso no lo reconocia. | post/Post-F1.feature
 Post | En algunos momentos identificaba correctamente el selector, pero en otros caso no lo reconocia. | post/Post-F2.feature
 Post | En algunos momentos identificaba correctamente el selector, pero en otros caso no lo reconocia. | post/Post-F3.feature
