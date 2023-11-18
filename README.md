@@ -13,7 +13,7 @@ Los siguientes pasos son una guía para correr los respectivos escenarios de pru
 
 ### Pasos previos:
 1. Usar la versión 18.18.2 de Node.js (Si se está usando nvm, utilizar la version 1.1.11 de este)
-2. Instalar el cli del ghost, npm install -g ghost-cli@latest (Ghost-CLI version: 1.25.3, Ghost version: 5.73.2)
+2. Instalar el cli del ghost, npm install -g ghost-cli@latest (Ghost-CLI version: 1.25.3, Ghost version: 5.73.2)  y (Ghost-CLI version: 1.25.3, Ghost version: 3.42.0)
 3. Crear una carpeta para el proyecto de ghost
 4. Ingresar en el directorio
 5. Instalar el CMS de Ghost usando: ghost install local
