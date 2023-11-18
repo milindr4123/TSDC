@@ -42,7 +42,7 @@ Then("I should be redirected to the pages view", () => {
   cy.wait(5000);
 });
 
-When('I click the {string} button', (linkText) => {
+When('I click the {string} button', () => {
   cy.get("section.view-actions a[href='#/editor/page/'], #ember404").click();
   cy.screenshot('NewPagesButton');
   cy.wait(2000);
