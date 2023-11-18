@@ -1,6 +1,6 @@
 {
   "dependencies": {
-    "@badeball/cypress-cucumber-preprocessor": "^19.1.0",
+    "@badeball/cypress-cucumber-preprocessor": "^19.1.1",
     "@bahmutov/cypress-esbuild-preprocessor": "^2.2.0",
     "@cypress/webpack-preprocessor": "^5.17.1",
     "@shelex/cypress-allure-plugin": "^2.40.0",
