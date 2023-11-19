@@ -8,11 +8,17 @@ Scenario: As a user, I create and view a post.
   And  I navigate to post section
   And  I wait for 2 seconds
   And  I click in New Post link
-  And I Fill Post
-  And  I click the Post settings button
+  And  I wait for 2 seconds
+  And  I Fill Post "Mi Cuarto Post"
+  And  I wait for 2 seconds
+  And  I click the Post settings button 
+  And  I wait for 2 seconds
   And  I enter Post URL "New Post in GHOST"
+  And  I wait for 2 seconds
   And  I click the Post settings button
+  And  I wait for 2 seconds
   And  I navigate to post section
+  And  I wait for 2 seconds
   When I select a post
   And  I wait for 2 seconds
   And  I Publish Post

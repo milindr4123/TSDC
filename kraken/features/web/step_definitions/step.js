@@ -273,6 +273,13 @@ When('I Fill Post', async function () {
     await element.click();
 });
 
+When('I Fill Post {kraken-string}', async function (msg) {
+    let element  = await this.driver.$('textarea.gh-editor-title.ember-text-area.gh-input.ember-view');
+    waitForElement(element)
+    await element.setValue("Prueba");
+    await element.click();
+});
+
 When('I click in Publish button', async function () {
     let element = await this.driver.$('button.gh-btn.gh-btn-editor.darkgrey.gh-publish-trigger');
     await element.click();
@@ -319,8 +326,15 @@ When('I Unpublish Post', async function () {
     waitForElement(element)    
     await element.click();
     let element1 = await this.driver.$('button[class="gh-revert-to-draft"]');
-    waitForElement(element1)    
-    await element1.click();
+    waitForElement(element1)
+    await element1.click();   
+});
+
+
+('I return Back From Unpublish Post', async function () {
+    let element3 = await this.driver.$("a[href='#/posts/?type=published']");
+    waitForElement(element3)
+    await element3.click();
 });
 
 
@@ -329,6 +343,11 @@ When('I navigate to section page', async function () {
     waitForElement(page)    
     await page.click();
 });
+
+When('I select a page', async function() {
+    let membersElement = await this.driver.$(".gh-posts-list-item");
+    return await membersElement.click();
+})
 
 When('I create a page', async function () {
     let page = await this.driver.$('a[@href="#/editor/page/"]');
