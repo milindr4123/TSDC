@@ -1,30 +1,21 @@
 Feature: Creación, Edición, Publicación, Despublicación y Eliminación de una Página - Page
 
-@user1 @web
-Scenario: As a user, I create, edit and view a page.
-  Given I navigate to page "http://localhost:2368/ghost/#/signin"
-  And   I wait for 5 seconds
-  And  I am logged
-  And   I wait for 2 seconds
-  And  I navigate to section page
-  And   I wait for 3 seconds
-  And  I create a page
-  And   I wait for 3 seconds  
-  And  I enter title "New Page in Ghost - title"
-  And   I wait for 3 seconds
-  And  I navigate to section page  
-  And   I wait for 5 seconds
-  And  I select a page
-  And   I wait for 5 seconds
-  And  I click in Preview button
-  And   I wait for 5 seconds
-  When  I click in Editor button
-  And   I wait for 3 seconds  
-  When  I enter title "Edit title - Page Ghost"
-  And   I wait for 3 seconds
-  And  I click in Preview button
-  And   I wait for 5 seconds
-  Then  I click in Preview button
-  And   I wait for 3 seconds
-  And  I navigate to section page
-  And   I wait for 3 seconds
+@user3 @web
+Scenario: Como usuario creo un tag y lo asigno a una publicacion
+  Given I navigate to page "http://localhost:3001/ghost/#/signin"
+  And I am logged with version 3
+  And I wait for 5 seconds
+  And I navigate to tags section
+  And I wait for 5 seconds
+  And I select public tags section
+  And I click to create a tag
+  And I fill just name field for public tag
+  When I click to save
+  And I wait for 2 seconds
+  And I navigate to post section
+  And I select a post
+  And I click to open post settings
+  And I add a tag to post
+  Then I go back to posts section
+  And I wait for 2 seconds
+  And I navigate to tags section

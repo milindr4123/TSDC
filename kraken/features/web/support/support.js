@@ -5,7 +5,7 @@ class KrakenWorld {
     let params = input.parameters;
     this.userId = params.id;
     this.device = params.device || {};
-    this.testScenarioId = params.testScenarioId;
+    this.testScenarioId = "F1";
     this.attach = input.attach;
   }
 }

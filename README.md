@@ -54,9 +54,11 @@ Instalación y set-up de Kraken:
 
 Ejecución: 
 1. Para ejecutar un feature en específico en Kraken, copie el contenido del feature que desea probar de la carpeta "lista_features" y peguelo en el archivo my_first.feature.
-2. En el archivo step.js debe cambiar las credenciales del super admin, encontradas en el Given: "I am logged"
-3. Se deben modificar los correos y contraseñas del archivo properties.json
-4. Correr las pruebas usando el comando: npx kraken-node run
+2. Cambie el nombre de la variable this.foldername en el archivo hooks.js, para que queden guardados los screenshots de acuerdo a la funcionalidad
+3. En el archivo hooks.js debe cambiar las credenciales (this.email, this.oldPassword) del super admin, encontradas en el Given: "I am logged"
+4. Se deben modificar los correos y contraseñas del archivo properties.json
+5. Correr las pruebas usando el comando: npx kraken-node run
+6. En caso de tener un error con el socket, intente cambiar el navegador en la variable this.deviceClient en el archivo hooks.js
 
 ### Pasos usando Cypress
 1. Instalar cypress usando: npm install -g cypress

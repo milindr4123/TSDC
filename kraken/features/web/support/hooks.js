@@ -35,7 +35,8 @@ function wait(ms) {
   let now = start;
   while ((now - start) < ms) { now = Date.now(); }
 }
- 
+
 After(async function() {
   await this.deviceClient.stopKrakenForUserId(this.userId);
 });
+
