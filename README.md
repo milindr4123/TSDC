@@ -12,14 +12,14 @@ Proyecto para administrar las incidencias de Ghost
 Los siguientes pasos son una guía para correr los respectivos escenarios de pruebas utilizando las herramientas de Cypress y Kraken.
 
 ### Pasos previos:
-1. Usar la versión 18.18.2 de Node.js (Si se está usando nvm, utilizar la version 1.1.11 de este)
-2. Instalar el cli del ghost, npm install -g ghost-cli@latest (Ghost-CLI version: 1.25.3, Ghost version: 5.73.2)  y (Ghost-CLI version: 1.25.3, Ghost version: 3.42.0)
-3. Crear una carpeta para el proyecto de ghost
-4. Ingresar en el directorio
-5. Instalar el CMS de Ghost usando: ghost install local
-6. Inicializar el ghost usando: ghost start (El puerto debe ser 2368)
-7. En un navegador ir al sitio: localhost:2368/ghost y realizar la correcta instalación del CMS
-8. Guardar las credenciales de superadmin creadas para las pruebas
+1. Tener instalada la herramienta git
+2. Tener instalada la versión 18.18.2 de Node.js (Si se está usando nvm, utilizar la version 1.1.11 de este en windows)
+3. Instalar y correr contenedor de ghost versión 3.42.0 usando el puerto 3001 en docker: docker run -d -e url=http://localhost:3001 -p 3001:2368 --name ghost_3.42 ghost:3.42
+4. Ingresar a la url http://localhost:3001/ghost y colocar en Email: prueba@prueba.com y Password: 123456789$ (Esto para correr las pruebas sin realizar ninguna modificación en los fixtures)
+5. Instalar y correr contenedor de ghost versión 5.73.2 usando el puerto 3002 en docker: docker run -d --name ghost_5.73.2 -e url=http://localhost:3002 -e NODE_ENV=development -e database__client=sqlite3 -e database__connection__filename="content/data/ghost.db" -e database__useNullAsDefault=true -e database__debug=false -p 3002:2368 ghost:5.73.2
+6. Ingresar a la url http://localhost:3002/ghost y colocar en Email: prueba@prueba.com y Password: 123456789$ (Esto para correr las pruebas sin realizar ninguna modificación en los fixtures)
+7. Clonar el repositorio del proyecto en el directorio de su preferencia: git clone https://github.com/milindr4123/TSDC.git
+8. Correr el comando npm install dentro del repositorio clonado para descargar los paquetes necesarios para el funcionamiento de las pruebas.
 
 ### Pasos usando Kraken
 Prerequisitos: 
@@ -67,17 +67,17 @@ Ejecución:
 		Cypress binary version: 13.5.1
 		Electron version: 25.8.4
 		Bundled Node version: 18.15.0
-2. Instalar cypress de manera local: npm install cypress
-3. Agrega los archivos descargados del repositorio que están asociados a Cypress al directorio de Ghost (La carpeta "cypress").
-4. Abre la terminal y dentro del directorio de la aplicación ejecuta el comando "cypress open".
-5. Selecciona el navegador "Chrome" en la ventana que se despliega.
+2. Abre la terminal y dentro del directorio de la aplicación ejecuta el comando "cypress open". 
+3. Seleccionamos la opción de pruebas E2E (Podemos evidenciar que ya se encuentran configurados los archivos de las pruebas e2e)
+5. Selecciona el navegador "Chrome" en la ventana que se despliega y le damos click a "Start E2E Testing in Chrome".
 6. En el menú izquierdo de la ventana de Cypress, elige la opción "Specs".
 7. Selecciona las pruebas que deseas ejecutar.
-8. (Paso adicional) Para las pruebas se deben modificar los atributos "email" y "password" en los archivos que se encuentran ubicados en la carpeta de fixtures. Utiliza las credenciales de superadmin creadas durante la instalación de Ghost.
-9. (Recomendación) los archivos de cypress cuentan con distinas funcionalidades que van a ir ejecutandose una tras otra cuando realices las pruebas, algunas pruebas deben ejecutarse de manera individual para garantizar su funcionamiento, ya que crean usuarios únicos que no pueden repetirse en la aplicación.
+8. (Paso opcional) Para las pruebas se deben modificar los atributos "email" y "password" en el archivo credentials.json que se encuentran ubicado en la carpeta de cypress/fixtures. Utiliza las credenciales de superadmin creadas durante la instalación de Ghost.
+9. (Paso opcional) Si por algún motivo se instaló alguna de las versiones de ghost de docker en un puerto diferente al que se recomendó, se debe modificar el archivo prots.json ubicado en la carpeta cypress/fixtures. La key "v1" se refiere a las pruebas realizadas en la versión 5.73.2 de ghost y "v2" se refiere a la versión 3.42.0 de ghost, entonces en el value se debe colocar el puerto en el cual se desplegaron esas versiones.
+10. (Paso opcional) Si se quieren modificar algunos datos de las pruebas realizadas, puede ir a la carpeta cypress/fixtures, en donde encontrará los datos que se usaron para algunas de las pruebas.
 
 ### Observaciones
-1. Los test se hicierón en dos versiones de GHOST (5.73.2 y 3.42.0). Dentro del repositorio se encontrará una carpeta por versión de GHOST.
+1. Los test se hicierón en dos versiones de GHOST (5.73.2 y 3.42.0). Dentro de los directorios de las pruebas podemos ver carpetas que tienen en su nombre "V3" los cuales se basan en las pruebas desarroladas en la versión 3.42.0 de GHOST.
 
 ### Obstáculos
 
