@@ -7,7 +7,7 @@ Proyecto para administrar las incidencias de Ghost
 	- Brayan Ricardo García - br.garciam1@uniandes.edu.co
  	- Juan Diego García - j.garcia55@uniandes.edu.co
 
-## Ejecución de pruebas
+## Ejecución de Pruebas de Regresión
 
 Los siguientes pasos son una guía para correr los respectivos escenarios de pruebas utilizando las herramientas de Cypress y Kraken.
 
@@ -77,10 +77,11 @@ Ejecución:
 9. (Recomendación) los archivos de cypress cuentan con distinas funcionalidades que van a ir ejecutandose una tras otra cuando realices las pruebas, algunas pruebas deben ejecutarse de manera individual para garantizar su funcionamiento, ya que crean usuarios únicos que no pueden repetirse en la aplicación.
 
 ### Observaciones
-1. Los test se hicierón en dos versiones de GHOST (5.73.2 y 3.42.0) Se encontrara dentro el codigo la versión por carpetas especificas.
+1. Los test se hicierón en dos versiones de GHOST (5.73.2 y 3.42.0). Dentro del repositorio se encontrará una carpeta por versión de GHOST.
 
+### Obstáculos
 
-### Obstaculos
+Al ejecutar las Pruebas de Regresión en la versión 3.42.0 de Ghost se presentarón pruebas fallidas, ya que en esta versión la identificación y nombre de algunos selectores de los elementos no coincidian, por tal motivo se hizo necesario modificar algunos escenarios de pruebas, actualizando de esta manera los identificadores y nombres de los selectores, para que así se logrará la ejecución exitosa de las mismas.  
 
 Nombre funcionalidad | Dificultad | Ubicación
 -- | -- | --
@@ -89,3 +90,22 @@ Post | En algunos momentos identificaba correctamente el selector, pero en otros
 Post | En algunos momentos identificaba correctamente el selector, pero en otros caso no lo reconocia. | post/Post-F3.feature
 Post | En algunos momentos identificaba correctamente el selector, pero en otros caso no lo reconocia. | post/Post-F4.feature
 Post | En algunos momentos identificaba correctamente el selector, pero en otros caso no lo reconocia. | post/Post-F5.feature
+
+## Ejecución de Pruebas de Regresión Visual - VRT
+
+### Aspectos a tener en cuenta: 
+
+1. Para la ejecución de las pruebas de regresión visual (VRT) se seleccionaron 10 escenarios de 3 [Funcionalidades VRT](https://github.com/milindr4123/TSDC/wiki/Funcionalidades-para-pruebas-VRT) diferentes documentadas en la wiki del proyecto. Estas pruebas se ejecutaron sobre los screenshots tomados en ambas versiones de Ghost (5.73.2 - 3.42.0) utilizando las herramientas ResembleJS y BackstopJS.
+
+2. Las diferencias visuales encontradas en la ejecución de las pruebas se encuentan reportadas en el sistema de [Registro de Incidencias](https://github.com/milindr4123/TSDC/issues) del proyecto.
+
+3. En la documentación del proyecto también se presentan los [PROS y CONTRAS](https://github.com/milindr4123/TSDC/wiki) de las herramientas ResembleJS y BackstopJS utilizadas para la ejecución de las pruebas VRT.
+
+4. El reporte generado para la ejecución de las pruebas con ResembleJs se encuentre en ......
+
+5. El reporte generado para la ejecución de las pruebas con BackstopJS se encuentre en ......
+
+6. En el siguiente video se busca explicar el procedimiento realizado para la toma de screenshots, las decisiones tomadas respecto al reporte generado y los resultados del proceso de ejecución de VRT.
+
+
+
