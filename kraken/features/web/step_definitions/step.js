@@ -1,5 +1,4 @@
 const { Given, When, Then } = require('@cucumber/cucumber');
-const assert = require('chai').assert;
 
 Given('I am logged', async function() {
     let identificationElement = await this.driver.$('#identification');
@@ -229,10 +228,35 @@ Given('I click the Post settings button', async function () {
     await element.click();
 });
 
+When("I click the Page settings button", () => {
+    cy.get("button.settings-menu-toggle").click();
+    cy.wait(2000);
+  });
+
+When('I enter Page URL "New Page in GHOST"', () => {
+    cy.get("#url").type("New Page in GHOST");
+    cy.wait(2000);
+  })
+
 When('I enter Post URL {kraken-string}', async function (url) {
     let element = await this.driver.$('#url');
     waitForElement(element)
     await element.setValue(url);
+});
+
+When('I click in Preview button', async function () {
+    let element  = await this.driver.$('button[data-test-button="publish-preview"]');
+    await element.click();
+});
+
+When("I click in Editor button", () => {
+    cy.get('.left').find('button.gh-editor-back-button').click()
+    cy.wait(5000);
+});
+
+When("I click in Publish return back button", async function () {
+    let element  = await this.driver.$('button[class="gh-btn-editor gh-publish-back-button"]');
+    await element.click();
 });
 
 
@@ -249,8 +273,28 @@ When('I Fill Post', async function () {
     await element.click();
 });
 
+When('I click in Publish button', async function () {
+    let element = await this.driver.$('button.gh-btn.gh-btn-editor.darkgrey.gh-publish-trigger');
+    await element.click();
+});
 
-//Escenario 2
+
+When("I click in Continue, final review button", async function () {
+    let element  = await this.driver.$('button[data-test-button="continue"]');
+    await element.click();
+  });
+
+When("I click in Publish page, right now button", async function () {
+    let element  = await this.driver.$('button[data-test-button="confirm-publish"]');
+    await element.click();
+});	
+
+When("I enter title {kraken-string}", async function (msg) {
+    let element  = await this.driver.$('textarea.gh-editor-title.ember-text-area.gh-input.ember-view');
+    waitForElement(element)
+    await element.setValue(msg);
+  });
+
 When('I Edit a Post {kraken-string}', async function (message) {
     let element = await this.driver.$('textarea.gh-editor-title.ember-text-area.gh-input.ember-view');
     waitForElement(element)
@@ -280,6 +324,18 @@ When('I Unpublish Post', async function () {
 });
 
 
+When('I navigate to section page', async function () {
+    let page = await this.driver.$('a[@href="#/pages/"]');
+    waitForElement(page)    
+    await page.click();
+});
+
+When('I create a page', async function () {
+    let page = await this.driver.$('a[@href="#/editor/page/"]');
+    waitForElement(page)    
+    await page.click();
+});
+
 
 When('I remove Post', async function () {
     let element = await this.driver.$('button.gh-btn.gh-btn-outline.gh-btn-icon.gh-btn-fullwidth');
@@ -291,11 +347,6 @@ When('I remove Post', async function () {
     
 });
 
-async function waitForElement(element) {
-    await element.waitForExist({ timeout: 20000 });
-    await element.waitForDisplayed({ timeout: 20000 });    
-    await element.waitForClickable({ timeout: 20000 }); 
-  }
 
 When('I click user settings', async function() {
     let profileSettingsElement = await this.driver.$('div.gh-user-avatar.relative');
@@ -367,3 +418,22 @@ Then('I check posts published', async function() {
     let element1 = await this.driver.$('a[title="Published"]');
     await element1.click();
 })
+When('I take a screenshot of functionality {kraken-string}', async function (filename) {
+    const screenshotName = `${filename}.png`;
+    const reportsFolder = path.join(__dirname, '../../../', 'reports');
+    const screenshotPath = path.join(reportsFolder, this.folderName, screenshotName);
+ 
+    if (!fs.existsSync(path.join(reportsFolder, this.folderName))) {
+      fs.mkdirSync(path.join(reportsFolder, this.folderName));
+    }
+ 
+    const screenshot = await this.driver.takeScreenshot();
+    fs.writeFileSync(screenshotPath, screenshot, 'base64');
+    console.log(`Screenshot saved as: ${filename}`);
+  });
+
+  async function waitForElement(element) {
+    await element.waitForExist({ timeout: 20000 });
+    await element.waitForDisplayed({ timeout: 20000 });    
+    await element.waitForClickable({ timeout: 20000 }); 
+  }
