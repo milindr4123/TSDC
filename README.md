@@ -15,21 +15,21 @@ Los siguientes pasos son una guía para correr los respectivos escenarios de pru
 1. Tener instalada la herramienta git
 2. Tener instalada la versión 18.18.2 de Node.js (Si se está usando nvm, utilizar la version 1.1.11 de este en windows)
 3. Instalar y correr contenedor de ghost versión 3.42.0 usando el puerto 3001 en docker: docker run -d -e url=http://localhost:3001 -p 3001:2368 --name ghost_3.42 ghost:3.42
-4. Ingresar a la url http://localhost:3001/ghost y colocar en Email: prueba@prueba.com y Password: 123456789$ (Esto para correr las pruebas sin realizar ninguna modificación en los fixtures)
-5. Instalar y correr contenedor de ghost versión 5.73.2 usando el puerto 3002 en docker: docker run -d --name ghost_5.73.2 -e url=http://localhost:3002 -e NODE_ENV=development -e database__client=sqlite3 -e database__connection__filename="content/data/ghost.db" -e database__useNullAsDefault=true -e database__debug=false -p 3002:2368 ghost:5.73.2
-6. Ingresar a la url http://localhost:3002/ghost y colocar en Email: prueba@prueba.com y Password: 123456789$ (Esto para correr las pruebas sin realizar ninguna modificación en los fixtures)
-7. Clonar el repositorio del proyecto en el directorio de su preferencia: git clone https://github.com/milindr4123/TSDC.git
-8. Correr el comando npm install dentro del repositorio clonado para descargar los paquetes necesarios para el funcionamiento de las pruebas.
+4. Instalar y correr contenedor de ghost versión 5.73.2 usando el puerto 3002 en docker: docker run -d --name ghost_5.73.2 -e url=http://localhost:3002 -e NODE_ENV=development -e database__client=sqlite3 -e database__connection__filename="content/data/ghost.db" -e database__useNullAsDefault=true -e database__debug=false -p 3002:2368 ghost:5.73.2
+5. Ingresar a la url http://localhost:3002/ghost y colocar en Email: prueba@prueba.com y Password: 123456789$ (Esto para correr las pruebas sin realizar ninguna modificación en los fixtures)
+6. Clonar el repositorio del proyecto en el directorio de su preferencia: git clone https://github.com/milindr4123/TSDC.git
+7. Correr el comando npm install dentro del repositorio clonado para descargar los paquetes necesarios para el funcionamiento de las pruebas.
 
 ### Pasos usando Kraken
-Prerequisitos: 
+Prerequisitos:
+0. Dado que ningún integrante tiene un sistema operativo diferente a Windows, para seguir estos pasos es necesario hacerlo en el sistema operativo Windows
 1. Tener instalado Android Studio
 2. En las propiedades de Android Studio tener instalado:
 	a. Android SDK Platform-Tools
 	b. Android SDK Build-Tools
 	c. Android SDK Tools (Obsolete) (Se deben poner visibles los paquetes obsoletos si se está usando Android Studio Giraffe o una versión más reciente)
 
-3. Configurar las siguientes rutas en PATH: 
+3. Configurar las siguientes rutas en PATH de usuario: 
 	a. C:\Users\***\AppData\Local\Android\Sdk\platform-tools
 	b. C:\Users\***\AppData\Local\Android\Sdk\tools
 	c. C:\Users\***\AppData\Local\Android\Sdk\build-tools\VERSION
@@ -41,24 +41,27 @@ Prerequisitos:
 Instalación y set-up de Kraken: 
 1. Ir a la carpeta de trabajo (En este caso, la carpeta de Ghost o del release)
 2. Sí aun no lo tiene, debe instalar Kraken en global: npm install kraken-node -g --force
-3. Inicializar Kraken: kraken-node gen
-4. Instalar Kraken en local: npm install kraken-node --force
-5. Instalar Appium en global: npm install -g appium --force
-6. Intalar faker: npm install faker
-7. Puede verificar que todo haya quedado instalado usando el comando kraken-node doctor
-8. Al ejecutar el paso 6. Se deberia visualizar una imagen como la siguiente:
+3. Descargar el repositorio
+4. Abrir la terminal en la dirección donde descargó el repositorio
+5. Ir a la carpeta kraken
+6. Instalar Kraken en local: npm install kraken-node --force
+7. Instalar Appium en global: npm install -g appium --force
+8. Intalar faker: npm install faker
+9. Puede verificar que todo haya quedado instalado usando el comando kraken-node doctor
+10. Al ejecutar el paso 6. Se deberia visualizar una imagen como la siguiente:
    ![image](https://github.com/milindr4123/TSDC/assets/142748575/da940a6e-cc85-4085-a512-58a51e36296b)
 #### Algunos errores comunes: 
-1. 
-
+1. Si ocurre un error, por favor reinstale kraken y faker
+2. Si el error persiste corra el comando npm audit fix --force
+3. Si aún tiene problemas, contáctenos, estamos 24 horas listos para ayudar :D
 
 Ejecución: 
-1. Para ejecutar un feature en específico en Kraken, copie el contenido del feature que desea probar de la carpeta "lista_features" y peguelo en el archivo my_first.feature.
-2. Cambie el nombre de la variable this.foldername en el archivo hooks.js, para que queden guardados los screenshots de acuerdo a la funcionalidad
+1. Para ejecutar un feature en específico en Kraken, copie el contenido del feature(.feature) y steps (steps.js) que desea probar de la carpeta "lista_features" si quiere probar con Ghost 5, o copie el contenido de la carpeta "lista_feature_version_ghost_3" si quiere probar con la versión 3.42 de Ghost, y peguelo en el archivo my_first.feature. (es posible que por correr varios usuarios al tiempo se generen errores, así que si esto sucede deberá correr de a un escenario a la vez. Los escenarios se encuentran dentro de los archivo .feature, y empiezan con "Scenario: NOMBRE_ESCENARIO")
+2. Cambie el nombre de la variable this.foldername en el archivo hooks.js, para que queden guardados los screenshots de acuerdo a la funcionalidad que está probando
 3. En el archivo hooks.js debe cambiar las credenciales (this.email, this.oldPassword) del super admin, encontradas en el Given: "I am logged"
 4. Se deben modificar los correos y contraseñas del archivo properties.json
 5. Correr las pruebas usando el comando: npx kraken-node run
-6. En caso de tener un error con el socket, intente cambiar el navegador en la variable this.deviceClient en el archivo hooks.js
+6. En caso de tener un error con el socket, intente cambiar el navegador en la variable this.deviceClient en el archivo hooks.js ( this.deviceClient = new WebClient('%NAVEGADOR%', {}, this.userId);)
 
 ### Pasos usando Cypress
 1. Instalar cypress usando: npm install -g cypress
