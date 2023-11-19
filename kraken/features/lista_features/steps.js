@@ -367,3 +367,38 @@ When('I take a screenshot of functionality {kraken-string}', async function (fil
     console.log(`Screenshot saved as: ${filename}`);
   });
 
+  Given('I click in New Post link', async function () {
+    let editor_post = await this.driver.$('a[href="#/editor/post/"]');
+    waitForElement(editor_post)
+    await editor_post.click();
+});
+
+When('I Fill Post', async function () {
+    let element  = await this.driver.$('textarea.gh-editor-title.ember-text-area.gh-input.ember-view');
+    waitForElement(element)
+    await element.setValue("Prueba");
+    await element.click();
+});
+
+When('I Fill Post {kraken-string}', async function (msg) {
+    let element  = await this.driver.$('textarea.gh-editor-title.ember-text-area.gh-input.ember-view');
+    waitForElement(element)
+    await element.setValue("Prueba");
+    await element.click();
+});
+When('I assign tag to post', async function() {
+    let membersElement = await this.driver.$("#tag-input");
+    await membersElement.click();
+    let elements = await this.driver.$$(".ember-power-select-option");
+    var element = elements[0]
+    await element.click();
+})
+Then('I check posts published', async function() {
+    let element1 = await this.driver.$('a[title="Published"]');
+    await element1.click();
+})
+async function waitForElement(element) {
+    await element.waitForExist({ timeout: 20000 });
+    await element.waitForDisplayed({ timeout: 20000 });    
+    await element.waitForClickable({ timeout: 20000 }); 
+  }
