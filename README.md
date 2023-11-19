@@ -73,3 +73,17 @@ Ejecución:
 7. Selecciona las pruebas que deseas ejecutar.
 8. (Paso adicional) Para las pruebas se deben modificar los atributos "email" y "password" en los archivos que se encuentran ubicados en la carpeta de fixtures. Utiliza las credenciales de superadmin creadas durante la instalación de Ghost.
 9. (Recomendación) los archivos de cypress cuentan con distinas funcionalidades que van a ir ejecutandose una tras otra cuando realices las pruebas, algunas pruebas deben ejecutarse de manera individual para garantizar su funcionamiento, ya que crean usuarios únicos que no pueden repetirse en la aplicación.
+
+### Observaciones
+1. Los test se hicierón en dos versiones de GHOST (5.73.2 y 3.42.0) Se encontrara dentro el codigo la versión por carpetas especificas.
+
+
+### Obstaculos
+
+Nombre funcionalidad | Dificultad | Ubicación
+-- | -- | --
+Post | En algunos momentos identificaba correctamente el selector, pero en otros caso no lo reconocia. | post/Post-F1.feature
+Post | En algunos momentos identificaba correctamente el selector, pero en otros caso no lo reconocia. | post/Post-F2.feature
+Post | En algunos momentos identificaba correctamente el selector, pero en otros caso no lo reconocia. | post/Post-F3.feature
+Post | En algunos momentos identificaba correctamente el selector, pero en otros caso no lo reconocia. | post/Post-F4.feature
+Post | En algunos momentos identificaba correctamente el selector, pero en otros caso no lo reconocia. | post/Post-F5.feature

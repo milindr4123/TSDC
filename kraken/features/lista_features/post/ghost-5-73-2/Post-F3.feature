@@ -1,4 +1,4 @@
-Feature: Create Post, edit Post, assig tag to a menber y view Post
+Feature: Create Post, edit Post, assig tag to a post y view Post
 
 @user3 @web
 Scenario: As a user,  Create Post, edit Post, assig tag to a menber y view Post.
