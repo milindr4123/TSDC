@@ -3,3 +3,6 @@ node_modules
 
 # Ignorar el archivo package-lock.json
 package-lock.json
+
+#Ignora el archivo screenshots para no cargar de imagenes el repositorio
+cypress/screenshots
