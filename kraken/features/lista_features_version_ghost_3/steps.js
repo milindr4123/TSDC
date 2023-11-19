@@ -116,6 +116,62 @@ When('I confirm to delete the tag', async function() {
     let confirmBtnElement = await this.driver.$('.modal-footer button.gh-btn-red');
     await confirmBtnElement.click();
 })
+When('I click user settings', async function() {
+    let profileSettingsElement = await this.driver.$('div.gh-user-avatar.relative');
+    await profileSettingsElement.click();
+})
+When('I click to go to profile', async function() {
+    let profileSettingsElement = await this.driver.$$('li[role="presentation"]')[2];
+    await profileSettingsElement.click();
+    
+})
+When('I click to change password', async function() {
+    let changePasswordElement = await this.driver.$('div.p-8.py-0 div.false button.cursor-pointer.bg-grey-100 span');
+    await changePasswordElement.click();
+})
+When('I put my old password', async function() {
+    let passwordsElement = await this.driver.$('#user-password-old');
+    await passwordsElement.setValue(this.oldPassword);
+})
+When('I put my new password', async function() {
+    let passwordsElement = await this.driver.$('#user-password-new');
+    await passwordsElement.setValue(this.newPassword);
+})
+When('I confirm my new password', async function() {
+    let passwordsElement = await this.driver.$('#user-new-password-verification');
+    await passwordsElement.setValue(this.newPassword);
+})
+When('I click to accept change the password', async function() {
+    let changePasswordElement = await this.driver.$('button.button-change-password span');
+    await changePasswordElement.click();
+})
+When('I click to save and close', async function() {
+    let changePasswordElement = await this.driver.$('div.p-8.py-6 div.flex.gap-3 button.cursor-pointer.bg-black span');
+    await changePasswordElement.click();
+})
+When('I click in done button', async function() {
+    let doneButtonElement = await this.driver.$('header button.gh-btn-blue');
+    await doneButtonElement.click();
+})
+When('I click to logout', async function() {
+    let doneButtonElement = await this.driver.$('a[href="#/signout/"]');
+    await doneButtonElement.click();
+})
+Then('I login with new credentials', async function() {
+    let identificationElement = await this.driver.$('input[name="identification"]');
+    await identificationElement.setValue(this.email);
+
+    let passwordElement = await this.driver.$('input[name="password"]');
+    await passwordElement.setValue(this.newPassword);
+
+    let element = await this.driver.$('button[type="submit"]');
+    return await element.click();
+})
+Then('I invert passwords', async function() {
+    let auxPassword = this.oldPassword
+    this.oldPassword = this.newPassword
+    this.newPassword = auxPassword
+})
 function sleep(ms) {
     return new Promise(resolve => setTimeout(resolve, ms));
   }
