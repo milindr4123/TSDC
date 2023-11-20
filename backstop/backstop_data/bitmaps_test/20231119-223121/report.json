@@ -1,0 +1,58 @@
+{
+  "testSuite": "BackstopJS",
+  "tests": [
+    {
+      "pair": {
+        "reference": "..\\bitmaps_reference\\backstop_default_Como_usuario_creo_un_nuevo_tag_publico_e_interno_1png_0_document_0_default.png",
+        "test": "..\\bitmaps_test\\20231119-223121\\backstop_default_Como_usuario_creo_un_nuevo_tag_publico_e_interno_1png_0_document_0_default.png",
+        "selector": "document",
+        "fileName": "backstop_default_Como_usuario_creo_un_nuevo_tag_publico_e_interno_1png_0_document_0_default.png",
+        "label": "Como usuario creo un nuevo tag publico e interno_1.png",
+        "misMatchThreshold": 0.1,
+        "url": "http://127.0.0.1:8080/F2-S1-version-5/Como usuario creo un nuevo tag publico e interno_1.png",
+        "referenceUrl": "C:\\Users\\ASUS\\Desktop\\Uniandes\\Ciclo 2\\PruebasAutomatizadas\\repoProyecto\\TSDC\\kraken\\reports\\F2-S1-version-3\\Como usuario creo un nuevo tag publico e interno_1.png",
+        "expect": 0,
+        "viewportLabel": "default",
+        "diff": {
+          "isSameDimensions": false,
+          "dimensionDifference": {
+            "width": 400,
+            "height": 300
+          },
+          "rawMisMatchPercentage": 1.794722222222222,
+          "misMatchPercentage": "1.79",
+          "analysisTime": 62
+        },
+        "diffImage": "..\\bitmaps_test\\20231119-223121\\failed_diff_backstop_default_Como_usuario_creo_un_nuevo_tag_publico_e_interno_1png_0_document_0_default.png"
+      },
+      "status": "fail"
+    },
+    {
+      "pair": {
+        "reference": "..\\bitmaps_reference\\backstop_default_Como_usuario_creo_un_nuevo_tag_publico_e_interno_2png_0_document_0_default.png",
+        "test": "..\\bitmaps_test\\20231119-223121\\backstop_default_Como_usuario_creo_un_nuevo_tag_publico_e_interno_2png_0_document_0_default.png",
+        "selector": "document",
+        "fileName": "backstop_default_Como_usuario_creo_un_nuevo_tag_publico_e_interno_2png_0_document_0_default.png",
+        "label": "Como usuario creo un nuevo tag publico e interno_2.png",
+        "misMatchThreshold": 0.1,
+        "url": "http://127.0.0.1:8080/F2-S1-version-5/Como usuario creo un nuevo tag publico e interno_2.png",
+        "referenceUrl": "C:\\Users\\ASUS\\Desktop\\Uniandes\\Ciclo 2\\PruebasAutomatizadas\\repoProyecto\\TSDC\\kraken\\reports\\F2-S1-version-3\\Como usuario creo un nuevo tag publico e interno_2.png",
+        "expect": 0,
+        "viewportLabel": "default",
+        "diff": {
+          "isSameDimensions": false,
+          "dimensionDifference": {
+            "width": -400,
+            "height": -300
+          },
+          "rawMisMatchPercentage": 35.945277777777775,
+          "misMatchPercentage": "35.95",
+          "analysisTime": 55
+        },
+        "diffImage": "..\\bitmaps_test\\20231119-223121\\failed_diff_backstop_default_Como_usuario_creo_un_nuevo_tag_publico_e_interno_2png_0_document_0_default.png"
+      },
+      "status": "fail"
+    }
+  ],
+  "id": "backstop_default"
+}
