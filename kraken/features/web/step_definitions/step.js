@@ -1,65 +1,42 @@
 const { Given, When, Then } = require('@cucumber/cucumber');
-const fs = require('fs');
-const path = require('path');
 
-Given('I am logged with version 3', async function () {
-    let identificationElement = await this.driver.$('input[name="identification"]');
+Given('I am logged', async function() {
+    let identificationElement = await this.driver.$('#identification');
     await identificationElement.setValue(this.email);
 
-    let passwordElement = await this.driver.$('input[name="password"]');
+    let passwordElement = await this.driver.$('#password');
     await passwordElement.setValue(this.oldPassword);
-
-    let element = await this.driver.$('button[type="submit"]');
+ 
+    let element = await this.driver.$('#ember5');
     return await element.click();
 })
-Given('I navigate to tags section', async function () {
+Given('I navigate to members section', async function() {
+    let membersElement = await this.driver.$("a[href='#/members/']");
+    return await membersElement.click();
+})
+Given('I navigate to tags section', async function() {
     let membersElement = await this.driver.$("a[href='#/tags/']");
     return await membersElement.click();
 })
-Given('I navigate to internal tags section', async function () {
+Given('I navigate to internal tags section', async function() {
     let membersElement = await this.driver.$("a[href='#/tags/?type=internal']");
     return await membersElement.click();
 })
-Given('I click to create a tag', async function () {
+Given('I click to create a tag', async function() {
     let newTagElement = await this.driver.$('a[href="#/tags/new/"]');
     return await newTagElement.click();
 })
-Given('I fill just name field for public tag', async function () {
+Given('I navigate to create a member', async function() {
+    let newMemberElement = await this.driver.$('a[href="#/members/new/"]');
+    return await newMemberElement.click();
+})
+Given('I fill just name field for public tag', async function() {
     let newTagElement = await this.driver.$('input#tag-name');
     return await newTagElement.setValue(this.newTagName);
 })
-Given('I fill just name field for internal tag', async function () {
+Given('I fill just name field for internal tag', async function() {
     let newTagElement = await this.driver.$('input#tag-name');
     return await newTagElement.setValue("#" + this.newTagName);
-})
-Then('I click the first tag', async function () {
-    let tagElement = await this.driver.$('.gh-list h3');
-    await tagElement.click();
-})
-When('I click to save', async function () {
-    let saveElement = await this.driver.$('header section button');
-    return await saveElement.click();
-})
-When('I select public tags section', async function() {
-    let publicTagsElement = await this.driver.$$('section.view-actions button.gh-btn')[0];
-    return await publicTagsElement.click();
-})
-When('I edit a public tag', async function() {
-    let newTagElement = await this.driver.$('input#tag-name');
-    await newTagElement.setValue("#" + this.newTagName);
-
-    let colorElement = await this.driver.$('input[name="accent-color"]');
-    await colorElement.setValue("0000FF");
-
-    let slugElement = await this.driver.$('input[name="slug"]');
-    await slugElement.setValue("#" + this.newTagName);
-
-    let textAreaElement = await this.driver.$('textarea.gh-tag-details-textarea');
-    await textAreaElement.setValue(this.newTagDescription);
-})
-When('I select internal tags section', async function() {
-    let internalSectionElement = await this.driver.$$('section.view-actions button.gh-btn')[1];
-    return await internalSectionElement.click();
 })
 When('I edit an internal tag', async function() {
     let newTagElement = await this.driver.$('input#tag-name');
@@ -68,13 +45,88 @@ When('I edit an internal tag', async function() {
     let colorElement = await this.driver.$('input[name="accent-color"]');
     await colorElement.setValue("0000FF");
 
-    let slugElement = await this.driver.$('input[name="slug"]');
-    await slugElement.setValue("#" + this.newTagName);
+    let slugElement = await this.driver.$('input[data-test-input="tag-slug"]');
+    await slugElement.setValue(this.newTagName);
 
     let textAreaElement = await this.driver.$('textarea.gh-tag-details-textarea');
     await textAreaElement.setValue(this.newTagDescription);
 })
 
+When('I edit a public tag', async function() {
+    let newTagElement = await this.driver.$('input#tag-name');
+    await newTagElement.setValue("#" + this.newTagName);
+
+    let colorElement = await this.driver.$('input[name="accent-color"]');
+    await colorElement.setValue("0000FF");
+
+    let slugElement = await this.driver.$('input[data-test-input="tag-slug"]');
+    await slugElement.setValue("#" + this.newTagName);
+
+    let textAreaElement = await this.driver.$('textarea.gh-tag-details-textarea');
+    await textAreaElement.setValue(this.newTagDescription);
+})
+When('I select public tags section', async function() {
+    let saveElement = await this.driver.$('button[data-test-tags-nav="public"]');
+    return await saveElement.click();
+})
+
+When('I select {string} tags section', async function(tagSetting) {
+    let saveElement = await this.driver.$('button[data-test-tags-nav="' + tagSetting + '"]');
+    return await saveElement.click();
+})
+When('I click to save', async function() {
+    let saveElement = await this.driver.$('section button[data-test-button="save"]');
+    return await saveElement.click();
+})
+When('I fill just name and email member fields', async function() {
+    let emailElement = await this.driver.$('#member-email');
+    await emailElement.setValue( this.newMemberEmail);
+
+    let userElement = await this.driver.$('#member-name');
+    await userElement.setValue(this.newMemberName);
+
+    let saveElement = await this.driver.$('section button[data-test-button="save"]');
+    await saveElement.click();
+})
+When('I fill all member fields', async function() {
+    let emailElement = await this.driver.$('#member-email');
+    await emailElement.setValue( this.newMemberEmail);
+
+    let userElement = await this.driver.$('#member-name');
+    await userElement.setValue(this.newMemberName);
+
+    let labelsElement = await this.driver.$('input[type="search"]');
+    await labelsElement.setValue(this.newMemberLabel);
+    let addLabelsElement = await this.driver.$('.ember-power-select-options li');
+    await addLabelsElement.click();
+
+    let noteElement = await this.driver.$('textarea.gh-member-details-textarea');
+    await noteElement.setValue(this.newMemberLabel);
+
+    let saveElement = await this.driver.$('section button[data-test-button="save"]');
+    await saveElement.click();
+})
+When('I edit a member', async function() {
+    let membersElement = await this.driver.$("p.gh-members-list-email");
+    await membersElement.click();
+
+    let emailElement = await this.driver.$('#member-email');
+    await emailElement.setValue( this.newMemberEmail);
+
+    let userElement = await this.driver.$('#member-name');
+    await userElement.setValue(this.newMemberName);
+
+    let labelsElement = await this.driver.$('input[type="search"]');
+    await labelsElement.setValue(this.newMemberLabel);
+    let addLabelsElement = await this.driver.$('.ember-power-select-options li');
+    await addLabelsElement.click();
+
+    let noteElement = await this.driver.$('textarea.gh-member-details-textarea');
+    await noteElement.setValue(this.newMemberLabel);
+
+    let saveElement = await this.driver.$('section button[data-test-button="save"]');
+    await saveElement.click();
+})
 When('I navigate to post section', async function() {
     let membersElement = await this.driver.$("a[href='#/posts/']");
     return await membersElement.click();
@@ -84,7 +136,7 @@ When('I select a post', async function() {
     return await membersElement.click();
 })
 When('I click to open post settings', async function() {
-    let postSettingsElement = await this.driver.$("button.post-settings");
+    let postSettingsElement = await this.driver.$(".gh-btn-action-icon svg");
     return await postSettingsElement.click();
 })
 When('I add a tag to post', async function() {
@@ -94,23 +146,28 @@ When('I add a tag to post', async function() {
     let tagsFirstElement = await this.driver.$('li[data-option-index="0"]');
     await tagsFirstElement.click();
 
-    let closeSettingsBtnElement = await this.driver.$('button.close');
-    await closeSettingsBtnElement.click();
-    await sleep(3000);
-
-    let publishMenuBtnElement = await this.driver.$('section div[role="button"]');
-    await publishMenuBtnElement.click();
-
-    let updateBtnElement = await this.driver.$('button.gh-btn-blue span');
+    let updateBtnElement = await this.driver.$('button[data-test-button="publish-save"]');
     await updateBtnElement.click();
+})
+When('I click to delete the tag', async function() {
+    let deleteBtnElement = await this.driver.$('button[data-test-button="delete-tag"]');
+    await deleteBtnElement.click();
+})
+When('I confirm to delete the tag', async function() {
+    let confirmBtnElement = await this.driver.$('button[data-test-button="confirm"]');
+    await confirmBtnElement.click();
+})
+When('I close delete tag modal', async function() {
+    let closeBtnElement = await this.driver.$('button.close');
+    await closeBtnElement.click();
+})
+When('I cancel to delete the tag', async function() {
+    let confirmBtnElement = await this.driver.$('button[data-test-button="cancel"]');
+    await confirmBtnElement.click();
 })
 Then('I go back to posts section', async function() {
     let membersElement = await this.driver.$("a[href='#/posts/']");
     return await membersElement.click();
-})
-When('I click to delete the tag', async function() {
-    let deleteBtnElement = await this.driver.$('button.gh-btn-red');
-    await deleteBtnElement.click();
 })
 Then('I check if user is saved', async function() {
     let membersElement = await this.driver.$("a[href='#/members/']");
@@ -375,10 +432,14 @@ Then('I invert passwords', async function() {
     this.oldPassword = this.newPassword
     this.newPassword = auxPassword
 })
-When('I confirm to delete the tag', async function() {
-    let confirmBtnElement = await this.driver.$('.modal-footer button.gh-btn-red');
-    await confirmBtnElement.click();
+
+Then('I check posts published', async function() {
+    let element1 = await this.driver.$('a[title="Published"]');
+    await element1.click();
 })
-function sleep(ms) {
-    return new Promise(resolve => setTimeout(resolve, ms));
+
+  async function waitForElement(element) {
+    await element.waitForExist({ timeout: 20000 });
+    await element.waitForDisplayed({ timeout: 20000 });    
+    await element.waitForClickable({ timeout: 20000 }); 
   }

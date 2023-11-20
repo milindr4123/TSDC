@@ -37,4 +37,3 @@ Scenario: Cambiar passsword de usuario
   And I wait for 1 seconds
   And I wait for 2 seconds
   And I click in done button
-  And I wait for 2 seconds

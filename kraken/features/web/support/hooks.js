@@ -13,11 +13,11 @@ Before(async function() {
   this.newMemberNote = faker.random.word()
   this.newTagName = faker.random.word()
   this.newTagDescription = faker.random.word()
-  this.email = "ingerika.forero@gmail.com"
-  this.oldPassword = "388338593.21"
-  this.newPassword = "9876543210"
-  this.folderName = "F1"
- 
+  this.email = ""
+  this.oldPassword = ""
+  this.newPassword = ""
+  this.folderName = "F3-S1-version-5"
+  this.indexId = 0
     if (!fs.existsSync(`./reports/${this.folderName}`)) {
         fs.mkdirSync(`./reports/${this.folderName}`);
     }
@@ -27,7 +27,8 @@ AfterStep(async function (scenario) {
   wait(1000);
   let fileName = scenario.pickle.name;
   let time = Math.round(+new Date() / 1000);
-  await this.driver.saveScreenshot(`./reports/${this.folderName}/${fileName}_${time}.png`);
+  await this.driver.saveScreenshot(`./reports/${this.folderName}/${fileName}_${this.indexId}.png`);
+  this.indexId = this.indexId + 1
 });
  
 function wait(ms) {

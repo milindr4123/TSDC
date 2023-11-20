@@ -1,8 +1,9 @@
 Feature: Change password
   
 @user1 @web
-Scenario: Como usuario elimino un tag
+Scenario: Cambiar passsword de usuario
   Given I navigate to page "http://localhost:2368/ghost/#/signin"
+  And I wait for 5 seconds
   And I am logged
   And I wait for 5 seconds
   And I click user settings
