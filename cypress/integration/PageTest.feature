@@ -107,3 +107,37 @@ Feature: Creación, Edición, Publicación, Despublicación y Eliminación de un
         And   I click in Unpublish and revert to private draft button
         And   I click in Pages link again
         Then  I should be redirected
+
+    Scenario: As a user, I create page with long title.
+        Given I navigate to page Ghost
+        When  I enter email
+        When  I enter password
+        When  I click in Sign in button
+        Then  I should be redirected to the dashboard
+        When  I click in Pages link
+        Then  I should be redirected to the pages
+        When  I click the "New page" link
+        Then  I should be redirected to the new page
+        When  I enter long title in Page
+        When  I click the Page settings button
+        Then  The settings menu should be opened
+        When  I click again on the page settings button
+        Then  Preview button does not exist
+
+    Scenario: I create and edit a post with a title longer than 255 characters.
+        Given I navigate to page Ghost
+        When  I enter email
+        When  I enter password
+        When  I click in Sign in button
+        Then  I should be redirected to the dashboard
+        When  I click in Pages link
+        Then  I should be redirected to the pages
+        When  I click the "New page" link
+        Then  I should be redirected to the new page
+        When  I enter short title in Page
+        When  I click the Page settings button
+        Then  The settings menu should be opened
+        When  I click again on the page settings button
+        And   I edit title in Page
+        And   I click in Publish button
+        Then  A validation message will be displayed
