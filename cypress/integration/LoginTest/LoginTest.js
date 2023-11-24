@@ -46,3 +46,27 @@ Then('The error message {string}', (error) => {
   cy.screenshot(datetime + '-PageGhostV5/PageErrorLogin');
   cy.wait(5000);
 });
+
+When("I enter empty email and valid password", async () => {
+  cy.fixture('credentials').then((credentials) => {
+    cy.get('input[name="identification"]').invoke('val', '')
+    cy.get('input[name="password"]').type(credentials.password, {force: true})
+  });
+  cy.screenshot(datetime + "-PageGhostV5/PageEmptyEmail");
+});
+
+When("I enter valid email and empty password", async () => {
+  cy.fixture('credentials').then((credentials) => {
+    cy.get('input[name="identification"]').type(credentials.email, {force: true})
+    cy.get('input[name="password"]').invoke('val', '')
+  });
+  cy.screenshot(datetime + "-PageGhostV5/PageEmptyPassword");
+});
+
+When("I enter empty email and empty password", async () => {
+  cy.fixture('credentials').then(() => {
+    cy.get('input[name="identification"]').invoke('val', '')
+    cy.get('input[name="password"]').invoke('val', '')
+  });
+  cy.screenshot(datetime + "-PageGhostV5/PageEmptyFields");
+});

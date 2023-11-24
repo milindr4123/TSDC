@@ -18,6 +18,21 @@ Feature: Autenticación fallida en Ghost
         And   I click in Sign in button
         Then  The error message "There is no user with that email address." 
 
+    Scenario: Empty User Login.
+        When  I enter empty email and valid password     
+        And   I click in Sign in button
+        Then  The error message "Please fill out the form to sign in" 
+    
+    Scenario: Empty Password.
+        When  I enter valid email and empty password     
+        And   I click in Sign in button
+        Then  The error message "Please fill out the form to sign in" 
+
+    Scenario: Form without data.
+        When  I enter empty email and empty password     
+        And   I click in Sign in button
+        Then  The error message "Please fill out the form to sign in"
+
     Scenario: Too many login attempts.
         When  I enter invalid email and valid password       
         And   I click in Sign in button

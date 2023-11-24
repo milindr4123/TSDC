@@ -124,7 +124,7 @@ Feature: Creación, Edición, Publicación, Despublicación y Eliminación de un
         When  I click again on the page settings button
         Then  Preview button does not exist
 
-    Scenario: I create and edit a post with a title longer than 255 characters.
+    Scenario: I create and edit a page with a title longer than 255 characters.
         Given I navigate to page Ghost
         When  I enter email
         When  I enter password
