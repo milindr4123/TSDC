@@ -213,3 +213,81 @@ Then("A validation message will be displayed", () => {
   cy.screenshot(datetime + '-PageGhostV5/ValidationTitlePage');
   cy.wait(3000);
 });
+
+When("I enter title on New Page", () => {
+  cy.get("textarea.gh-editor-title").type(faker.lorem.sentence(5));
+  cy.screenshot(datetime + '-PageGhostV5/EnterTitlePage');
+  cy.wait(5000);
+});
+
+When("I insert an invalid publication date format", () => {
+  cy.get('input[data-test-date-time-picker-date-input=""]').type(faker.lorem.sentence(5)); 
+  cy.screenshot(datetime + '-PageGhostV5/InvalidDateFormat');
+  cy.wait(2000);
+});
+
+When("I click on hour field", () => {
+  cy.get('input[data-test-date-time-picker-time-input=""]').click();
+  cy.screenshot(datetime + '-PageGhostV5/InvalidDateFormat');
+  cy.wait(2000);
+});
+
+Then("A validation date format will be displayed", () => {
+  cy.get('div[data-test-date-time-picker-error=""]').invoke('text').should('contains', 'Invalid date format, must be YYYY-MM-DD');
+  cy.screenshot(datetime + '-PageGhostV5/ValidationPublicationDate');
+  cy.wait(3000);
+});
+
+When("I insert an invalid publication hour", () => {
+  cy.get('input[data-test-date-time-picker-time-input=""]').type(faker.number.int()); 
+  cy.get('input[data-test-date-time-picker-date-input=""]').click();
+  cy.screenshot(datetime + '-PageGhostV5/InvalidHour');
+  cy.wait(2000);
+});
+
+Then("A validation hour format will be displayed", () => {
+  cy.get('div.gh-date-time-picker-error').invoke('text').should('contains', 'Must be in format: "15:00"');
+  cy.screenshot(datetime + '-PageGhostV5/ValidationPublicationHour');
+  cy.wait(3000);
+});
+
+When("I delete author", () => {
+  cy.get('span.ember-power-select-multiple-remove-btn').click();  
+  cy.screenshot(datetime + '-PageGhostV5/InvalidAuthor');
+  cy.wait(2000);
+});
+
+Then("The validation message {string} will be displayed", (message) => {
+  cy.get('p[data-test-error="authors"]').invoke('text').should('contains', message);
+  cy.screenshot(datetime + '-PageGhostV5/ValidationMessage');
+  cy.wait(3000);
+});
+
+When("I Click in Meta data", () => {
+  cy.get('button[data-test-button="meta-data"]').click();
+  cy.screenshot(datetime + '-PageGhostV5/InvalidURLMetaData');
+  cy.wait(2000);
+});
+
+When("I Enter invalid information in Canonical URL", () => {
+  cy.request({
+    method: "GET",
+    url: "https://my.api.mockaroo.com/url.json?key=ba212b80",
+  }).then((response) => {
+  expect(response.status).to.eq(200);  
+  const randomElement = Cypress._.sample(response.body);
+  cy.get('input[name="post-setting-canonicalUrl"]').type(randomElement.url);
+  cy.get('input[name="post-setting-meta-title"]').click();  
+  });
+});
+
+Then("Validation message will be displayed", () => {
+  cy.get('p.response').should('be.visible');
+  cy.screenshot(datetime + '-PageGhostV5/ValidationURLPost');
+  cy.wait(3000);
+});
+
+When("I Enter invalid information on Excerpt", () => {
+  cy.get('textarea[name="post-setting-custom-excerpt"]').type(faker.lorem.sentence(50));
+  cy.get('small[data-test-date-time-picker-timezone=""]').click();  
+});

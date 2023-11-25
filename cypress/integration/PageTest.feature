@@ -141,3 +141,85 @@ Feature: Creación, Edición, Publicación, Despublicación y Eliminación de un
         And   I edit title in Page
         And   I click in Publish button
         Then  A validation message will be displayed
+
+    Scenario: Create post with invalid publication Date
+        Given I navigate to page Ghost
+        When  I enter email
+        When  I enter password
+        When  I click in Sign in button
+        Then  I should be redirected to the dashboard
+        When  I click in Pages link
+        Then  I should be redirected to the pages
+        When  I click the "New page" link
+        Then  I should be redirected to the new page
+        When  I enter title on New Page
+        When  I click the Page settings button
+        Then  The settings menu should be opened
+        When  I insert an invalid publication date format
+        And   I click on hour field
+        Then  A validation date format will be displayed
+
+    Scenario: Create post with invalid publication Hour
+        Given I navigate to page Ghost
+        When  I enter email
+        When  I enter password
+        When  I click in Sign in button
+        Then  I should be redirected to the dashboard
+        When  I click in Pages link
+        Then  I should be redirected to the pages
+        When  I click the "New page" link
+        Then  I should be redirected to the new page
+        When  I enter title on New Page
+        When  I click the Page settings button
+        Then  The settings menu should be opened
+        When  I insert an invalid publication hour
+        Then  A validation hour format will be displayed
+
+    Scenario: Create post without author
+        Given I navigate to page Ghost
+        When  I enter email
+        When  I enter password
+        When  I click in Sign in button
+        Then  I should be redirected to the dashboard
+        When  I click in Pages link
+        Then  I should be redirected to the pages
+        When  I click the "New page" link
+        Then  I should be redirected to the new page
+        When  I enter title on New Page
+        When  I click the Page settings button
+        Then  The settings menu should be opened
+        When  I delete author
+        Then  The validation message "At least one author is required." will be displayed
+
+    Scenario: Insert invalid URL in Meta data
+        Given I navigate to page Ghost
+        When  I enter email
+        When  I enter password
+        When  I click in Sign in button
+        Then  I should be redirected to the dashboard
+        When  I click in Pages link
+        Then  I should be redirected to the pages
+        When  I click the "New page" link
+        Then  I should be redirected to the new page
+        When  I enter title on New Page
+        When  I click the Page settings button
+        Then  The settings menu should be opened       
+        When  I Click in Meta data
+        When  I Enter invalid information in Canonical URL
+        Then  Validation message will be displayed
+
+    Scenario: Create Page with invalid information on Excerpt
+        Given I navigate to page Ghost
+        When  I enter email
+        When  I enter password
+        When  I click in Sign in button
+        Then  I should be redirected to the dashboard
+        When  I click in Pages link
+        Then  I should be redirected to the pages
+        When  I click the "New page" link
+        Then  I should be redirected to the new page
+        When  I enter title on New Page
+        When  I click the Page settings button
+        Then  The settings menu should be opened       
+        When  I Enter invalid information on Excerpt
+        Then  Validation message will be displayed
