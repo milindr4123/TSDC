@@ -20,3 +20,24 @@ Feature: Update user profile using Ghost web app
         And I entered with email and new password
         And I click on login submit button
         Then I am logged
+
+
+    Scenario: Change password in profile but news password do not match
+        Given I am logged
+        When I click on avatar icon
+        And I click on Your profile
+        And I click on Change password button
+        And I entered old password
+        And I entered new password differents
+        And I click on Change password button
+        Then  The error message "Your new passwords do not match"
+
+    Scenario: Change password in profile but with incorrect password
+        Given I am logged
+        When I click on avatar icon
+        And I click on Your profile
+        And I click on Change password button
+        And I entered invalid old password
+        And I entered new password twice
+        And I click on Change password button
+        Then  The toast error "Your password is incorrect."

@@ -13,7 +13,7 @@ let datetime = new Date().toISOString().replace(/:/g,".");
 
 Given("I navigate to the Website", () => {
     cy.fixture('ports').then((port) => {
-        portVersion = port.v1
+        portVersion = port.v5
         cy.visit(`http://localhost:${portVersion}/ghost/`);
     });
     cy.screenshot(datetime + '-ProfileGhostV5/SignInPage');
@@ -74,6 +74,28 @@ And("I entered old password", () => {
     cy.screenshot(datetime + '-ProfileGhostV5/TypeOldPassword');
 });
 
+And("I entered invalid old password", () => {
+    cy.fixture('credentials').then((credentials) => {
+        cy.get('input.peer[type="password"]').then(inputs => {
+            var inputText = inputs.get(0);
+            cy.wrap(inputText).type(credentials.invalidPassword, {force: true});
+        });
+    });
+    cy.wait(1000)
+    cy.screenshot(datetime + '-ProfileGhostV5/TypeOldPassword');
+});
+
+And("I entered incorrect old password", () => {
+    cy.fixture('credentials').then((credentials) => {
+        cy.get('input.peer[type="password"]').then(inputs => {
+            var inputText = inputs.get(0);
+            cy.wrap(inputText).type(credentials.invalidPassword, {force: true});
+        });
+    });
+    cy.wait(1000)
+    cy.screenshot(datetime + '-ProfileGhostV5/TypeOldPassword');
+});
+
 And("I entered new password twice", () => {
     cy.fixture('credentials').then((profile) => {
         cy.get('input.peer[type="password"]').then(inputs => {
@@ -88,6 +110,22 @@ And("I entered new password twice", () => {
     cy.wait(1000)
     cy.screenshot(datetime + '-ProfileGhostV5/TypeNewPassword');
 });
+
+And("I entered new password differents", () => {
+    cy.fixture('credentials').then((profile) => {
+        cy.get('input.peer[type="password"]').then(inputs => {
+            var inputText = inputs.get(0);
+            inputText = inputs.get(1);
+            cy.wrap(inputText).type(profile.password, {force: true});
+            cy.wait(1000)
+            inputText = inputs.get(2);
+            cy.wrap(inputText).type(profile.invalidPassword, {force: true});
+        });
+    });
+    cy.wait(1000)
+    cy.screenshot(datetime + '-ProfileGhostV5/TypeNewPassword');
+});
+
 
 And("I back to Dashboard view", () => {
     cy.get('[data-testid="exit-settings"]').click();
@@ -123,3 +161,15 @@ Then("I am logged", () => {
     cy.wait(1000)
     cy.screenshot(datetime + '-ProfileGhostV5/DashboardPage');
 });
+
+Then('The error message {string}', (error) => {
+    cy.get('span.mt-1').invoke('text').should('contains', error);
+    cy.screenshot(datetime + '-PageGhostV5/PageErrorChangePassword');
+    cy.wait(5000);
+  });
+
+  Then('The toast error {string}', (error) => {
+    cy.get('div.gap-3').invoke('text').should('contains', error);
+    cy.screenshot(datetime + '-PageGhostV5/PageErrorChangePassword');
+    cy.wait(5000);
+  });
