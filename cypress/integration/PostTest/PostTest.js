@@ -13,8 +13,8 @@ let datetime = new Date().toISOString().replace(/:/g,".");
 
 Given('I navigate to Ghost', () => {
   cy.fixture('ports').then((port) => {
-    portVersion = port.v1
-    cy.visit(`http://localhost:${port.v1}/ghost//#/signin`);
+    portVersion = port.v5
+    cy.visit(`http://localhost:${port.v5}/ghost//#/signin`);
   });
   cy.screenshot(datetime + '-PostGhostV5/SignInGhost');
 });
@@ -66,6 +66,18 @@ When('I Click the {string} Button', (linkText) => {
 });
 
 Then("I should be redirected to the new post", () => {
+  cy.url().should("eq", `http://localhost:${portVersion}/ghost/#/editor/post`);
+  cy.screenshot(datetime + '-PostGhostV5/NewPostRedirect');
+  cy.wait(1000);
+});
+
+When("I fill form with website invalid URL {string}", (post) => {
+  cy.get("textarea.gh-editor-title").type(post);
+  cy.screenshot(datetime + '-PostGhostV5/EnterTitlePost');
+  cy.wait(1000);
+});
+
+Then("The error message error {string}", () => {
   cy.url().should("eq", `http://localhost:${portVersion}/ghost/#/editor/post`);
   cy.screenshot(datetime + '-PostGhostV5/NewPostRedirect');
   cy.wait(1000);

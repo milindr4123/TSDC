@@ -270,3 +270,30 @@ Then('The error message {string}', (error) => {
     cy.screenshot(datetime + '-PageGhostV5/PageErrorChangePassword');
     cy.wait(5000);
   });
+
+
+  And("I fill form with website invalid URL {string} and {string}",  (field, field2 )  => {
+    cy.fixture('profile').then((profile) => {
+      cy.get('input.peer[type="text"]').then(inputs => {
+          var inputText = inputs.get(0);
+          inputText = inputs.get(0);
+          cy.wrap(inputText).clear().invoke('val', field2);
+          inputText = inputs.get(1);
+          cy.wrap(inputText).clear().type(field);
+          cy.wait(1000)
+          inputText = inputs.get(2);
+          cy.wrap(inputText).clear().type(profile.location, {force: true});
+      });
+  });
+  cy.wait(1000)
+  cy.screenshot(datetime + '-ProfileGhostV5/TypeNewPassword');       
+});
+
+
+
+Then('The error message error {string}', (error) => {
+cy.get('span[class="mt-1 inline-block text-xs text-red dark:text-red-500 order-3"]').invoke('text').should('contains', error);   
+cy.screenshot(datetime + '-PageGhostV5/PageErrorChangePassword');
+cy.wait(5000);
+});
+
