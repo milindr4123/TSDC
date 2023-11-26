@@ -79,26 +79,17 @@ Ejecución:
 9. (Paso opcional) Si por algún motivo se instaló alguna de las versiones de ghost de docker en un puerto diferente al que se recomendó, se debe modificar el archivo prots.json ubicado en la carpeta cypress/fixtures. La key "v1" se refiere a las pruebas realizadas en la versión 5.73.2 de ghost y "v2" se refiere a la versión 3.42.0 de ghost, entonces en el value se debe colocar el puerto en el cual se desplegaron esas versiones.
 10. (Paso opcional) Si se quieren modificar algunos datos de las pruebas realizadas, puede ir a la carpeta cypress/fixtures, en donde encontrará los datos que se usaron para algunas de las pruebas.
 
-### Observaciones
-1. Los test se hicierón en dos versiones de GHOST (5.73.2 y 3.42.0). Dentro de los directorios de las pruebas podemos ver carpetas que tienen en su nombre "V3" los cuales se basan en las pruebas desarroladas en la versión 3.42.0 de GHOST.
-
-### Obstáculos
-
-Al ejecutar las Pruebas de Regresión en la versión 3.42.0 de Ghost se presentarón pruebas fallidas, ya que en esta versión la identificación y nombre de algunos selectores de los elementos no coincidian, por tal motivo se hizo necesario modificar algunos escenarios de pruebas, actualizando de esta manera los identificadores y nombres de los selectores, para que así se logrará la ejecución exitosa de las mismas.  
-
-Nombre funcionalidad | Dificultad | Ubicación
--- | -- | --
-Post | En algunos momentos identificaba correctamente el selector, pero en otros caso no lo reconocia. | post/Post-F1.feature
-Post | En algunos momentos identificaba correctamente el selector, pero en otros caso no lo reconocia. | post/Post-F2.feature
-Post | En algunos momentos identificaba correctamente el selector, pero en otros caso no lo reconocia. | post/Post-F3.feature
-Post | En algunos momentos identificaba correctamente el selector, pero en otros caso no lo reconocia. | post/Post-F4.feature
-Post | En algunos momentos identificaba correctamente el selector, pero en otros caso no lo reconocia. | post/Post-F5.feature
-
 ***
 ## Ejecución de Pruebas de Regresión Visual - VRT
 
 ## Escenarios de pruebas actualizados
 [Funcionalidades ABP ‐ GHOST](https://github.com/milindr4123/TSDC/wiki/Funcionalidades-para-pruebas-VRT)
+
+## Observaciones
+1. Los test se hicierón en dos versiones de GHOST (5.73.2 y 3.42.0). Dentro de los directorios de las pruebas podemos ver carpetas que tienen en su nombre "V3" los cuales se basan en las pruebas desarroladas en la versión 3.42.0 de GHOST.
+
+## Obstáculos
+Al ejecutar las Pruebas de Regresión en la versión 3.42.0 de Ghost se presentarón pruebas fallidas, ya que en esta versión la identificación y nombre de algunos selectores de los elementos no coincidian, por tal motivo se hizo necesario modificar algunos escenarios de pruebas, actualizando de esta manera los identificadores y nombres de los selectores, para que así se logrará la ejecución exitosa de las mismas. 
 
 ## Reportes generados con ResembleJS y BackstopJS
 **ResembleJS:** En este reporte se encuentran las pruebas realizadas con cypress, en este caso los 5 escenarios del CRUD de Pages 
