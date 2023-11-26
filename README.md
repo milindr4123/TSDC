@@ -96,10 +96,56 @@ Post | En algunos momentos identificaba correctamente el selector, pero en otros
 
 ## Ejecución de Pruebas de Regresión Visual - VRT
 
-### Aspectos a tener en cuenta: 
+## Escenarios de pruebas actualizados
+[Funcionalidades ABP ‐ GHOST](https://github.com/milindr4123/TSDC/wiki/Funcionalidades-para-pruebas-VRT)
 
-1. Para la ejecución de las pruebas de regresión visual (VRT) se seleccionaron 10 escenarios de 3 [Funcionalidades VRT](https://github.com/milindr4123/TSDC/wiki/Funcionalidades-para-pruebas-VRT) diferentes documentadas en la wiki del proyecto. Estas pruebas se ejecutaron sobre los screenshots tomados en ambas versiones de Ghost (5.73.2 - 3.42.0) utilizando las herramientas ResembleJS y BackstopJS.
+## Reportes generados con ResembleJS y BackstopJS
+**ResembleJS:** En este reporte se encuentran las pruebas realizadas con cypress, en este caso los 5 escenarios del CRUD de Pages 
+- **/resemble/results/2023-11-19T23.25.58.260Z/report.html**
 
-2. Las diferencias visuales encontradas en la ejecución de las pruebas se encuentan reportadas en el sistema de [Registro de Incidencias](https://github.com/milindr4123/TSDC/issues) del proyecto.
+**BackstopJS:** En este reporte se encuentran las pruebas realizadas con kraken, en este caso 4 escenarios del CRUD de Tags y 1 escenario de Profile
+- **/backstop/backstop_data/html_report/report_1.html**
+- **/backstop/backstop_data/html_report/report_2.html**
+- **/backstop/backstop_data/html_report/report_3.html**
+- **/backstop/backstop_data/html_report/report_4.html**
+- **/backstop/backstop_data/html_report/report_5.html**
 
-3. En la documentación del proyecto también se presentan los [PROS y CONTRAS](https://github.com/milindr4123/TSDC/wiki) de las herramientas ResembleJS y BackstopJS utilizadas para la ejecución de las pruebas VRT.
+## Enlace al video de explicación
+[Enlace al video](https://youtu.be/rTh4BQayZsw)
+
+## Herramientas de Pruebas de Regresión Visual - VRT
+
+### Resemble JS 
+
+#### Pros
+- Útil para comparaciones visuales simples.
+- Adecuada para proyectos que se centran en imágenes estáticas.
+- Realiza comparaciones visuales precisas entre imágenes.
+- Facilita la detección de cambios en la apariencia de una interfaz de usuario.
+- Fácil de implementar.
+- Permite ajustar la tolerancia para las diferencias visuales.
+- Puede utilizarse en diversas plataformas y entornos de desarrollo.
+
+#### Contras
+- La precisión de las comparaciones visuales puede llegar depender de los entornos de ejecución.
+- Carece de funcionalidades avanzadas
+- Se centra solo en la comparación visual de imágenes estáticas
+- Requiere de configuraciones y ajustes manuales para adaptarse a los requisitos específicos del proyecto web
+
+### Backstop JS
+
+#### Pros
+- Identifica cambios que para un tester podrían ser difíciles de detectar.
+- Facilita la identificación de cambios visuales inesperados.
+- Permite ejecutar pruebas de regresión visual de manera eficiente y consistente ya que se puede integrar a flujos de pruebas automatizadas.
+- Ofrece una interfaz gráfica para visualizar y comparar los resultados.
+- Genera reporte de errores detectados sobre la interfaz de usuario.
+- Permite asegurar que los cambios en el código no afecten negativamente la apariencia de la aplicación.
+- Es una de las herramientas más completas para pruebas de regresión visual.
+
+#### Contras
+- La configuración inicial puede ser compleja.
+- Al utilizar tecnologías como Puppeteer o PhantomJS para realizar capturas de pantalla y comparaciones visuales, Backstop JS tiene dependencia de estas herramientas.
+- Puede llegar a requerir recursos significativos de hardware al ejecutar grandes conjuntos de pruebas en paralelo.
+- Los cambios en las versiones de Puppeteer, PhantomJS u otras dependencias pueden afectar la funcionalidad de BackstopJS.
+- Requiere de una alta curva de aprendizaje.
