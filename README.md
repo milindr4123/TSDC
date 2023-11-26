@@ -94,6 +94,7 @@ Post | En algunos momentos identificaba correctamente el selector, pero en otros
 Post | En algunos momentos identificaba correctamente el selector, pero en otros caso no lo reconocia. | post/Post-F4.feature
 Post | En algunos momentos identificaba correctamente el selector, pero en otros caso no lo reconocia. | post/Post-F5.feature
 
+***
 ## Ejecución de Pruebas de Regresión Visual - VRT
 
 ## Escenarios de pruebas actualizados
@@ -149,3 +150,28 @@ Post | En algunos momentos identificaba correctamente el selector, pero en otros
 - Puede llegar a requerir recursos significativos de hardware al ejecutar grandes conjuntos de pruebas en paralelo.
 - Los cambios en las versiones de Puppeteer, PhantomJS u otras dependencias pueden afectar la funcionalidad de BackstopJS.
 - Requiere de una alta curva de aprendizaje.
+
+***
+## Ejecución de Pruebas con Generación de Datos
+Para la presente entrega se implementaron 120 escenarios de prueba en los que se usan las tres estrategias de generación de datos: ***pool de datos a-priori***, **pool de datos (pseudo) aleatorio dinámico** y ***escenario aleatorio***.
+
+### Estrategia de Generacion de Datos
+
+- Para la implementación de la estrategia de generación de datos pool de datos ***a-priori*** se crearon archivos .json con los datos a utilizar en los diferentes escenarios de prueba y estos fueron ubicados dentro del proyecto (TSDC/cypress/fixtures) e importados en cada caso de prueba.
+
+- La estrategia de generación de datos ***pool de datos (pseudo) aleatorio dinámico***, se llevó a cabo con el uso de **MOCK APIS** generadas a través de la aplicación Mockaroo e implementados en los escenarios de pruebas a través de las diferentes url´s suministradas por Mockaroo.
+
+- Para la implementación de la estrategia de generación ***aleatoria de datos***, se utilizó la libería **Faker**. Para ello, se realizó la instalación de la librería en el proyecto (***npm install @faker-js/faker --save-dev***) y se importó esta (***import {faker} from '@faker-js/faker'***) en los archivos que contienen los diferentes escenarios de prueba que usan datos aleatorios en su ejecución.
+
+## Contenido de escenarios de prueba en el repositorio
+Los 120 escenarios de prueba que implementan las tres estrategias de generación de datos han sido creados para ser ejecutados con las herramientas **Cypress** (60 escenarios) y **Kraken** (60 escenarios).
+- Los archivos con los 60 escenarios de prueba implementados en **Cypress** se encuentran ubicados en ***TSDC/cypress*** (Los 60 escenarios tienen la distribución de las 3 estrategias de generación de datos).  
+- Los archivos con los 60 escenarios de prueba implementados en **Kraken** se encuentran ubicados en ***TSDC/kraken*** (Los 60 escenarios tienen la distribución de las 3 estrategias de generación de datos).  
+
+## Instrucciones de ejecución de las pruebas en **Cypress**
+- Clonar repositorio
+- instalar Faker
+- Correr comando cypress open
+
+## Instrucciones de ejecución de las pruebas en **Cypress**
+pasos
