@@ -12,7 +12,9 @@
     "backstopjs": "^6.2.2",
     "cypress": "^13.5.1",
     "cypress-cucumber-preprocessor": "^4.3.1",
-    "ghost-cli": "^0.0.2",
+    "faker": "^5.5.3",
+    "ghost-cli": "^1.25.3",
+    "kraken-node": "^1.0.24",
     "playwright": "^1.40.0",
     "resemblejs": "^5.0.0"
   },
