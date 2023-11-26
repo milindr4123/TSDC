@@ -2,7 +2,7 @@
 Proyecto para administrar las incidencias de Ghost
 
 ## Integrantes:
-	- Erika Margarita Forero Sossa - j.corredore@uniandes.edu.co
+	- Erika Margarita Forero Sossa - e.foreros@uniandes.edu.co
  	- Jeniffer Corredor Enciso - j.corredore@uniandes.edu.co
 	- Brayan Ricardo García - br.garciam1@uniandes.edu.co
  	- Juan Diego García - j.garcia55@uniandes.edu.co
