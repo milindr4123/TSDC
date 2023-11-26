@@ -11,40 +11,52 @@ Given('I navigate to page Ghost Web', () => {
   cy.screenshot(datetime + '-PageGhostV5/SignInPage');
 });
 
-When("I enter invalid email and valid password", async () => {
-  cy.fixture('credentials').then((credentials) => {
-    cy.get('input[name="identification"]').type(credentials.invalidEmail, {force: true})
-    cy.get('input[name="password"]').type(credentials.password, {force: true})
-  });
-  cy.screenshot(datetime + "-PageGhostV5/PageInvalidEmailAndValidPassword");
-});
-
-When("I enter valid email and invalid password", async () => {
+When("I enter valid email", async () => {
   cy.fixture('credentials').then((credentials) => {
     cy.get('input[name="identification"]').type(credentials.email, {force: true})
-    cy.get('input[name="password"]').type(credentials.invalidPassword, {force: true})
   });
-  cy.screenshot(datetime + "-PageGhostV5/PageValidEmailAndInvalidPassword");
+  cy.screenshot(datetime + "-PageGhostV5/PageValidEmail");
 });
 
-When("I enter valid email and invalid password", async () => {
+When("I enter valid password", async () => {
   cy.fixture('credentials').then((credentials) => {
-    cy.get('input[name="identification"]').type(credentials.invalidEmailmail, {force: true})
-    cy.get('input[name="password"]').type(credentials.invalidPassword, {force: true})
+    cy.get('input[name="password"]').type(credentials.password, {force: true})
   });
-  cy.screenshot(datetime + "-PageGhostV5/PageValidEmailAndInvalidPassword");
+  cy.screenshot(datetime + "-PageGhostV5/PageValidPassword");
+});
+
+When("I enter invalid email", async () => {
+  cy.request({
+    method: "GET",
+    url: "https://my.api.mockaroo.com/usersEmail.json?key=ba212b80",
+  }).then((response) => {
+    expect(response.status).to.eq(200);
+    const randomElement = Cypress._.sample(response.body);
+    cy.get('input[name="identification"]').type(randomElement.email, {force: true})
+  });
+});
+
+When("I enter invalid password", async () => {
+  cy.request({
+    method: "GET",
+    url: "https://my.api.mockaroo.com/password.json?key=ba212b80",
+  }).then((response) => {
+    expect(response.status).to.eq(200);
+    const randomElement = Cypress._.sample(response.body);
+    cy.get('input[name="password"]').type(randomElement.password, {force: true})
+  });
 });
 
 When("I click in Sign in button", () => {
   cy.get("#ember5").click({force: true});
   cy.screenshot(datetime + '-PageGhostV5/ClickSignInButton');
-  cy.wait(4000);
+  cy.wait(2000);
 });
 
 Then('The error message {string}', (error) => {
   cy.get('p.main-error').invoke('text').should('contains', error);
   cy.screenshot(datetime + '-PageGhostV5/PageErrorLogin');
-  cy.wait(5000);
+  cy.wait(2000);
 });
 
 When("I enter empty email and valid password", async () => {

@@ -1,6 +1,7 @@
 import { Given, When, Then, And } from "cypress-cucumber-preprocessor/steps"
 import {faker} from '@faker-js/faker'
 
+import {faker} from '@faker-js/faker'
 
 Cypress.on('uncaught:exception', (err, runnable) => {
   if (err.message.includes('TransitionAborted') || err.message.includes('TaskCancelation')) {
@@ -15,6 +16,8 @@ let datetime = new Date().toISOString().replace(/:/g,".");
 
 Given('I navigate to Ghost', () => {
   cy.fixture('ports').then((port) => {
+    portVersion = port.v5
+    cy.visit(`http://localhost:${portVersion}/ghost//#/signin`);
     portVersion = port.v5
     cy.visit(`http://localhost:${port.v5}/ghost//#/signin`);
   });
@@ -217,4 +220,134 @@ When("I Click in Unpublish and revert to private draft Button", () => {
   cy.get('button[data-test-button="revert-to-draft"]').click();
   cy.screenshot(datetime + '-PostGhostV5/Unpublish');
   cy.wait(1000);
+});
+
+When("I Enter Title on Post" , () => {
+  cy.request({
+    method: "GET",
+    url: "https://my.api.mockaroo.com/post.json?key=22935570",
+  }).then((response) => {
+  expect(response.status).to.eq(200);  
+  const randomElement = Cypress._.sample(response.body);
+  cy.get("textarea.gh-editor-title").type(randomElement.title);
+  });
+});
+
+When("I insert an invalid publication date" , () => {
+  cy.request({
+    method: "GET",
+    url: "https://my.api.mockaroo.com/publishDate.json?key=22935570",
+  }).then((response) => {
+  expect(response.status).to.eq(200);  
+  const randomElement = Cypress._.sample(response.body);
+  cy.get('input[data-test-date-time-picker-date-input=""]').type(randomElement.date);
+  cy.get('small[data-test-date-time-picker-timezone=""]').click();
+  });
+});
+
+Then("A validation date will be displayed", () => {
+  cy.get('div.gh-date-time-picker-error').invoke('text').should('contains', 'Invalid date format, must be YYYY-MM-DD');
+  cy.screenshot(datetime + '-PageGhostV5/ValidationPublicationDate');
+  cy.wait(3000);
+});
+
+When("I insert an invalid publication hour" , () => {
+  cy.request({
+    method: "GET",
+    url: "https://my.api.mockaroo.com/publishDate.json?key=22935570",
+  }).then((response) => {
+  expect(response.status).to.eq(200);  
+  const randomElement = Cypress._.sample(response.body);
+  cy.get('small[data-test-date-time-picker-timezone=""]').type(randomElement.hour);
+  cy.get('input[data-test-date-time-picker-date-input=""]').click();  
+  });
+});
+
+Then("A validation date will be displayed", () => {
+  cy.get('div.gh-date-time-picker-error').invoke('text').should('contains', 'Must be in format: "15:00"');
+  cy.screenshot(datetime + '-PageGhostV5/ValidationPublicationDate');
+  cy.wait(3000);
+});
+
+Then("A validation date format will be displayed with message {string}", (message) => {
+  cy.get('div.gh-date-time-picker-error').invoke('text').should('contains', message);
+  cy.screenshot(datetime + '-PageGhostV5/ValidationPublicationDate');
+  cy.wait(3000);
+});
+
+When("I delete author", () => {
+  cy.get('span.ember-power-select-multiple-remove-btn').click();  
+  cy.screenshot(datetime + '-PageGhostV5/InvalidAuthor');
+  cy.wait(2000);
+});
+
+Then("A validation date format will be displayed with message {string}", (message) => {
+  cy.get('div.gh-date-time-picker-error').invoke('text').should('contains', message);
+  cy.screenshot(datetime + '-PageGhostV5/ValidationPublicationDate');
+  cy.wait(3000);
+});
+
+Then("The validation message {string} will be displayed", (message) => {
+  cy.get('p[data-test-error="authors"]').invoke('text').should('contains', message);
+  cy.screenshot(datetime + '-PageGhostV5/ValidationMessage');
+  cy.wait(3000);
+});
+
+When("I enter long title in Post", () => {
+  cy.get("textarea.gh-editor-title").type(faker.lorem.sentence(80));
+  cy.screenshot(datetime + '-PageGhostV5/EnterLongTitlePost');
+  cy.wait(2000);
+});
+
+Then("A validation message will be displayed", () => {
+  cy.get('.gh-alert-content').invoke('text').should('contains', 'Validation failed: Title cannot be longer than 255 characters.');
+  cy.screenshot(datetime + '-PageGhostV5/ValidationTitlePage');
+  cy.wait(3000);
+});
+
+Then("Don't save and preview button does not exist", () => {
+  cy.get('button[data-test-button="publish-preview"]').should('not.exist');
+  cy.screenshot(datetime + '-PageGhostV5/PreviewButtonNotExist');
+  cy.wait(1000);
+});
+
+When("I enter short title in Post", () => {
+  cy.get("textarea.gh-editor-title").type(faker.lorem.sentence(5));
+  cy.screenshot(datetime + '-PageGhostV5/EnterLongTitlePost');
+  cy.wait(2000);
+});
+
+Then("A validation message {string} will be displayed", (message) => {
+  cy.get('.gh-alert-content').invoke('text').should('contains', message);
+  cy.screenshot(datetime + '-PageGhostV5/ValidationTitlePost');
+  cy.wait(3000);
+});
+
+When("I Click in Meta data", () => {
+  cy.get('button[data-test-button="meta-data"]').click();
+  cy.screenshot(datetime + '-PageGhostV5/InvalidURLMetaData');
+  cy.wait(2000);
+});
+
+When("I Enter invalid information in Canonical URL", () => {
+  cy.request({
+    method: "GET",
+    url: "https://my.api.mockaroo.com/url.json?key=ba212b80",
+  }).then((response) => {
+  expect(response.status).to.eq(200);  
+  const randomElement = Cypress._.sample(response.body);
+  cy.get('input[name="post-setting-canonicalUrl"]').type(randomElement.url);
+  cy.get('input[name="post-setting-meta-title"]').click();  
+  });
+});
+
+Then("Validation message will be displayed", () => {
+  cy.get('p.response').should('be.visible');
+  cy.screenshot(datetime + '-PageGhostV5/ValidationURLPost');
+  cy.wait(3000);
+});
+
+When("I Enter invalid information on Excerpt", () => {
+  cy.get('textarea[name="post-setting-custom-excerpt"]').type(faker.lorem.sentence(50));
+  cy.get('input[data-test-date-time-picker-time-input=""]').click();  
 });

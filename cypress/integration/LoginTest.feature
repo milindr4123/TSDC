@@ -4,17 +4,20 @@ Feature: Autenticación fallida en Ghost
         Given I navigate to page Ghost Web
 
     Scenario: Incorrect User Login.
-        When  I enter invalid email and valid password       
+        When  I enter invalid email     
+        When  I enter valid password    
         And   I click in Sign in button
         Then  The error message "There is no user with that email address" 
 
     Scenario: Incorrect Password.
-        When  I enter valid email and invalid password       
+        When  I enter valid email     
+        When  I enter invalid password         
         And   I click in Sign in button
         Then  The error message "There is no user with that email address"
 
     Scenario: Incorrect User and Password.
-        When  I enter invalid email and invalid password       
+        When  I enter invalid email     
+        When  I enter invalid password     
         And   I click in Sign in button
         Then  The error message "There is no user with that email address." 
 
@@ -34,6 +37,7 @@ Feature: Autenticación fallida en Ghost
         Then  The error message "Please fill out the form to sign in"
 
     Scenario: Too many login attempts.
-        When  I enter invalid email and valid password       
+        When  I enter invalid email
+        And   I enter valid password       
         And   I click in Sign in button
         Then  The error message "Too many login attempts. Please wait"
