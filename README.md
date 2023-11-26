@@ -103,12 +103,3 @@ Post | En algunos momentos identificaba correctamente el selector, pero en otros
 2. Las diferencias visuales encontradas en la ejecución de las pruebas se encuentan reportadas en el sistema de [Registro de Incidencias](https://github.com/milindr4123/TSDC/issues) del proyecto.
 
 3. En la documentación del proyecto también se presentan los [PROS y CONTRAS](https://github.com/milindr4123/TSDC/wiki) de las herramientas ResembleJS y BackstopJS utilizadas para la ejecución de las pruebas VRT.
-
-4. El reporte generado para la ejecución de las pruebas con ResembleJs se encuentre en ......
-
-5. El reporte generado para la ejecución de las pruebas con BackstopJS se encuentre en ......
-
-6. En el siguiente video se busca explicar el procedimiento realizado para la toma de screenshots, las decisiones tomadas respecto al reporte generado y los resultados del proceso de ejecución de VRT.
-
-
-
