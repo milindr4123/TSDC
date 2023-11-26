@@ -10,7 +10,6 @@
   "license": "ISC",
   "dependencies": {
     "backstopjs": "^6.2.2",
-    "cypress": "^13.5.1",
     "cypress-cucumber-preprocessor": "^4.3.1",
     "ghost-cli": "^0.0.2",
     "playwright": "^1.40.0",
@@ -20,6 +19,7 @@
     "nonGlobalStepDefinitions": true
   },
   "devDependencies": {
-    "@faker-js/faker": "^8.3.1"
+    "@faker-js/faker": "^8.3.1",
+    "cypress": "^13.6.0"
   }
 }

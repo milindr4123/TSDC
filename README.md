@@ -2,7 +2,7 @@
 Proyecto para administrar las incidencias de Ghost
 
 ## Integrantes:
-	- Erika Margarita Forero Sossa - j.corredore@uniandes.edu.co
+	- Erika Margarita Forero Sossa - e.foreros@uniandes.edu.co
  	- Jeniffer Corredor Enciso - j.corredore@uniandes.edu.co
 	- Brayan Ricardo García - br.garciam1@uniandes.edu.co
  	- Juan Diego García - j.garcia55@uniandes.edu.co
@@ -79,36 +79,90 @@ Ejecución:
 9. (Paso opcional) Si por algún motivo se instaló alguna de las versiones de ghost de docker en un puerto diferente al que se recomendó, se debe modificar el archivo prots.json ubicado en la carpeta cypress/fixtures. La key "v1" se refiere a las pruebas realizadas en la versión 5.73.2 de ghost y "v2" se refiere a la versión 3.42.0 de ghost, entonces en el value se debe colocar el puerto en el cual se desplegaron esas versiones.
 10. (Paso opcional) Si se quieren modificar algunos datos de las pruebas realizadas, puede ir a la carpeta cypress/fixtures, en donde encontrará los datos que se usaron para algunas de las pruebas.
 
-### Observaciones
-1. Los test se hicierón en dos versiones de GHOST (5.73.2 y 3.42.0). Dentro de los directorios de las pruebas podemos ver carpetas que tienen en su nombre "V3" los cuales se basan en las pruebas desarroladas en la versión 3.42.0 de GHOST.
-
-### Obstáculos
-
-Al ejecutar las Pruebas de Regresión en la versión 3.42.0 de Ghost se presentarón pruebas fallidas, ya que en esta versión la identificación y nombre de algunos selectores de los elementos no coincidian, por tal motivo se hizo necesario modificar algunos escenarios de pruebas, actualizando de esta manera los identificadores y nombres de los selectores, para que así se logrará la ejecución exitosa de las mismas.  
-
-Nombre funcionalidad | Dificultad | Ubicación
--- | -- | --
-Post | En algunos momentos identificaba correctamente el selector, pero en otros caso no lo reconocia. | post/Post-F1.feature
-Post | En algunos momentos identificaba correctamente el selector, pero en otros caso no lo reconocia. | post/Post-F2.feature
-Post | En algunos momentos identificaba correctamente el selector, pero en otros caso no lo reconocia. | post/Post-F3.feature
-Post | En algunos momentos identificaba correctamente el selector, pero en otros caso no lo reconocia. | post/Post-F4.feature
-Post | En algunos momentos identificaba correctamente el selector, pero en otros caso no lo reconocia. | post/Post-F5.feature
-
+***
 ## Ejecución de Pruebas de Regresión Visual - VRT
 
-### Aspectos a tener en cuenta: 
+## Escenarios de pruebas actualizados
+[Funcionalidades ABP ‐ GHOST](https://github.com/milindr4123/TSDC/wiki/Funcionalidades-para-pruebas-VRT)
 
-1. Para la ejecución de las pruebas de regresión visual (VRT) se seleccionaron 10 escenarios de 3 [Funcionalidades VRT](https://github.com/milindr4123/TSDC/wiki/Funcionalidades-para-pruebas-VRT) diferentes documentadas en la wiki del proyecto. Estas pruebas se ejecutaron sobre los screenshots tomados en ambas versiones de Ghost (5.73.2 - 3.42.0) utilizando las herramientas ResembleJS y BackstopJS.
+## Observaciones
+1. Los test se hicierón en dos versiones de GHOST (5.73.2 y 3.42.0). Dentro de los directorios de las pruebas podemos ver carpetas que tienen en su nombre "V3" los cuales se basan en las pruebas desarroladas en la versión 3.42.0 de GHOST.
 
-2. Las diferencias visuales encontradas en la ejecución de las pruebas se encuentan reportadas en el sistema de [Registro de Incidencias](https://github.com/milindr4123/TSDC/issues) del proyecto.
+## Obstáculos
+Al ejecutar las Pruebas de Regresión en la versión 3.42.0 de Ghost se presentarón pruebas fallidas, ya que en esta versión la identificación y nombre de algunos selectores de los elementos no coincidian, por tal motivo se hizo necesario modificar algunos escenarios de pruebas, actualizando de esta manera los identificadores y nombres de los selectores, para que así se logrará la ejecución exitosa de las mismas. 
 
-3. En la documentación del proyecto también se presentan los [PROS y CONTRAS](https://github.com/milindr4123/TSDC/wiki) de las herramientas ResembleJS y BackstopJS utilizadas para la ejecución de las pruebas VRT.
+## Reportes generados con ResembleJS y BackstopJS
+**ResembleJS:** En este reporte se encuentran las pruebas realizadas con cypress, en este caso los 5 escenarios del CRUD de Pages 
+- **/resemble/results/2023-11-19T23.25.58.260Z/report.html**
 
-4. El reporte generado para la ejecución de las pruebas con ResembleJs se encuentre en ......
+**BackstopJS:** En este reporte se encuentran las pruebas realizadas con kraken, en este caso 4 escenarios del CRUD de Tags y 1 escenario de Profile
+- **/backstop/backstop_data/html_report/report_1.html**
+- **/backstop/backstop_data/html_report/report_2.html**
+- **/backstop/backstop_data/html_report/report_3.html**
+- **/backstop/backstop_data/html_report/report_4.html**
+- **/backstop/backstop_data/html_report/report_5.html**
 
-5. El reporte generado para la ejecución de las pruebas con BackstopJS se encuentre en ......
+## Enlace al video de explicación
+[Enlace al video](https://youtu.be/rTh4BQayZsw)
 
-6. En el siguiente video se busca explicar el procedimiento realizado para la toma de screenshots, las decisiones tomadas respecto al reporte generado y los resultados del proceso de ejecución de VRT.
+## Herramientas de Pruebas de Regresión Visual - VRT
 
+### Resemble JS 
 
+#### Pros
+- Útil para comparaciones visuales simples.
+- Adecuada para proyectos que se centran en imágenes estáticas.
+- Realiza comparaciones visuales precisas entre imágenes.
+- Facilita la detección de cambios en la apariencia de una interfaz de usuario.
+- Fácil de implementar.
+- Permite ajustar la tolerancia para las diferencias visuales.
+- Puede utilizarse en diversas plataformas y entornos de desarrollo.
 
+#### Contras
+- La precisión de las comparaciones visuales puede llegar depender de los entornos de ejecución.
+- Carece de funcionalidades avanzadas
+- Se centra solo en la comparación visual de imágenes estáticas
+- Requiere de configuraciones y ajustes manuales para adaptarse a los requisitos específicos del proyecto web
+
+### Backstop JS
+
+#### Pros
+- Identifica cambios que para un tester podrían ser difíciles de detectar.
+- Facilita la identificación de cambios visuales inesperados.
+- Permite ejecutar pruebas de regresión visual de manera eficiente y consistente ya que se puede integrar a flujos de pruebas automatizadas.
+- Ofrece una interfaz gráfica para visualizar y comparar los resultados.
+- Genera reporte de errores detectados sobre la interfaz de usuario.
+- Permite asegurar que los cambios en el código no afecten negativamente la apariencia de la aplicación.
+- Es una de las herramientas más completas para pruebas de regresión visual.
+
+#### Contras
+- La configuración inicial puede ser compleja.
+- Al utilizar tecnologías como Puppeteer o PhantomJS para realizar capturas de pantalla y comparaciones visuales, Backstop JS tiene dependencia de estas herramientas.
+- Puede llegar a requerir recursos significativos de hardware al ejecutar grandes conjuntos de pruebas en paralelo.
+- Los cambios en las versiones de Puppeteer, PhantomJS u otras dependencias pueden afectar la funcionalidad de BackstopJS.
+- Requiere de una alta curva de aprendizaje.
+
+***
+## Ejecución de Pruebas con Generación de Datos
+Para la presente entrega se implementaron 120 escenarios de prueba en los que se usan las tres estrategias de generación de datos: ***pool de datos a-priori***, **pool de datos (pseudo) aleatorio dinámico** y ***escenario aleatorio***.
+
+### Estrategia de Generacion de Datos
+
+- Para la implementación de la estrategia de generación de datos pool de datos ***a-priori*** se crearon archivos .json con los datos a utilizar en los diferentes escenarios de prueba y estos fueron ubicados dentro del proyecto (TSDC/cypress/fixtures) e importados en cada caso de prueba.
+
+- La estrategia de generación de datos ***pool de datos (pseudo) aleatorio dinámico***, se llevó a cabo con el uso de **MOCK APIS** generadas a través de la aplicación Mockaroo e implementados en los escenarios de pruebas a través de las diferentes url´s suministradas por Mockaroo.
+
+- Para la implementación de la estrategia de generación ***aleatoria de datos***, se utilizó la libería **Faker**. Para ello, se realizó la instalación de la librería en el proyecto (***npm install @faker-js/faker --save-dev***) y se importó esta (***import {faker} from '@faker-js/faker'***) en los archivos que contienen los diferentes escenarios de prueba que usan datos aleatorios en su ejecución.
+
+## Contenido de escenarios de prueba en el repositorio
+Los 120 escenarios de prueba que implementan las tres estrategias de generación de datos han sido creados para ser ejecutados con las herramientas **Cypress** (60 escenarios) y **Kraken** (60 escenarios).
+- Los archivos con los 60 escenarios de prueba implementados en **Cypress** se encuentran ubicados en ***TSDC/cypress*** (Los 60 escenarios tienen la distribución de las 3 estrategias de generación de datos).  
+- Los archivos con los 60 escenarios de prueba implementados en **Kraken** se encuentran ubicados en ***TSDC/kraken*** (Los 60 escenarios tienen la distribución de las 3 estrategias de generación de datos).  
+
+## Instrucciones de ejecución de las pruebas en **Cypress**
+- Clonar repositorio
+- instalar Faker
+- Correr comando cypress open
+
+## Instrucciones de ejecución de las pruebas en **Cypress**
+pasos
