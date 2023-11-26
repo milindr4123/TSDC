@@ -272,17 +272,23 @@ Then('The error message {string}', (error) => {
   });
 
 
-  And("I fill form with website invalid URL {string} and {string}",  (field, field2 )  => {
+  And("I fill form with dynamic data {string} and {string} and {string} and {string}",  
+  (website, fullName, location, email )  => {
     cy.fixture('profile').then((profile) => {
-      cy.get('input.peer[type="text"]').then(inputs => {
-          var inputText = inputs.get(0);
-          inputText = inputs.get(0);
-          cy.wrap(inputText).clear().invoke('val', field2);
-          inputText = inputs.get(1);
-          cy.wrap(inputText).clear().type(field);
+      cy.get('input.peer[type="text"]').then(($inputs) => {           
+          var inputText = $inputs.get(0);
+          inputText = $inputs.get(0);
           cy.wait(1000)
-          inputText = inputs.get(2);
-          cy.wrap(inputText).clear().type(profile.location, {force: true});
+          cy.wrap(inputText).clear().focus().invoke('val', fullName);
+          inputText = $inputs.get(1);
+          cy.wait(1000)
+          cy.wrap(inputText).focus().invoke('val', email);
+          inputText = $inputs.get(4);
+          cy.wait(1000)
+          cy.wrap(inputText).invoke('val', website);
+          cy.wait(1000)
+          inputText = $inputs.get(3);
+          cy.wrap(inputText).focus().invoke('val', location);
       });
   });
   cy.wait(1000)

@@ -89,13 +89,13 @@ Feature: Update user profile using Ghost web app
         Then  The error message "Please enter a valid URL"
 
 
-    Scenario Outline: I fill form with website invalid URL
+    Scenario Outline: I fill form with dynamic data 
         Given I am logged
         When I click on avatar icon
         And I click on Your profile
-        And I fill form with website invalid URL "<url>" and "<name>"
+        And I fill form with dynamic data "<website>" and "<fullName>" and "<location>" and "<email>"
         Then The error message error "<error>" 
         Examples:
-        | url   |  name   |  error |
-        |  +-58  | mily   |  Please enter a valid email address |
-        |  ingerika.forerogmail.com  |    |  Please enter a name |
+        | website                   |  fullName  |  location |  email                   |  error                            |
+        |https://meet.google.com/|mily|ibagué|ingerika.forerogmail.com|Please enter a valid email address|
+        |https://meet.google.com/||ibagué|ingerika.forerogmail.com|Please enter a valid email address|
