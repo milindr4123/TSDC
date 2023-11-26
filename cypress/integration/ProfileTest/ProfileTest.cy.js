@@ -187,12 +187,88 @@ And("I fill form", () => {
 });
 
 
+
+And("I fill form fullName {string}",
+ (fullName)  => {
+    cy.fixture('profile').then((profile) => {
+        cy.get('input.peer[type="text"]').then(inputs => {
+            var inputText = inputs.get(0);
+            cy.wrap(inputText).clear().invoke('val', fullName);
+            var inputText = inputs.get(1);
+            cy.wrap(inputText).click();
+        });
+    });
+    cy.wait(1000)
+    cy.screenshot(datetime + '-ProfileGhostV5/TypeNewPassword');
+});
+
+
+
+And("I fill form email {string}",
+ (email)  => {
+    cy.fixture('profile').then((profile) => {
+        cy.get('input.peer[type="text"]').then(inputs => {
+            var inputText = inputs.get(1);
+            cy.wrap(inputText).clear().invoke('val', email);
+            var inputText = inputs.get(2);
+            cy.wrap(inputText).click();
+        });
+    });
+    cy.wait(1000)
+    cy.screenshot(datetime + '-ProfileGhostV5/TypeNewPassword');
+});
+
+
+And("I fill form webSite {string}",
+ (webSite)  => {
+    cy.fixture('profile').then((profile) => {
+        cy.get('input.peer[type="text"]').then(inputs => {
+            var inputText = inputs.get(4);
+            cy.wrap(inputText).clear().invoke('val', webSite);
+            var inputText = inputs.get(2);
+            cy.wrap(inputText).click();
+        });
+    });
+    cy.wait(1000)
+    cy.screenshot(datetime + '-ProfileGhostV5/TypeNewPassword');
+});
+
+And("I fill form facebook profile {string}",
+ (facebook)  => {
+    cy.fixture('profile').then((profile) => {
+        cy.get('input.peer[type="text"]').then(inputs => {
+            var inputText = inputs.get(5);
+            cy.wrap(inputText).clear().invoke('val', facebook);
+            var inputText = inputs.get(2);
+            cy.wrap(inputText).click();
+        });
+    });
+    cy.wait(1000)
+    cy.screenshot(datetime + '-ProfileGhostV5/TypeNewPassword');
+});
+
+
+And("I fill form twitter profile {string}",
+ (twitter)  => {
+    cy.fixture('profile').then((twitter) => {
+        cy.get('input.peer[type="text"]').then(inputs => {
+            var inputText = inputs.get(6);
+            cy.wrap(inputText).clear().invoke('val', twitter);
+            var inputText = inputs.get(2);
+            cy.wrap(inputText).click();
+        });
+    });
+    cy.wait(1000)
+    cy.screenshot(datetime + '-ProfileGhostV5/TypeNewPassword');
+});
+
+
 And("I fill form with name too long", () => {
     cy.fixture('profile').then((profile) => {
         cy.get('input.peer[type="text"]').then(inputs => {
             var inputText = inputs.get(0);
             inputText = inputs.get(0);
-            cy.wrap(inputText).clear().type(faker.lorem.sentence(30));
+            cy.wrap(inputText).clear().type(faker.lorem.sentence(50));
             cy.wait(1000)
             inputText = inputs.get(2);
             cy.wrap(inputText).clear().type(profile.location, {force: true});

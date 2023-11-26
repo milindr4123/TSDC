@@ -89,13 +89,56 @@ Feature: Update user profile using Ghost web app
         Then  The error message "Please enter a valid URL"
 
 
-    Scenario Outline: I fill form with dynamic data 
+
+    Scenario Outline: I fill fullName form with dynamic data 
         Given I am logged
         When I click on avatar icon
         And I click on Your profile
-        And I fill form with dynamic data "<website>" and "<fullName>" and "<location>" and "<email>"
+        And I fill form fullName "<fullName>"
         Then The error message error "<error>" 
         Examples:
-        | website                   |  fullName  |  location |  email                   |  error                            |
-        |https://meet.google.com/|mily|ibagué|ingerika.forerogmail.com|Please enter a valid email address|
-        |https://meet.google.com/||ibagué|ingerika.forerogmail.com|Please enter a valid email address|
+        | fullName               |  error              |
+        |                        | Please enter a name |
+
+
+    Scenario Outline: I fill email form with dynamic data 
+        Given I am logged
+        When I click on avatar icon
+        And I click on Your profile
+        And I fill form email "<email>"
+        Then The error message error "<error>" 
+        Examples:
+        | email               |  error              |
+        |  sin formato        | Please enter a valid email address |
+
+
+    Scenario Outline: I fill Website form with dynamic data 
+        Given I am logged
+        When I click on avatar icon
+        And I click on Your profile
+        And I fill form webSite "<webSite>"
+        Then The error message error "<error>" 
+        Examples:
+        | webSite               |  error              |
+        |  nada        | Please enter a valid URL |
+
+    Scenario Outline: I fill facebook profile form with dynamic data 
+        Given I am logged
+        When I click on avatar icon
+        And I click on Your profile
+        And I fill form facebook profile "<facebook>"
+        Then The error message error "<error>" 
+        Examples:
+        | facebook               |  error              |
+        |  0    nada        | The URL must be in a format like https://www.facebook.com/yourPage |
+
+
+    Scenario Outline: I fill twitter profile form with dynamic data 
+        Given I am logged
+        When I click on avatar icon
+        And I click on Your profile
+        And I fill form twitter profile "<twitter>"
+        Then The error message error "<error>" 
+        Examples:
+        | twitter               |  error              |
+        |  0    nada        | Your Username is not a valid Twitter Username |
