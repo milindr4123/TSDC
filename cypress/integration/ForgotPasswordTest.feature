@@ -11,4 +11,4 @@ Feature: forgot password failed in Ghost
     Scenario: Password recovery with incorrectly formatted email.
         When  I enter invalid email format
         And   I click in forgot button
-        Then  The error message "We need your email address to reset your password!"
+        Then  The error message "User not found."

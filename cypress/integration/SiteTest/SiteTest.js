@@ -98,7 +98,7 @@ And("I click on Create button", () => {
 });
 
 When("I fill create newsletter form {string}", (data) => {
-        cy.get('input[type="Weekly roundup"]').type(data, {force: true});
+        cy.get('input[class="peer z-[1] order-2 h-8 w-full bg-transparent px-3 py-1 text-sm placeholder:text-grey-500 dark:placeholder:text-grey-700 md:h-9 md:py-2 md:text-md dark:text-white rounded-md"]').invoke('val', data);
         cy.screenshot(datetime + '-SiteGhostV5/SiteLink');
         cy.wait(1000);
     });

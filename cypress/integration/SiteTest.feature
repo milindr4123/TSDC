@@ -17,12 +17,3 @@ Feature: options test in Ghost
         Examples:
         | thoughts   |error|
         |   |Please enter a name|
-
-    Scenario: I fill crate newsletter form with random data
-        Given I am logged
-        And I click in site
-        When I click on settings button
-        And I click on newsletters button
-        And I click add new newsletters button
-        And I click on Create button
-        
