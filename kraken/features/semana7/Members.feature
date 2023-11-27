@@ -1,6 +1,6 @@
 Feature: CRUD of members
 
-@user1 @web
+@user12 @web
 Scenario: Como usuario creo un nuevo miembro solo con correo y nombre
   Given I navigate to page "http://localhost:2368/ghost/#/signin"
   And I am logged
@@ -11,7 +11,7 @@ Scenario: Como usuario creo un nuevo miembro solo con correo y nombre
   When I fill just name and email member fields
   Then I check if user is saved
 
-@user2 @web
+@user13 @web
 Scenario: Como usuario creo un nuevo miembro llenando todos los campos
   Given I navigate to page "http://localhost:2368/ghost/#/signin"
   And I am logged
@@ -21,7 +21,7 @@ Scenario: Como usuario creo un nuevo miembro llenando todos los campos
   When I fill all member fields
   Then I check if user is saved 
   
-@user3 @web
+@user14 @web
 Scenario: Como usuario edito un miembro cambiando todos los campos
   Given I navigate to page "http://localhost:2368/ghost/#/signin"
   And I am logged
@@ -32,7 +32,7 @@ Scenario: Como usuario edito un miembro cambiando todos los campos
   And I navigate to members section
   Then I select the first member
   
-@user4 @web
+@user15 @web
 Scenario: Como usuario creo, edito, y elimino un miembro
   Given I navigate to page "http://localhost:2368/ghost/#/signin"
   And I am logged
@@ -49,7 +49,7 @@ Scenario: Como usuario creo, edito, y elimino un miembro
   And I click to delete a member
   And I click to confirm delete a member
 
-@user5 @web
+@user16 @web
 Scenario: Como usuario elimino un miembro
   Given I navigate to page "http://localhost:2368/ghost/#/signin"
   And I am logged
