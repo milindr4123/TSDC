@@ -57,7 +57,7 @@ Instalación y set-up de Kraken:
 3. Si aún tiene problemas, contáctenos, estamos 24 horas listos para ayudar :D
 
 Ejecución: 
-1. Para ejecutar un feature en específico en Kraken, copie el contenido del feature(.feature) y steps (steps.js) que desea probar de la carpeta "lista_features" si quiere probar con Ghost 5, o copie el contenido de la carpeta "lista_feature_version_ghost_3" si quiere probar con la versión 3.42 de Ghost, y peguelo en el archivo my_first.feature. (es posible que por correr varios usuarios al tiempo se generen errores, así que si esto sucede deberá correr de a un escenario a la vez. Los escenarios se encuentran dentro de los archivo .feature, y empiezan con "Scenario: NOMBRE_ESCENARIO")
+1. Para ejecutar un feature en específico en Kraken, copie el contenido del feature(.feature) y steps (steps.js) que desea probar de la carpeta "semana(#semana)/lista_features/(feature)", ejemplo, para tomar las pruebas de profile, vamos a la ruta "semana7/lista_features/profile". Si quiere probar con Ghost 5, o copie el contenido de la carpeta "semana6/lista_feature_version_ghost_3" si quiere probar con la versión 3.42 de Ghost, y peguelo en el archivo my_first.feature. (es posible que por correr varios usuarios al tiempo se generen errores, así que si esto sucede deberá correr de a un escenario a la vez. Los escenarios se encuentran dentro de los archivo .feature, y empiezan con "Scenario: NOMBRE_ESCENARIO")
 2. Cambie el nombre de la variable this.foldername en el archivo hooks.js, para que queden guardados los screenshots de acuerdo a la funcionalidad que está probando
 3. En el archivo hooks.js debe cambiar las credenciales (this.email, this.oldPassword) del super admin, encontradas en el Given: "I am logged"
 4. Se deben modificar los correos y contraseñas del archivo properties.json
@@ -165,5 +165,12 @@ Los 120 escenarios de prueba que implementan las tres estrategias de generación
 - Abrir la consola de comandos y ubicarse en la carpeta del proyecto (TSDC) e instalar la librería faker escribiendo el comando ***npm install @faker-js/faker --save-dev***
 - Ejecutar el comando ***cypress open***
 
-## Instrucciones de ejecución de las pruebas en **Cypress**
-pasos
+## Instrucciones de ejecución de las pruebas en **Kraken**
+Ejecución: 
+1. Para ejecutar un feature en específico en Kraken, copie el contenido del feature(.feature) y steps (steps.js) que desea probar de la carpeta "semana(#semana)/lista_features/(feature)", ejemplo, para tomar las pruebas de profile, vamos a la ruta "semana7/lista_features/profile" (es posible que por correr varios usuarios al tiempo se generen errores, así que si esto sucede deberá correr de a un escenario a la vez. Los escenarios se encuentran dentro de los archivo .feature, y empiezan con "Scenario: NOMBRE_ESCENARIO")
+2. Cambie el nombre de la variable this.foldername en el archivo hooks.js, para que queden guardados los screenshots de acuerdo a la funcionalidad que está probando
+3. En el archivo hooks.js debe cambiar las credenciales (this.email, this.oldPassword) del super admin, encontradas en el Given: "I am logged"
+4. Se deben modificar los correos y contraseñas del archivo properties.json
+5. Correr las pruebas usando el comando: npx kraken-node run
+6. En caso de tener un error con el socket, intente cambiar el navegador en la variable this.deviceClient en el archivo hooks.js ( this.deviceClient = new WebClient('%NAVEGADOR%', {}, this.userId);)
+
