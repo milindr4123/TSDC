@@ -252,3 +252,25 @@ Feature: Creación, Edición, Publicación, Despublicación y Eliminación de un
         Then  The Settings Menu should be opened        
         When  I Enter invalid information on Excerpt
         Then  Validation message will be displayed
+
+
+     Scenario Outline: I fill form with website invalid URL
+        Given I navigate to Ghost
+        When  I Enter Address Email
+        And   I Enter Password
+        And   I Click in Sign In
+        Then  I should be redirected to Dashboard
+        When  I click in Posts
+        Then  I should be redirected to the Posts
+        When  I Click the "New post" Button
+        Then  I should be redirected to the new post
+        And I fill form dynamic data "<title>"
+        And   I click the Settings Button
+        Then  The Settings Menu should be opened
+        When  I click again on the Settings Button  
+        When  I Click in Posts link again
+        Then  I should be redirected to the Posts
+        Examples:
+        | title   |
+        | Postfffffffffffffffffffffffff|
+        | |

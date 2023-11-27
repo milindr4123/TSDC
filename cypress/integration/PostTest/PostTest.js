@@ -4,8 +4,7 @@ import {faker} from '@faker-js/faker'
 Cypress.on('uncaught:exception', (err, runnable) => {
   if (err.message.includes('TransitionAborted') || err.message.includes('TaskCancelation')) {
       return false;
-  }
-  
+  }  
   return true;
 });
 
@@ -72,8 +71,34 @@ Then("I should be redirected to the new post", () => {
   cy.wait(1000);
 });
 
+When("I fill form dynamic data {string}", (post) => {
+  cy.get("textarea.gh-editor-title").invoke('val', post);;
+  cy.screenshot(datetime + '-PostGhostV5/EnterTitlePost');
+  cy.wait(1000);
+});
+
+Then("The error message error {string}", () => {
+  cy.url().should("eq", `http://localhost:${portVersion}/ghost/#/editor/post`);
+  cy.screenshot(datetime + '-PostGhostV5/NewPostRedirect');
+  cy.wait(1000);
+});
+
 When("I Enter Title {string}", (title) => {
   cy.get("textarea.gh-editor-title").type(title);
+  cy.screenshot(datetime + '-PostGhostV5/EnterTitlePost');
+  cy.wait(1000);
+});
+
+
+When("I Enter Title faker", () => {
+  cy.get("textarea.gh-editor-title").type(faker.lorem.sentence(30));
+  cy.screenshot(datetime + '-PostGhostV5/EnterTitlePost');
+  cy.wait(1000);
+});
+
+
+When("I Enter Title faker major 255", () => {
+  cy.get("textarea.gh-editor-title").type(faker.lorem.sentence(256));
   cy.screenshot(datetime + '-PostGhostV5/EnterTitlePost');
   cy.wait(1000);
 });

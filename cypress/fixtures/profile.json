@@ -1,4 +1,6 @@
 {
     "email": "prueba@prueba.com",
-    "password": "123456789$"
+    "password": "123456789$",
+    "location": "ibagué",
+    "webSiteInvalid": "$%&/()=!!%"
 }
