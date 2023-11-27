@@ -18,9 +18,11 @@ Before(async function() {
   this.newPassword = ""
   this.folderName = "F3-S1-version-5"
   this.indexId = 0
-    if (!fs.existsSync(`./reports/${this.folderName}`)) {
-        fs.mkdirSync(`./reports/${this.folderName}`);
-    }
+  this.bigString = faker.lorem.paragraph()
+  if (!fs.existsSync(`./reports/${this.folderName}`)) {
+      fs.mkdirSync(`./reports/${this.folderName}`);
+  }
+  this.randomUrl = faker.internet.url();
 })
  
 AfterStep(async function (scenario) {

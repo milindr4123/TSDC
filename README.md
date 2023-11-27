@@ -16,6 +16,7 @@ Los siguientes pasos son una guía para correr los respectivos escenarios de pru
 2. Tener instalada la versión 18.18.2 de Node.js (Si se está usando nvm, utilizar la version 1.1.11 de este en windows)
 3. Instalar y correr contenedor de ghost versión 3.42.0 usando el puerto 3001 en docker: docker run -d -e url=http://localhost:3001 -p 3001:2368 --name ghost_3.42 ghost:3.42
 4. Instalar y correr contenedor de ghost versión 5.73.2 usando el puerto 3002 en docker: docker run -d --name ghost_5.73.2 -e url=http://localhost:3002 -e NODE_ENV=development -e database__client=sqlite3 -e database__connection__filename="content/data/ghost.db" -e database__useNullAsDefault=true -e database__debug=false -p 3002:2368 ghost:5.73.2
+4.1. En Caso de no funcionar esto, cambiar las urls de los steps y features al puerto donde se ejecuta Ghost en su máquina
 5. Ingresar a la url http://localhost:3002/ghost y colocar en Email: prueba@prueba.com y Password: 123456789$ (Esto para correr las pruebas sin realizar ninguna modificación en los fixtures)
 6. Clonar el repositorio del proyecto en el directorio de su preferencia: git clone https://github.com/milindr4123/TSDC.git
 7. Correr el comando npm install dentro del repositorio clonado para descargar los paquetes necesarios para el funcionamiento de las pruebas.

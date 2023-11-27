@@ -1,8 +1,20 @@
 const { Given, When, Then } = require('@cucumber/cucumber');
+const { assert } = require('chai');
+const faker = require('faker');
 
 Given('I am logged', async function() {
     let identificationElement = await this.driver.$('#identification');
     await identificationElement.setValue(this.email);
+
+    let passwordElement = await this.driver.$('#password');
+    await passwordElement.setValue(this.oldPassword);
+ 
+    let element = await this.driver.$('#ember5');
+    return await element.click();
+})
+Given('I am logged random', async function() {
+    let identificationElement = await this.driver.$('#identification');
+    
 
     let passwordElement = await this.driver.$('#password');
     await passwordElement.setValue(this.oldPassword);
@@ -438,8 +450,298 @@ Then('I check posts published', async function() {
     await element1.click();
 })
 
+
+
   async function waitForElement(element) {
     await element.waitForExist({ timeout: 20000 });
     await element.waitForDisplayed({ timeout: 20000 });    
     await element.waitForClickable({ timeout: 20000 }); 
   }
+
+// WEEK 7
+// Scenary 1
+When('I put a random string in profile name', async function() {
+    let nameElement = await this.driver.$('input[class="peer z-[1] order-2 h-8 w-full bg-transparent px-3 py-1 text-sm placeholder:text-grey-500 dark:placeholder:text-grey-700 md:h-9 md:py-2 md:text-md dark:text-white rounded-md"]');
+    await nameElement.setValue(this.newMemberName)
+})
+When('I click in somewhere profile place', async function() {
+    let element = await this.driver.$('h4');
+    await element.click();
+})
+Then('I see the new name', async function() {
+    let element = await this.driver.$('input[class="peer z-[1] order-2 h-8 w-full bg-transparent px-3 py-1 text-sm placeholder:text-grey-500 dark:placeholder:text-grey-700 md:h-9 md:py-2 md:text-md dark:text-white rounded-md"]');
+    waitForElement(element)
+    let elementText = await element.getValue();
+    assert.isTrue(elementText.includes(this.newMemberName))
+})
+// Scenary 2
+When('I put a big string in profile name', async function() {
+    let nameElement = await this.driver.$('input[class="peer z-[1] order-2 h-8 w-full bg-transparent px-3 py-1 text-sm placeholder:text-grey-500 dark:placeholder:text-grey-700 md:h-9 md:py-2 md:text-md dark:text-white rounded-md"]');
+    await nameElement.setValue(this.bigString)
+    await this.driver.pause(5000);
+    waitForElement(nameElement)
+
+})
+Then('I see a too long error name', async function() {
+    let element = await this.driver.$('span.text-red');
+    let elementText = await element.getText();
+    assert.strictEqual(elementText, "Name is too long","Unexpected error message")
+})
+// Scenary 3
+When('I put a random string in location name', async function() {
+    let inputElements = await this.driver.$$('input[class="peer z-[1] order-2 h-8 w-full bg-transparent px-3 py-1 text-sm placeholder:text-grey-500 dark:placeholder:text-grey-700 md:h-9 md:py-2 md:text-md dark:text-white rounded-md"]');
+    let locationElement = inputElements[3]
+    locationElement.setValue(this.newMemberName)
+    await this.driver.pause(5000);
+    waitForElement(locationElement)
+
+})
+Then('I see the new location name', async function() {
+    let inputElements = await this.driver.$$('input[class="peer z-[1] order-2 h-8 w-full bg-transparent px-3 py-1 text-sm placeholder:text-grey-500 dark:placeholder:text-grey-700 md:h-9 md:py-2 md:text-md dark:text-white rounded-md"]');
+    let locationElement = inputElements[3]
+    let elementText = await locationElement.getValue();
+    assert.isTrue(elementText.includes(this.newMemberName))
+})
+// Scenary 4
+When('I put a big string in location name', async function() {
+    let inputElements = await this.driver.$$('input[class="peer z-[1] order-2 h-8 w-full bg-transparent px-3 py-1 text-sm placeholder:text-grey-500 dark:placeholder:text-grey-700 md:h-9 md:py-2 md:text-md dark:text-white rounded-md"]');
+    let locationElement = inputElements[3]
+    locationElement.setValue(this.bigString)
+    await this.driver.pause(5000);
+    waitForElement(locationElement)
+})
+Then('I see a too long location error name', async function() {
+    let element = await this.driver.$('span.text-red');
+    let elementText = await element.getText();
+    assert.strictEqual(elementText, "Location is too long","Unexpected error message")
+})
+// Scenary 5
+When('I put an invalid email in email input', async function() {
+    let inputElements = await this.driver.$$('input[class="peer z-[1] order-2 h-8 w-full bg-transparent px-3 py-1 text-sm placeholder:text-grey-500 dark:placeholder:text-grey-700 md:h-9 md:py-2 md:text-md dark:text-white rounded-md"]');
+    let emailElement = inputElements[1]
+    let element = await this.driver.$('h4');
+    await emailElement.setValue(this.newMemberEmail)
+    await element.click();
+    await this.driver.pause(5000);
+    
+})
+Then('I see an invalid email error', async function() {
+    let element = await this.driver.$('span.text-red');
+    let elementText = await element.getText();
+    assert.strictEqual(elementText, "Please enter a valid email address","Unexpected error message")
+})
+// Scenary 6
+When('I put a big email in email input', async function() {
+    let inputElements = await this.driver.$$('input[class="peer z-[1] order-2 h-8 w-full bg-transparent px-3 py-1 text-sm placeholder:text-grey-500 dark:placeholder:text-grey-700 md:h-9 md:py-2 md:text-md dark:text-white rounded-md"]');
+    let emailElement = inputElements[1]
+    let element = await this.driver.$('h4');
+    let longName = '';
+
+    while (longName.length <= 200) {
+        longName += faker.random.word();
+    }
+    await this.driver.pause(3000);
+    await emailElement.setValue(longName)
+    await element.click();  
+})
+// Scenary 7
+When('I put an invalid website in website input', async function() {
+    let inputElements = await this.driver.$$('input[class="peer z-[1] order-2 h-8 w-full bg-transparent px-3 py-1 text-sm placeholder:text-grey-500 dark:placeholder:text-grey-700 md:h-9 md:py-2 md:text-md dark:text-white rounded-md"]');
+    let emailElement = inputElements[4]
+    let element = await this.driver.$('h4');
+
+    await this.driver.pause(3000);
+    await emailElement.setValue(this.bigString)
+    await element.click();  
+})
+Then('I see an url error', async function() {
+    let element = await this.driver.$('span.text-red');
+    let elementText = await element.getText();
+    assert.strictEqual(elementText, "Please enter a valid URL","Unexpected error message")
+})
+// Scenary 8
+When('I put a big website in website input', async function() {
+    let inputElements = await this.driver.$$('input[class="peer z-[1] order-2 h-8 w-full bg-transparent px-3 py-1 text-sm placeholder:text-grey-500 dark:placeholder:text-grey-700 md:h-9 md:py-2 md:text-md dark:text-white rounded-md"]');
+    let websiteElement = inputElements[4]
+    let element = await this.driver.$('h4');
+    let longName = '';
+
+    while (longName.length <= 500) {
+        longName += faker.random.word();
+    }
+    await this.driver.pause(8000);
+    await websiteElement.setValue("www."+longName+".com")
+    await this.driver.pause(1000);
+    await element.click();  
+})
+// Scenary 9
+When('I a put a website in website profile input', async function() {
+    let inputElements = await this.driver.$$('input[class="peer z-[1] order-2 h-8 w-full bg-transparent px-3 py-1 text-sm placeholder:text-grey-500 dark:placeholder:text-grey-700 md:h-9 md:py-2 md:text-md dark:text-white rounded-md"]');
+    let websiteElement = inputElements[4]
+    websiteElement.setValue(this.randomUrl)
+    waitForElement(websiteElement)
+
+})
+Then('I see the new website url', async function() {
+    let inputElements = await this.driver.$$('input[class="peer z-[1] order-2 h-8 w-full bg-transparent px-3 py-1 text-sm placeholder:text-grey-500 dark:placeholder:text-grey-700 md:h-9 md:py-2 md:text-md dark:text-white rounded-md"]');
+    let websiteElement = inputElements[4]
+    let elementText = await websiteElement.getValue();
+    assert.isTrue(elementText.includes(this.randomUrl))
+})
+// Scenary 10
+When('I a put a slug', async function() {
+    let inputElements = await this.driver.$$('input[class="peer z-[1] order-2 h-8 w-full bg-transparent px-3 py-1 text-sm placeholder:text-grey-500 dark:placeholder:text-grey-700 md:h-9 md:py-2 md:text-md dark:text-white rounded-md"]');
+    let websiteElement = inputElements[2]
+    websiteElement.setValue(this.newMemberName)
+    waitForElement(websiteElement)
+
+})
+Then('I see the new slug', async function() {
+    let inputElements = await this.driver.$$('input[class="peer z-[1] order-2 h-8 w-full bg-transparent px-3 py-1 text-sm placeholder:text-grey-500 dark:placeholder:text-grey-700 md:h-9 md:py-2 md:text-md dark:text-white rounded-md"]');
+    let websiteElement = inputElements[2]
+    let elementText = await websiteElement.getValue();
+    waitForElement(websiteElement)
+    waitForElement(elementText)
+    assert.isTrue(elementText.includes(this.newMemberName))
+})
+// Scenary 11
+When('I a put a facebook profile in facebook profile input', async function() {
+    let inputElements = await this.driver.$$('input[class="peer z-[1] order-2 h-8 w-full bg-transparent px-3 py-1 text-sm placeholder:text-grey-500 dark:placeholder:text-grey-700 md:h-9 md:py-2 md:text-md dark:text-white rounded-md"]');
+    let websiteElement = inputElements[5]
+    websiteElement.setValue(this.newMemberName)
+    waitForElement(websiteElement)
+
+})
+Then('I see the new facebook url', async function() {
+    let inputElements = await this.driver.$$('input[class="peer z-[1] order-2 h-8 w-full bg-transparent px-3 py-1 text-sm placeholder:text-grey-500 dark:placeholder:text-grey-700 md:h-9 md:py-2 md:text-md dark:text-white rounded-md"]');
+    let websiteElement = inputElements[5]
+    let elementText = await websiteElement.getValue();
+    waitForElement(websiteElement)
+    waitForElement(elementText)
+    assert.isTrue(elementText.includes(this.newMemberName))
+})
+// Scenary 12
+When('I a put a big facebook profile in facebook profile input', async function() {
+    let inputElements = await this.driver.$$('input[class="peer z-[1] order-2 h-8 w-full bg-transparent px-3 py-1 text-sm placeholder:text-grey-500 dark:placeholder:text-grey-700 md:h-9 md:py-2 md:text-md dark:text-white rounded-md"]');
+    let websiteElement = inputElements[5]
+    let element = await this.driver.$('h4');
+    let longName = '';
+
+    while (longName.length <= 2500) {
+        longName += faker.random.word();
+    }
+    await websiteElement.setValue(longName)
+    await this.driver.pause(5000);
+    waitForElement(element)
+    await element.click()
+    waitForElement(websiteElement)
+    await this.driver.pause(1000);
+})
+Then('I see a facebook profile error', async function() {
+    let element = await this.driver.$('span.text-red');
+    let elementText = await element.getText();
+    assert.strictEqual(elementText, "The URL must be in a format like https://www.facebook.com/yourPage","Unexpected error message")
+})
+// Scenary 13
+When('I a put an invalid facebook profile in facebook profile input', async function() {
+    let inputElements = await this.driver.$$('input[class="peer z-[1] order-2 h-8 w-full bg-transparent px-3 py-1 text-sm placeholder:text-grey-500 dark:placeholder:text-grey-700 md:h-9 md:py-2 md:text-md dark:text-white rounded-md"]');
+    let websiteElement = inputElements[5]
+    let element = await this.driver.$('h4');
+
+    await websiteElement.setValue(this.bigString)
+    await element.click()
+})
+// Scenary 14
+When('I put an invalid twitter profile in twitter profile input', async function() {
+    let inputElements = await this.driver.$$('input[class="peer z-[1] order-2 h-8 w-full bg-transparent px-3 py-1 text-sm placeholder:text-grey-500 dark:placeholder:text-grey-700 md:h-9 md:py-2 md:text-md dark:text-white rounded-md"]');
+    let websiteElement = inputElements[6]
+    let element = await this.driver.$('h4');
+
+    await websiteElement.setValue(this.bigString)
+    await element.click()
+})
+Then('I see a twitter profile error', async function() {
+    let element = await this.driver.$('span.text-red');
+    let elementText = await element.getText();
+    assert.strictEqual(elementText, "Your Username is not a valid Twitter Username","Unexpected error message")
+})
+// Scenary 15
+When('I put a big twitter user profile in twitter profile input', async function() {
+    let inputElements = await this.driver.$$('input[class="peer z-[1] order-2 h-8 w-full bg-transparent px-3 py-1 text-sm placeholder:text-grey-500 dark:placeholder:text-grey-700 md:h-9 md:py-2 md:text-md dark:text-white rounded-md"]');
+    let websiteElement = inputElements[6]
+    let element = await this.driver.$('h4');
+    let longName = '';
+
+    while (longName.length <= 2500) {
+        longName += faker.random.word();
+    }
+    await websiteElement.setValue(longName)
+    await this.driver.pause(5000);
+    waitForElement(element)
+    await element.click()
+    waitForElement(websiteElement)
+    await this.driver.pause(1000);
+})
+// Scenary 16
+When('I put a twitter profile in twitter profile input', async function() {
+    let inputElements = await this.driver.$$('input[class="peer z-[1] order-2 h-8 w-full bg-transparent px-3 py-1 text-sm placeholder:text-grey-500 dark:placeholder:text-grey-700 md:h-9 md:py-2 md:text-md dark:text-white rounded-md"]');
+    let websiteElement = inputElements[6]
+    websiteElement.setValue(this.newMemberName)
+    waitForElement(websiteElement)
+
+})
+Then('I see the new twitter url', async function() {
+    let inputElements = await this.driver.$$('input[class="peer z-[1] order-2 h-8 w-full bg-transparent px-3 py-1 text-sm placeholder:text-grey-500 dark:placeholder:text-grey-700 md:h-9 md:py-2 md:text-md dark:text-white rounded-md"]');
+    let websiteElement = inputElements[6]
+    let elementText = await websiteElement.getValue();
+    waitForElement(websiteElement)
+    waitForElement(elementText)
+    assert.isTrue(elementText.includes(this.newMemberName))
+})
+// Scenary 17 
+When('I put a bio in bio profile input', async function() {
+    let bioElement = await this.driver.$('textarea');
+    bioElement.setValue(this.newMemberNote)
+    waitForElement(bioElement)
+
+})
+Then('I see the new bio url', async function() {
+    let bioElement = await this.driver.$('textarea');
+    let elementText = await bioElement.getValue();
+    waitForElement(elementText)
+    assert.isTrue(elementText.includes(this.newMemberNote))
+})
+// Scenary 18
+When('I put a big bio in bio profile input', async function() {
+    let bioElement = await this.driver.$('textarea');
+    let element = await this.driver.$('h4');
+    let longName = '';
+
+    while (longName.length <= 200) {
+        longName += faker.random.word();
+    }
+    
+    await bioElement.setValue(longName)
+    waitForElement(bioElement)
+    await element.click()
+    waitForElement(element)
+    await this.driver.pause(1000);
+})
+Then('I see a bio profile error', async function() {
+    let element = await this.driver.$('span.text-red');
+    let elementText = await element.getText();
+    assert.strictEqual(elementText, "Bio is too long","Unexpected error message")
+})
+// Scenary 19
+When('I put an empty bio in bio profile input', async function() {
+    let bioElement = await this.driver.$('textarea');
+    let changePasswordElement = await this.driver.$('div.p-8.py-6 div.flex.gap-3 button.cursor-pointer.bg-black span');
+    await bioElement.clearValue()
+    waitForElement(bioElement)
+    await changePasswordElement.click();
+})
+Then('I see an empty bio profile', async function() {
+    let element = await this.driver.$('textarea');
+    let elementText = await element.getText();
+    assert.strictEqual(elementText, "","Unexpected error message")
+})
