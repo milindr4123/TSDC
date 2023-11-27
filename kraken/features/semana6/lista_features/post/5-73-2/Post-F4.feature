@@ -2,7 +2,7 @@ Feature: Creacion post and publish post
 
 @user4 @web
 Scenario: As a user, I create and view a post.
-  Given I navigate to post "http://localhost:2368/ghost/#/signin"
+  Given I navigate to post "http://localhost:3002/ghost/#/signin"
   When  I am logged
   And  I wait for 4 seconds
   And  I navigate to post section

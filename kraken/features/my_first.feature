@@ -1,19 +1,16 @@
-Feature: CRUD of members
+Feature: General settings modify
 
-@user21 @web
-Scenario: Cambiar la bio y dejarla vacía
-  Given I navigate to page "http://localhost:2368/ghost/#/signin"
-  And I wait for 5 seconds
-  And I am logged
-  And I wait for 5 seconds
-  And I click user settings
-  And I click to go to profile
-  And I wait for 3 seconds
-  When I put an empty bio in bio profile input
-  And I wait for 1 seconds
-  And I click in done button
-  And I wait for 1 seconds
-  And I click user settings
-  And I click to go to profile
-  And I wait for 3 seconds
-  Then I see an empty bio profile
+@user30 @web
+Scenario: Como usuario agrego una integración personalizada de la aplicación sin nombre
+    Given I navigate to page "http://localhost:2368/ghost/#/signin"
+    When I am logged
+    And I wait for 2 seconds
+    And I navigate to general settings
+    And I wait for 2 seconds
+    And I click on add custom integration
+    And I wait for 2 seconds
+    And I fill name field
+    And I click on add button
+    And I wait for 2 seconds
+    And I click on save and close
+    Then I check the name on the list

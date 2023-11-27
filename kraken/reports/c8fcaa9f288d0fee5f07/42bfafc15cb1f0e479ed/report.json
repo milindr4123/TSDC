@@ -1,0 +1,206 @@
+[
+  {
+    "description": "",
+    "elements": [
+      {
+        "description": "",
+        "id": "general-settings-modify;como-usuario-agrego-una-integración-personalizada-de-la-aplicación-sin-nombre",
+        "keyword": "Scenario",
+        "line": 4,
+        "name": "Como usuario agrego una integración personalizada de la aplicación sin nombre",
+        "steps": [
+          {
+            "keyword": "Before",
+            "hidden": true,
+            "result": {
+              "status": "passed",
+              "duration": 876000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Given ",
+            "line": 5,
+            "name": "I navigate to page \"http://localhost:2368/ghost/#/signin\"",
+            "match": {
+              "location": "..\\..\\..\\..\\..\\..\\..\\node_modules\\kraken-node\\lib\\steps\\web.js:41"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 1951000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "When ",
+            "line": 6,
+            "name": "I am logged",
+            "match": {
+              "location": "features\\web\\step_definitions\\step.js:5"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 1429000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 7,
+            "name": "I wait for 2 seconds",
+            "match": {
+              "location": "..\\..\\..\\..\\..\\..\\..\\node_modules\\kraken-node\\lib\\steps\\both.js:73"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 3165000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 8,
+            "name": "I navigate to general settings",
+            "match": {
+              "location": "features\\web\\step_definitions\\step.js:16"
+            },
+            "result": {
+              "status": "failed",
+              "duration": 4169000000,
+              "error_message": "Error: Can't call click on element with selector \"a[data-test-nav=\"settings\"]\" because element wasn't found\n    at implicitWait (C:\\Users\\ASUS\\node_modules\\webdriverio\\build\\utils\\implicitWait.js:34:19)\n    at async Element.elementErrorHandlerCallbackFn (C:\\Users\\ASUS\\node_modules\\webdriverio\\build\\middlewares.js:20:29)\n    at async Element.wrapCommandFn (C:\\Users\\ASUS\\node_modules\\@wdio\\utils\\build\\shim.js:136:29)\n    at async KrakenWorld.<anonymous> (C:\\Users\\ASUS\\Desktop\\Uniandes\\Ciclo 2\\PruebasAutomatizadas\\repoProyecto\\TSDC\\kraken\\features\\web\\step_definitions\\step.js:18:12)"
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 9,
+            "name": "I wait for 2 seconds",
+            "match": {
+              "location": "..\\..\\..\\..\\..\\..\\..\\node_modules\\kraken-node\\lib\\steps\\both.js:73"
+            },
+            "result": {
+              "status": "skipped",
+              "duration": 0
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 10,
+            "name": "I click on add custom integration",
+            "match": {
+              "location": "features\\web\\step_definitions\\step.js:21"
+            },
+            "result": {
+              "status": "skipped",
+              "duration": 0
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 11,
+            "name": "I wait for 2 seconds",
+            "match": {
+              "location": "..\\..\\..\\..\\..\\..\\..\\node_modules\\kraken-node\\lib\\steps\\both.js:73"
+            },
+            "result": {
+              "status": "skipped",
+              "duration": 0
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 12,
+            "name": "I fill name field",
+            "match": {
+              "location": "features\\web\\step_definitions\\step.js:26"
+            },
+            "result": {
+              "status": "skipped",
+              "duration": 0
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 13,
+            "name": "I click on add button",
+            "match": {
+              "location": "features\\web\\step_definitions\\step.js:31"
+            },
+            "result": {
+              "status": "skipped",
+              "duration": 0
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 14,
+            "name": "I wait for 2 seconds",
+            "match": {
+              "location": "..\\..\\..\\..\\..\\..\\..\\node_modules\\kraken-node\\lib\\steps\\both.js:73"
+            },
+            "result": {
+              "status": "skipped",
+              "duration": 0
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 15,
+            "name": "I click on save and close",
+            "match": {
+              "location": "features\\web\\step_definitions\\step.js:36"
+            },
+            "result": {
+              "status": "skipped",
+              "duration": 0
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Then ",
+            "line": 16,
+            "name": "I check the name on the list",
+            "match": {
+              "location": "features\\web\\step_definitions\\step.js:41"
+            },
+            "result": {
+              "status": "skipped",
+              "duration": 0
+            }
+          },
+          {
+            "keyword": "After",
+            "hidden": true,
+            "result": {
+              "status": "passed",
+              "duration": 163000000
+            }
+          }
+        ],
+        "tags": [
+          {
+            "name": "@user30",
+            "line": 3
+          },
+          {
+            "name": "@web",
+            "line": 3
+          }
+        ],
+        "type": "scenario"
+      }
+    ],
+    "id": "general-settings-modify",
+    "line": 1,
+    "keyword": "Feature",
+    "name": "General settings modify",
+    "tags": [],
+    "uri": "features\\my_first.feature"
+  }
+]
