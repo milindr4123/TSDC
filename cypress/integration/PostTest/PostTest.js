@@ -1,13 +1,10 @@
 import { Given, When, Then, And } from "cypress-cucumber-preprocessor/steps"
 import {faker} from '@faker-js/faker'
 
-import {faker} from '@faker-js/faker'
-
 Cypress.on('uncaught:exception', (err, runnable) => {
   if (err.message.includes('TransitionAborted') || err.message.includes('TaskCancelation')) {
       return false;
-  }
-  
+  }  
   return true;
 });
 
@@ -18,8 +15,6 @@ Given('I navigate to Ghost', () => {
   cy.fixture('ports').then((port) => {
     portVersion = port.v5
     cy.visit(`http://localhost:${portVersion}/ghost//#/signin`);
-    portVersion = port.v5
-    cy.visit(`http://localhost:${port.v5}/ghost//#/signin`);
   });
   cy.screenshot(datetime + '-PostGhostV5/SignInGhost');
 });
