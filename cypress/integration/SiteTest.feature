@@ -11,7 +11,7 @@ Feature: options test in Ghost
         When I click on settings button
         And I click on newsletters button
         And I click add new newsletters button
-        And I fill create newsletter form Error "<thoughts>"
+        And I fill create newsletter form with dynamic data "<thoughts>"
         And I click on Save
         Then The error message "<error>"
         Examples:
