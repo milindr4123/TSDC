@@ -90,20 +90,29 @@ When("I click add new newsletters button", () => {
 
 });
 
-And("I click on Create button", () => {
-    cy.get('span').contains('Create').click();
-    cy.wait(1000)
-    cy.screenshot(datetime + "-SiteGhostV5/CreateButtonPress");
 
+When("I click on Save", () => {
+    cy.once('uncaught:exception', () => false);
+    cy.contains('span', 'Create').click();
+    cy.wait(1000)
 });
 
-When("I fill create newsletter form {string}", (data) => {
-        cy.get('input[class="peer z-[1] order-2 h-8 w-full bg-transparent px-3 py-1 text-sm placeholder:text-grey-500 dark:placeholder:text-grey-700 md:h-9 md:py-2 md:text-md dark:text-white rounded-md"]').invoke('val', data);
-        cy.screenshot(datetime + '-SiteGhostV5/SiteLink');
-        cy.wait(1000);
-    });
 
-Then('The error message {string}', (error) => {
+When("I fill create newsletter form with dynamic data {string}", (data) => {
+    cy.get('textarea').type("prueba");
+    cy.get('input[class="peer z-[1] order-2 h-8 w-full bg-transparent px-3 py-1 text-sm placeholder:text-grey-500 dark:placeholder:text-grey-700 md:h-9 md:py-2 md:text-md dark:text-white rounded-md"]').invoke('val',data);
+    cy.wait(1000)   
+});
+
+
+When("I fill create newsletter form {string}", (data) => {
+    cy.get('textarea').type("prueba");
+    cy.get('input[class="peer z-[1] order-2 h-8 w-full bg-transparent px-3 py-1 text-sm placeholder:text-grey-500 dark:placeholder:text-grey-700 md:h-9 md:py-2 md:text-md dark:text-white rounded-md"]').type(data);
+    cy.wait(1000)   
+});
+
+
+Then('The error message {string}', (error) => { 
     cy.get('span[class="mt-1 inline-block text-xs text-red dark:text-red-500 order-3"]').invoke('text').should('contains', error);
     cy.screenshot(datetime + '-SiteV5/PageErrorCreateNewsLetter');
     cy.wait(5000);
@@ -111,6 +120,12 @@ Then('The error message {string}', (error) => {
 
 
 
+  Then("I Validation show another page", () => {
+    cy.get('div[class="absolute inset-0 m-5 flex items-center justify-center"]').should('be.visible');
+    cy.screenshot(datetime + '-PostGhostV5/ValidationURLPost');
+    cy.wait(3000);
+  });
+  
 
   
   
