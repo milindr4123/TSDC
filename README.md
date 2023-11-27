@@ -161,9 +161,9 @@ Los 120 escenarios de prueba que implementan las tres estrategias de generación
 - Los archivos con los 60 escenarios de prueba implementados en **Kraken** se encuentran ubicados en ***TSDC/kraken*** (Los 60 escenarios tienen la distribución de las 3 estrategias de generación de datos).  
 
 ## Instrucciones de ejecución de las pruebas en **Cypress**
-- Clonar repositorio
-- instalar Faker
-- Correr comando cypress open
+- Clonar el proyecto según instrucciónes previas
+- Abrir la consola de comandos y ubicarse en la carpeta del proyecto (TSDC) e instalar la librería faker escribiendo el comando ***npm install @faker-js/faker --save-dev***
+- Ejecutar el comando ***cypress open***
 
 ## Instrucciones de ejecución de las pruebas en **Cypress**
 pasos
