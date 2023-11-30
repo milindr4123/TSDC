@@ -35,38 +35,30 @@ Feature: Creación, Edición, Publicación, Despublicación y Eliminación de un
         And   I click in Posts
         Then  I should be redirected to the Posts
 
-    # Scenario: As a user, I create and publish a post.
-    #     When  I click in Posts
-    #     Then  I should be redirected to the Posts
-    #     When  I Click the "New post" Button
-    #     Then  I should be redirected to the new post
-    #     When  I Enter Title "New Post in GHOST 3"
-    #     And   I click the Settings Button
-    #     Then  The Settings Menu should be opened
-    #     And   I Click in Preview Button
-    #     And   I Click in Editor Button
-    #     And   I Click in Publish Button
-    #     And   I Click in Continue, final review button
-    #     And   I Click in Publish Post, right now button
-    #     Then  I should be redirected to the Published Post
-
-    # Scenario: As a user, I create, publish and remove a post.
-    #     When  I click in Posts
-    #     Then  I should be redirected to the Posts
-    #     When  I Click the "New post" Button
-    #     Then  I should be redirected to the new post
-    #     When  I Enter Title "New Post in GHOST 4"
-    #     And   I click the Settings Button
-    #     Then  The Settings Menu should be opened
-    #     And   I Click in Preview Button    
-    #     And   I Click in Editor Button
-    #     And   I Click in Publish Button
-    #     And   I Click in Continue, final review button
-    #     And   I Click in Publish Post, right now button
-    #     Then  I should be redirected to the Published Post
-    #     When  I Click in Back to Editor Link
-    #     And   I click the Settings Button
-    #     Then  The Settings Menu should be opened
-    #     When  I click in the Delete Post
-    #     And   I Click in the Delete Button
-    #     Then  I should be redirected to the Posts    
+    Scenario: As a user, I create and publish a post.
+        When  I click in Posts
+        Then  I should be redirected to the Posts
+        When  I Click the "New post" Button
+        Then  I should be redirected to the new post
+        When  I Enter Title "New Post in GHOST 3"
+        And  I click in any screen post
+        Then  I click publish button
+        Then  I click publish button
+        Then  I should notificate publish
+ 
+ 
+    Scenario: As a user, I create and publish a post.
+         When  I click in Posts
+         Then  I should be redirected to the Posts
+         When  I Click the "New post" Button
+         Then  I should be redirected to the new post
+         When  I Enter Title "New Post in GHOST 3"
+         When  I click in any screen post
+         Then  I click publish button
+         Then  I click publish button
+         Then  I should notificate publish
+         Then I close notificate publish
+         When   I click the Settings Button
+         And I click delete button
+         And I click delete button
+         Then  I click in Posts  

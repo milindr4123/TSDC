@@ -27,6 +27,18 @@ When("I Enter Address Email Login", () => {
   cy.wait(1000);
 });
 
+Then("I should notificate publish", () => {
+  cy.get('span[class="gh-notification-title"]').should('exist');
+  cy.screenshot(datetime + '-PageGhostV5/PreviewButtonNotExist');
+  cy.wait(1000);
+});
+
+When("I click publish button", () => {
+  cy.contains('span', 'Publish').click();
+   cy.screenshot(datetime + '-PostGhostV3/ClickSignInButton');
+  cy.wait(1000);
+});
+
 When("I Enter Password Login", () => {
   cy.fixture('credentials').then((credentials) => {
     cy.get(".password").type(credentials.password, {force: true});
@@ -41,6 +53,13 @@ When("I Click in Sign In button", () => {
   cy.wait(1000);
 });
 
+When("I click in any screen post", () => {
+  cy.get("div[class='gh-koenig-editor-pane flex flex-column mih-100']").click();
+   cy.screenshot(datetime + '-PostGhostV3/ClickSignInButton');
+  cy.wait(1000);
+});
+
+
 Then("I Should be redirected to Dashboard", () => {
   cy.url().should("eq", `http://localhost:${portVersion}/ghost/#/site`);
    cy.screenshot(datetime + '-PostGhostV3/DashboardPage');
@@ -48,7 +67,7 @@ Then("I Should be redirected to Dashboard", () => {
 });
 
 When("I click in Posts", () => {
-  cy.get("a[href='#/posts/']").click({ multiple: true });
+  cy.get("a[href='#/posts/']").click({ multiple: true, force: true});
    cy.screenshot(datetime + '-PostGhostV3/PostsLink');
   cy.wait(1000);
 });
@@ -96,19 +115,31 @@ Then('The Settings Menu should be opened', () => {
 });
 
 When("I Click in Preview Button", () => {
-  cy.get("div.form-group a").click();
+  cy.get("div.form-group a").click({ force: true});
+   cy.screenshot(datetime + '-PostGhostV3/PreviewButton');
+  cy.wait(1000);
+});
+
+When("I click delete button", () => {
+  cy.contains('span', 'Delete post').click({ force: true});
+   cy.screenshot(datetime + '-PostGhostV3/PreviewButton');
+  cy.wait(1000);
+});
+
+Then("I close notificate publish", () => {
+  cy.get("button[class='gh-notification-close']").click({ force: true});
    cy.screenshot(datetime + '-PostGhostV3/PreviewButton');
   cy.wait(1000);
 });
 
 When("I click on the Close settings", () => {
-  cy.get("button.close").click();
+  cy.get("button.close").click({ force: true});
    cy.screenshot(datetime + '-PageGhostV3/PostSettingsMenuAgain');
   cy.wait(1000);
 });
 
 When("I Click in Preview Button", () => {
-  cy.get("div.form-group a").click();
+  cy.get("div.form-group a").click({ force: true});
    cy.screenshot(datetime + '-PostGhostV3/PreviewButton');
   cy.wait(1000);
 });
