@@ -1,0 +1,32 @@
+{
+    "url": "http://localhost:2368/ghost/",
+    "headless": true,
+    "depthLevels": 1,
+    "inputValues": false,
+    "viewports": [
+        {
+            "width":430, 
+            "height":932
+        },
+        {
+            "width":1024, 
+            "height":1366
+        },
+        {
+            "width":1200, 
+            "height":720
+        },
+        {
+            "width":1920, 
+            "height":1080
+        }
+    ],
+    "viewportHeight": 932,
+    "viewportWidth": 430,
+    "values": {"userInput": "prueba",
+        "passwordInput": "123456789$",
+        "passwordTwoInput": "123456789$",
+        "nameInput": "Juan",
+        "emailInput": "prueba@prueba.com"},
+    "browsers": ["chromium"]
+}
