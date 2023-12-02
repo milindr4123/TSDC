@@ -15,7 +15,7 @@ Los siguientes pasos son una guía para correr los respectivos escenarios de pru
 1. Tener instalada la herramienta git
 2. Tener instalada la versión 18.18.2 de Node.js (Si se está usando nvm, utilizar la version 1.1.11 de este en windows)
 3. Instalar y correr contenedor de ghost versión 3.42.0 usando el puerto 3001 en docker: docker run -d -e url=http://localhost:3001 -p 3001:2368 --name ghost_3.42 ghost:3.42
-4. Instalar y correr contenedor de ghost versión 5.73.2 usando el puerto 3002 en docker: docker run -d --name ghost_5.73.2 -e url=http://localhost:3002 -e NODE_ENV=development -e database__client=sqlite3 -e database__connection__filename="content/data/ghost.db" -e database__useNullAsDefault=true -e database__debug=false -p 3002:2368 ghost:5.73.2
+4. Instalar y correr contenedor de ghost versión 5.73.2 usando el puerto 2368 en docker: docker run -d --name ghost_5.73.2 -e url=http://localhost:2368 -e NODE_ENV=development -e database__client=sqlite3 -e database__connection__filename="content/data/ghost.db" -e database__useNullAsDefault=true -e database__debug=false -p 2368:2368 ghost:5.73.2
 4.1. En Caso de no funcionar esto, cambiar las urls de los steps y features al puerto donde se ejecuta Ghost en su máquina
 5. Ingresar a la url http://localhost:3002/ghost y colocar en Email: prueba@prueba.com y Password: 123456789$ (Esto para correr las pruebas sin realizar ninguna modificación en los fixtures)
 6. Clonar el repositorio del proyecto en el directorio de su preferencia: git clone https://github.com/milindr4123/TSDC.git
@@ -173,4 +173,18 @@ Ejecución:
 4. Se deben modificar los correos y contraseñas del archivo properties.json
 5. Correr las pruebas usando el comando: npx kraken-node run
 6. En caso de tener un error con el socket, intente cambiar el navegador en la variable this.deviceClient en el archivo hooks.js ( this.deviceClient = new WebClient('%NAVEGADOR%', {}, this.userId);)
+
+## Instrucciones de ejecución de las pruebas de reconocimiento usando RIPuppet
+Para esta prueba se debe tener en cuenta los pasos previos dados anteriormente
+1. Clonar el repositorio del proyecto
+2. Ingresar a la carpeta RIPuppet
+3. Abrir el cmd de windows
+4. Ejecutar "npm install"
+5. Ejecutar "node index.js"
+6. Instalar http-server "npm install -g http-server"
+7. Dirigirse al directorio de results
+8. Ejecutar "http-server"
+9. Dirigirse al navegador usando el link "127.0.0.1:8080"
+10. Seleccionar el ultimo directorio del listado
+11. Revisar los resultados dados por la prueba
 
