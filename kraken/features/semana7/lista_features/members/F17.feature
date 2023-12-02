@@ -2,7 +2,7 @@ Feature: CRUD of members
 
 @user17 @web
 Scenario: Como usuario intento crear miembro con los campos vacíos
-    Given I navigate to page "http://localhost:3002/ghost/#/signin"
+    Given I navigate to page "http://localhost:2368/ghost/#/signin"
     When I am logged
     And I wait for 2 seconds
     And I navigate to members section

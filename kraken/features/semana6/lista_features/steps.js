@@ -12,7 +12,7 @@ Given('I am logged', async function() {
 })
 Given('I am logged random', async function() {
     let identificationElement = await this.driver.$('#identification');
-    await identificationElement.setValue(faker.);
+    await identificationElement.setValue(this.email);
 
     let passwordElement = await this.driver.$('#password');
     await passwordElement.setValue(this.oldPassword);

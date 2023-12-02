@@ -1,16 +1,28 @@
-Feature: General settings modify
+Feature: Create Post, edit Post y view Post
 
-@user30 @web
-Scenario: Como usuario agrego una integración personalizada de la aplicación sin nombre
-    Given I navigate to page "http://localhost:2368/ghost/#/signin"
-    When I am logged
-    And I wait for 2 seconds
-    And I navigate to general settings
-    And I wait for 2 seconds
-    And I click on add custom integration
-    And I wait for 2 seconds
-    And I fill name field
-    And I click on add button
-    And I wait for 2 seconds
-    And I click on save and close
-    Then I check the name on the list
+@user2 @web
+Scenario: As a user, I create, edit and view a post.
+  Given I navigate to post "http://localhost:2368/ghost/#/signin"
+  And  I am logged
+  And  I wait for 4 seconds
+  And  I navigate to post section 
+  And  I wait for 2 seconds
+  And  I click in New Post link
+  And  I wait for 2 seconds
+  And  I click the Post settings button
+  And  I wait for 2 seconds
+  And  I enter Post URL "New Post in GHOST"
+  And  I wait for 2 seconds
+  And  I click the Post settings button
+  And  I wait for 2 seconds
+  When I Fill Post
+  And  I wait for 3 seconds
+  And  I navigate to post section
+  And  I wait for 5 seconds
+  And  I select a post
+  And  I wait for 2 seconds
+  And  I Edit a Post "es editado"
+  And  I wait for 2 seconds
+  And  I click in Post link 
+  And  I wait for 2 seconds
+  Then I select a post

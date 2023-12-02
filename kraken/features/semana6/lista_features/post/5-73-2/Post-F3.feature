@@ -2,7 +2,7 @@ Feature: Create Post, edit Post, assig tag to a post y view Post
 
 @user3 @web
 Scenario: As a user,  Create Post, edit Post, assig tag to a menber y view Post.
-  Given I navigate to post "http://localhost:3002/ghost/#/signin"
+  Given I navigate to post "http://localhost:2368/ghost/#/signin"
   And  I am logged
   And  I wait for 4 seconds
   And  I navigate to tags section

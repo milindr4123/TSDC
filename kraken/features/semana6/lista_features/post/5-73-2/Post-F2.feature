@@ -2,7 +2,7 @@ Feature: Create Post, edit Post y view Post
 
 @user2 @web
 Scenario: As a user, I create, edit and view a post.
-  Given I navigate to post "http://localhost:3002/ghost/#/signin"
+  Given I navigate to post "http://localhost:2368/ghost/#/signin"
   And  I am logged
   And  I wait for 4 seconds
   And  I navigate to post section 

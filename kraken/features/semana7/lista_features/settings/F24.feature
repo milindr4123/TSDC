@@ -2,7 +2,7 @@ Feature: General settings modify
 
 @user24 @web
 Scenario: Como usuario agrego una recomendación de la aplicación usando campos vacíos
-    Given I navigate to page "http://localhost:3002/ghost/#/signin"
+    Given I navigate to page "http://localhost:2368/ghost/#/signin"
     When I am logged
     And I wait for 2 seconds
     And I navigate to general settings

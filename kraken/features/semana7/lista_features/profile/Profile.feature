@@ -2,7 +2,7 @@ Feature: Change password
   
 @user21 @web
 Scenario: Cambiar passsword de usuario
-  Given I navigate to page "http://localhost:3002/ghost/#/signin"
+  Given I navigate to page "http://localhost:2368/ghost/#/signin"
   And I wait for 5 seconds
   And I am logged
   And I wait for 5 seconds
@@ -41,7 +41,7 @@ Scenario: Cambiar passsword de usuario
 
 @user38 @web
 Scenario: Cambiar nombre de usuario por uno correcto
-  Given I navigate to page "http://localhost:3002/ghost/#/signin"
+  Given I navigate to page "http://localhost:2368/ghost/#/signin"
   And I wait for 5 seconds
   And I am logged
   And I wait for 5 seconds
@@ -60,7 +60,7 @@ Scenario: Cambiar nombre de usuario por uno correcto
 
 @user39 @web
 Scenario: Cambiar nombre de usuario por uno muy grande
-  Given I navigate to page "http://localhost:3002/ghost/#/signin"
+  Given I navigate to page "http://localhost:2368/ghost/#/signin"
   And I wait for 5 seconds
   And I am logged
   And I wait for 5 seconds
@@ -73,7 +73,7 @@ Scenario: Cambiar nombre de usuario por uno muy grande
 
 @user40 @web
 Scenario: Cambiar localizacion por una muy grande
-  Given I navigate to page "http://localhost:3002/ghost/#/signin"
+  Given I navigate to page "http://localhost:2368/ghost/#/signin"
   And I wait for 5 seconds
   And I am logged
   And I wait for 5 seconds
@@ -86,7 +86,7 @@ Scenario: Cambiar localizacion por una muy grande
 
 @user41 @web
 Scenario: Cambiar localizacion por una correcta
-  Given I navigate to page "http://localhost:3002/ghost/#/signin"
+  Given I navigate to page "http://localhost:2368/ghost/#/signin"
   And I wait for 5 seconds
   And I am logged
   And I wait for 5 seconds
@@ -106,7 +106,7 @@ Scenario: Cambiar localizacion por una correcta
 
 @user42 @web
 Scenario: Cambiar email por uno invalido
-  Given I navigate to page "http://localhost:3002/ghost/#/signin"
+  Given I navigate to page "http://localhost:2368/ghost/#/signin"
   And I wait for 5 seconds
   And I am logged
   And I wait for 5 seconds
@@ -119,7 +119,7 @@ Scenario: Cambiar email por uno invalido
 
 @user43 @web
 Scenario: Cambiar email por uno muy grande
-  Given I navigate to page "http://localhost:3002/ghost/#/signin"
+  Given I navigate to page "http://localhost:2368/ghost/#/signin"
   And I wait for 5 seconds
   And I am logged
   And I wait for 5 seconds
@@ -132,7 +132,7 @@ Scenario: Cambiar email por uno muy grande
 
 @user44 @web
 Scenario: Cambiar la url del website por una incorrecta
-  Given I navigate to page "http://localhost:3002/ghost/#/signin"
+  Given I navigate to page "http://localhost:2368/ghost/#/signin"
   And I wait for 5 seconds
   And I am logged
   And I wait for 5 seconds
@@ -145,7 +145,7 @@ Scenario: Cambiar la url del website por una incorrecta
 
 @user45 @web
 Scenario: Cambiar la url del website por una muy grande
-  Given I navigate to page "http://localhost:3002/ghost/#/signin"
+  Given I navigate to page "http://localhost:2368/ghost/#/signin"
   And I wait for 5 seconds
   And I am logged
   And I wait for 5 seconds
@@ -158,7 +158,7 @@ Scenario: Cambiar la url del website por una muy grande
 
 @user46 @web
 Scenario: Cambiar la url del website por una correcta
-  Given I navigate to page "http://localhost:3002/ghost/#/signin"
+  Given I navigate to page "http://localhost:2368/ghost/#/signin"
   And I wait for 5 seconds
   And I am logged
   And I wait for 5 seconds
@@ -178,7 +178,7 @@ Scenario: Cambiar la url del website por una correcta
 
 @user47 @web
 Scenario: Cambiar slug por uno correcto
-  Given I navigate to page "http://localhost:3002/ghost/#/signin"
+  Given I navigate to page "http://localhost:2368/ghost/#/signin"
   And I wait for 5 seconds
   And I am logged
   And I wait for 5 seconds
@@ -198,7 +198,7 @@ Scenario: Cambiar slug por uno correcto
 
 @user48 @web
 Scenario: Cambiar la url del perfil de Facebook con una url incorrecta
-  Given I navigate to page "http://localhost:3002/ghost/#/signin"
+  Given I navigate to page "http://localhost:2368/ghost/#/signin"
   And I wait for 5 seconds
   And I am logged
   And I wait for 5 seconds
@@ -210,7 +210,7 @@ Scenario: Cambiar la url del perfil de Facebook con una url incorrecta
 
 @user49 @web
 Scenario: Cambiar la url del perfil de Facebook con una url muy grande
-  Given I navigate to page "http://localhost:3002/ghost/#/signin"
+  Given I navigate to page "http://localhost:2368/ghost/#/signin"
   And I wait for 5 seconds
   And I am logged
   And I wait for 5 seconds
@@ -222,7 +222,7 @@ Scenario: Cambiar la url del perfil de Facebook con una url muy grande
 
 @user50 @web
 Scenario: Cambiar la url del perfil de Facebook con una url correcta
-  Given I navigate to page "http://localhost:3002/ghost/#/signin"
+  Given I navigate to page "http://localhost:2368/ghost/#/signin"
   And I wait for 5 seconds
   And I am logged
   And I wait for 5 seconds
@@ -242,7 +242,7 @@ Scenario: Cambiar la url del perfil de Facebook con una url correcta
 
 @user51 @web
 Scenario: Cambiar la url del perfil de Twitter con una url incorrecta
-  Given I navigate to page "http://localhost:3002/ghost/#/signin"
+  Given I navigate to page "http://localhost:2368/ghost/#/signin"
   And I wait for 5 seconds
   And I am logged
   And I wait for 5 seconds
@@ -254,7 +254,7 @@ Scenario: Cambiar la url del perfil de Twitter con una url incorrecta
 
 @user52 @web
 Scenario: Cambiar la url del perfil de Twitter con una url muy grande
-  Given I navigate to page "http://localhost:3002/ghost/#/signin"
+  Given I navigate to page "http://localhost:2368/ghost/#/signin"
   And I wait for 5 seconds
   And I am logged
   And I wait for 5 seconds
@@ -266,7 +266,7 @@ Scenario: Cambiar la url del perfil de Twitter con una url muy grande
 
 @user53 @web
 Scenario: Cambiar la url del perfil de Twitter con una url correcta
-  Given I navigate to page "http://localhost:3002/ghost/#/signin"
+  Given I navigate to page "http://localhost:2368/ghost/#/signin"
   And I wait for 5 seconds
   And I am logged
   And I wait for 5 seconds
@@ -286,7 +286,7 @@ Scenario: Cambiar la url del perfil de Twitter con una url correcta
 
 @user54 @web
 Scenario: Cambiar la bio y dejarla vacía
-  Given I navigate to page "http://localhost:3002/ghost/#/signin"
+  Given I navigate to page "http://localhost:2368/ghost/#/signin"
   And I wait for 5 seconds
   And I am logged
   And I wait for 5 seconds
@@ -304,7 +304,7 @@ Scenario: Cambiar la bio y dejarla vacía
 
 @user55 @web
 Scenario: Cambiar la bio con un tamaño muy grande
-  Given I navigate to page "http://localhost:3002/ghost/#/signin"
+  Given I navigate to page "http://localhost:2368/ghost/#/signin"
   And I wait for 5 seconds
   And I am logged
   And I wait for 5 seconds
@@ -316,7 +316,7 @@ Scenario: Cambiar la bio con un tamaño muy grande
 
 @user56 @web
 Scenario: Cambiar la bio del perfil de manera correcta
-  Given I navigate to page "http://localhost:3002/ghost/#/signin"
+  Given I navigate to page "http://localhost:2368/ghost/#/signin"
   And I wait for 5 seconds
   And I am logged
   And I wait for 5 seconds

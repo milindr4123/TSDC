@@ -2,7 +2,7 @@ Feature: General settings modify
 
 @user30 @web
 Scenario: Como usuario agrego una recomendación de la aplicación y luego la elimino
-    Given I navigate to page "http://localhost:3002/ghost/#/signin"
+    Given I navigate to page "http://localhost:2368/ghost/#/signin"
     When I am logged
     And I wait for 2 seconds
     And I navigate to general settings

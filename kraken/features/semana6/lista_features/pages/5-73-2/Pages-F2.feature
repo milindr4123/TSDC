@@ -2,7 +2,7 @@ Feature: Creación, Edición, Publicación, Despublicación y Eliminación de un
 
 @user1 @web
 Scenario: As a user, I create, edit and view a page.
-  Given I navigate to page "http://localhost:3002/ghost/#/signin"
+  Given I navigate to page "http://localhost:2368/ghost/#/signin"
   And   I wait for 5 seconds
   And  I am logged
   And   I wait for 2 seconds

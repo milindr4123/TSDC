@@ -2,7 +2,7 @@ Feature: CRUD of Tags
   
 @user1 @web
 Scenario: Como usuario creo un nuevo tag publico e interno
-  Given I navigate to page "http://localhost:3001/ghost/#/signin"
+  Given I navigate to page "http://localhost:2368/ghost/#/signin"
   And I am logged with version 3
   And I wait for 5 seconds
   And I navigate to tags section
@@ -20,7 +20,7 @@ Scenario: Como usuario creo un nuevo tag publico e interno
 
 @user2 @web
 Scenario: Como usuario edito un tag publico e interno
-  Given I navigate to page "http://localhost:3001/ghost/#/signin"
+  Given I navigate to page "http://localhost:2368/ghost/#/signin"
   And I am logged with version 3
   And I wait for 5 seconds
   And I navigate to tags section
@@ -40,7 +40,7 @@ Scenario: Como usuario edito un tag publico e interno
 
 @user3 @web
 Scenario: Como usuario creo un tag y lo asigno a una publicacion
-  Given I navigate to page "http://localhost:3001/ghost/#/signin"
+  Given I navigate to page "http://localhost:2368/ghost/#/signin"
   And I am logged with version 3
   And I wait for 5 seconds
   And I navigate to tags section
@@ -60,7 +60,7 @@ Scenario: Como usuario creo un tag y lo asigno a una publicacion
 
 @user4 @web
 Scenario: Como usuario creo un tag, lo edito y lo elimino
-  Given I navigate to page "http://localhost:3001/ghost/#/signin"
+  Given I navigate to page "http://localhost:2368/ghost/#/signin"
   And I am logged with version 3
   And I wait for 5 seconds
   And I navigate to tags section

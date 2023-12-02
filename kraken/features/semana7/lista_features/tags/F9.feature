@@ -2,7 +2,7 @@ Feature: CRUD of tags
 
 @user9 @web
 Scenario: Como usuario creo y edito un nuevo tag interno y lo visualizo
-    Given I navigate to page "http://localhost:3002/ghost/#/signin"
+    Given I navigate to page "http://localhost:2368/ghost/#/signin"
     When I am logged
     And I wait for 2 seconds
     And I navigate to tags section

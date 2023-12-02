@@ -2,7 +2,7 @@ Feature: CRUD of members
 
 @user1 @web
 Scenario: Como usuario creo un nuevo miembro solo con correo y nombre
-  Given I navigate to page "http://localhost:3002/ghost/#/signin"
+  Given I navigate to page "http://localhost:2368/ghost/#/signin"
   And I am logged
   And I wait for 4 seconds
   And I navigate to members section
@@ -13,7 +13,7 @@ Scenario: Como usuario creo un nuevo miembro solo con correo y nombre
 
 @user2 @web
 Scenario: Como usuario creo un nuevo miembro llenando todos los campos
-  Given I navigate to page "http://localhost:3002/ghost/#/signin"
+  Given I navigate to page "http://localhost:2368/ghost/#/signin"
   And I am logged
   And I wait for 4 seconds
   And I navigate to members section
@@ -23,7 +23,7 @@ Scenario: Como usuario creo un nuevo miembro llenando todos los campos
   
 @user3 @web
 Scenario: Como usuario edito un miembro cambiando todos los campos
-  Given I navigate to page "http://localhost:3002/ghost/#/signin"
+  Given I navigate to page "http://localhost:2368/ghost/#/signin"
   And I am logged
   And I wait for 5 seconds
   And I navigate to members section
@@ -34,7 +34,7 @@ Scenario: Como usuario edito un miembro cambiando todos los campos
   
 @user4 @web
 Scenario: Como usuario creo, edito, y elimino un miembro
-  Given I navigate to page "http://localhost:3002/ghost/#/signin"
+  Given I navigate to page "http://localhost:2368/ghost/#/signin"
   And I am logged
   And I wait for 5 seconds
   And I navigate to members section
@@ -51,7 +51,7 @@ Scenario: Como usuario creo, edito, y elimino un miembro
 
 @user5 @web
 Scenario: Como usuario elimino un miembro
-  Given I navigate to page "http://localhost:3002/ghost/#/signin"
+  Given I navigate to page "http://localhost:2368/ghost/#/signin"
   And I am logged
   And I wait for 5 seconds
   And I navigate to members section
