@@ -4,39 +4,39 @@ report({
     {
       "pair": {
         "reference": "..\\bitmaps_reference\\backstop_default_As_a_user_I_create_and_view_a_post_0png_0_document_0_default.png",
-        "test": "..\\bitmaps_test\\20231201-170641\\backstop_default_As_a_user_I_create_and_view_a_post_0png_0_document_0_default.png",
+        "test": "..\\bitmaps_test\\20231202-103349\\backstop_default_As_a_user_I_create_and_view_a_post_0png_0_document_0_default.png",
         "selector": "document",
         "fileName": "backstop_default_As_a_user_I_create_and_view_a_post_0png_0_document_0_default.png",
         "label": "As a user, I create and view a post._0.png",
         "misMatchThreshold": 0.1,
         "url": "http://127.0.0.1:8080/F3-S1-version-5/As a user, I create and view a post._0.png",
-        "referenceUrl": "C:\\Users\\ASUS\\Desktop\\Uniandes\\Ciclo 2\\PruebasAutomatizadas\\repoProyecto\\TSDC\\kraken\\reports\\F3-S1-version-3\\As a user, I create and view a post._0.png",
+        "referenceUrl": "C:/Users/ASUS/Desktop/Uniandes/Ciclo 2/PruebasAutomatizadas/repoProyecto/TSDC/kraken/reports/F3-S1-version-3/As a user, I create and view a post._0.png",
         "expect": 0,
         "viewportLabel": "default",
         "diff": {
           "isSameDimensions": false,
           "dimensionDifference": {
-            "width": -400,
-            "height": -300
+            "width": 400,
+            "height": 300
           },
-          "rawMisMatchPercentage": 0.5718518518518518,
-          "misMatchPercentage": "0.57",
-          "analysisTime": 179
+          "rawMisMatchPercentage": 1.8755555555555556,
+          "misMatchPercentage": "1.88",
+          "analysisTime": 160
         },
-        "diffImage": "..\\bitmaps_test\\20231201-170641\\failed_diff_backstop_default_As_a_user_I_create_and_view_a_post_0png_0_document_0_default.png"
+        "diffImage": "..\\bitmaps_test\\20231202-103349\\failed_diff_backstop_default_As_a_user_I_create_and_view_a_post_0png_0_document_0_default.png"
       },
       "status": "fail"
     },
     {
       "pair": {
         "reference": "..\\bitmaps_reference\\backstop_default_As_a_user_I_create_and_view_a_post_1png_0_document_0_default.png",
-        "test": "..\\bitmaps_test\\20231201-170641\\backstop_default_As_a_user_I_create_and_view_a_post_1png_0_document_0_default.png",
+        "test": "..\\bitmaps_test\\20231202-103349\\backstop_default_As_a_user_I_create_and_view_a_post_1png_0_document_0_default.png",
         "selector": "document",
         "fileName": "backstop_default_As_a_user_I_create_and_view_a_post_1png_0_document_0_default.png",
         "label": "As a user, I create and view a post._1.png",
         "misMatchThreshold": 0.1,
         "url": "http://127.0.0.1:8080/F3-S1-version-5/As a user, I create and view a post._1.png",
-        "referenceUrl": "C:\\Users\\ASUS\\Desktop\\Uniandes\\Ciclo 2\\PruebasAutomatizadas\\repoProyecto\\TSDC\\kraken\\reports\\F3-S1-version-3\\As a user, I create and view a post._1.png",
+        "referenceUrl": "C:/Users/ASUS/Desktop/Uniandes/Ciclo 2/PruebasAutomatizadas/repoProyecto/TSDC/kraken/reports/F3-S1-version-3/As a user, I create and view a post._1.png",
         "expect": 0,
         "viewportLabel": "default",
         "diff": {
@@ -45,24 +45,24 @@ report({
             "width": -400,
             "height": -300
           },
-          "rawMisMatchPercentage": 35.66888888888889,
-          "misMatchPercentage": "35.67",
-          "analysisTime": 138
+          "rawMisMatchPercentage": 35.97342592592593,
+          "misMatchPercentage": "35.97",
+          "analysisTime": 233
         },
-        "diffImage": "..\\bitmaps_test\\20231201-170641\\failed_diff_backstop_default_As_a_user_I_create_and_view_a_post_1png_0_document_0_default.png"
+        "diffImage": "..\\bitmaps_test\\20231202-103349\\failed_diff_backstop_default_As_a_user_I_create_and_view_a_post_1png_0_document_0_default.png"
       },
       "status": "fail"
     },
     {
       "pair": {
         "reference": "..\\bitmaps_reference\\backstop_default_As_a_user_I_create_and_view_a_post_10png_0_document_0_default.png",
-        "test": "..\\bitmaps_test\\20231201-170641\\backstop_default_As_a_user_I_create_and_view_a_post_10png_0_document_0_default.png",
+        "test": "..\\bitmaps_test\\20231202-103349\\backstop_default_As_a_user_I_create_and_view_a_post_10png_0_document_0_default.png",
         "selector": "document",
         "fileName": "backstop_default_As_a_user_I_create_and_view_a_post_10png_0_document_0_default.png",
         "label": "As a user, I create and view a post._10.png",
         "misMatchThreshold": 0.1,
         "url": "http://127.0.0.1:8080/F3-S1-version-5/As a user, I create and view a post._10.png",
-        "referenceUrl": "C:\\Users\\ASUS\\Desktop\\Uniandes\\Ciclo 2\\PruebasAutomatizadas\\repoProyecto\\TSDC\\kraken\\reports\\F3-S1-version-3\\As a user, I create and view a post._10.png",
+        "referenceUrl": "C:/Users/ASUS/Desktop/Uniandes/Ciclo 2/PruebasAutomatizadas/repoProyecto/TSDC/kraken/reports/F3-S1-version-3/As a user, I create and view a post._10.png",
         "expect": 0,
         "viewportLabel": "default",
         "diff": {
@@ -71,24 +71,24 @@ report({
             "width": -400,
             "height": -300
           },
-          "rawMisMatchPercentage": 3.1012962962962964,
-          "misMatchPercentage": "3.10",
-          "analysisTime": 185
+          "rawMisMatchPercentage": 4.380833333333333,
+          "misMatchPercentage": "4.38",
+          "analysisTime": 222
         },
-        "diffImage": "..\\bitmaps_test\\20231201-170641\\failed_diff_backstop_default_As_a_user_I_create_and_view_a_post_10png_0_document_0_default.png"
+        "diffImage": "..\\bitmaps_test\\20231202-103349\\failed_diff_backstop_default_As_a_user_I_create_and_view_a_post_10png_0_document_0_default.png"
       },
       "status": "fail"
     },
     {
       "pair": {
         "reference": "..\\bitmaps_reference\\backstop_default_As_a_user_I_create_and_view_a_post_11png_0_document_0_default.png",
-        "test": "..\\bitmaps_test\\20231201-170641\\backstop_default_As_a_user_I_create_and_view_a_post_11png_0_document_0_default.png",
+        "test": "..\\bitmaps_test\\20231202-103349\\backstop_default_As_a_user_I_create_and_view_a_post_11png_0_document_0_default.png",
         "selector": "document",
         "fileName": "backstop_default_As_a_user_I_create_and_view_a_post_11png_0_document_0_default.png",
         "label": "As a user, I create and view a post._11.png",
         "misMatchThreshold": 0.1,
         "url": "http://127.0.0.1:8080/F3-S1-version-5/As a user, I create and view a post._11.png",
-        "referenceUrl": "C:\\Users\\ASUS\\Desktop\\Uniandes\\Ciclo 2\\PruebasAutomatizadas\\repoProyecto\\TSDC\\kraken\\reports\\F3-S1-version-3\\As a user, I create and view a post._11.png",
+        "referenceUrl": "C:/Users/ASUS/Desktop/Uniandes/Ciclo 2/PruebasAutomatizadas/repoProyecto/TSDC/kraken/reports/F3-S1-version-3/As a user, I create and view a post._11.png",
         "expect": 0,
         "viewportLabel": "default",
         "diff": {
@@ -97,24 +97,24 @@ report({
             "width": -760,
             "height": -300
           },
-          "rawMisMatchPercentage": 0.6051282051282051,
-          "misMatchPercentage": "0.61",
-          "analysisTime": 213
+          "rawMisMatchPercentage": 0.8494301994301994,
+          "misMatchPercentage": "0.85",
+          "analysisTime": 237
         },
-        "diffImage": "..\\bitmaps_test\\20231201-170641\\failed_diff_backstop_default_As_a_user_I_create_and_view_a_post_11png_0_document_0_default.png"
+        "diffImage": "..\\bitmaps_test\\20231202-103349\\failed_diff_backstop_default_As_a_user_I_create_and_view_a_post_11png_0_document_0_default.png"
       },
       "status": "fail"
     },
     {
       "pair": {
         "reference": "..\\bitmaps_reference\\backstop_default_As_a_user_I_create_and_view_a_post_12png_0_document_0_default.png",
-        "test": "..\\bitmaps_test\\20231201-170641\\backstop_default_As_a_user_I_create_and_view_a_post_12png_0_document_0_default.png",
+        "test": "..\\bitmaps_test\\20231202-103349\\backstop_default_As_a_user_I_create_and_view_a_post_12png_0_document_0_default.png",
         "selector": "document",
         "fileName": "backstop_default_As_a_user_I_create_and_view_a_post_12png_0_document_0_default.png",
         "label": "As a user, I create and view a post._12.png",
         "misMatchThreshold": 0.1,
         "url": "http://127.0.0.1:8080/F3-S1-version-5/As a user, I create and view a post._12.png",
-        "referenceUrl": "C:\\Users\\ASUS\\Desktop\\Uniandes\\Ciclo 2\\PruebasAutomatizadas\\repoProyecto\\TSDC\\kraken\\reports\\F3-S1-version-3\\As a user, I create and view a post._12.png",
+        "referenceUrl": "C:/Users/ASUS/Desktop/Uniandes/Ciclo 2/PruebasAutomatizadas/repoProyecto/TSDC/kraken/reports/F3-S1-version-3/As a user, I create and view a post._12.png",
         "expect": 0,
         "viewportLabel": "default",
         "diff": {
@@ -123,24 +123,24 @@ report({
             "width": -760,
             "height": -300
           },
-          "rawMisMatchPercentage": 0.6051282051282051,
-          "misMatchPercentage": "0.61",
-          "analysisTime": 152
+          "rawMisMatchPercentage": 0.8467236467236468,
+          "misMatchPercentage": "0.85",
+          "analysisTime": 130
         },
-        "diffImage": "..\\bitmaps_test\\20231201-170641\\failed_diff_backstop_default_As_a_user_I_create_and_view_a_post_12png_0_document_0_default.png"
+        "diffImage": "..\\bitmaps_test\\20231202-103349\\failed_diff_backstop_default_As_a_user_I_create_and_view_a_post_12png_0_document_0_default.png"
       },
       "status": "fail"
     },
     {
       "pair": {
         "reference": "..\\bitmaps_reference\\backstop_default_As_a_user_I_create_and_view_a_post_13png_0_document_0_default.png",
-        "test": "..\\bitmaps_test\\20231201-170641\\backstop_default_As_a_user_I_create_and_view_a_post_13png_0_document_0_default.png",
+        "test": "..\\bitmaps_test\\20231202-103349\\backstop_default_As_a_user_I_create_and_view_a_post_13png_0_document_0_default.png",
         "selector": "document",
         "fileName": "backstop_default_As_a_user_I_create_and_view_a_post_13png_0_document_0_default.png",
         "label": "As a user, I create and view a post._13.png",
         "misMatchThreshold": 0.1,
         "url": "http://127.0.0.1:8080/F3-S1-version-5/As a user, I create and view a post._13.png",
-        "referenceUrl": "C:\\Users\\ASUS\\Desktop\\Uniandes\\Ciclo 2\\PruebasAutomatizadas\\repoProyecto\\TSDC\\kraken\\reports\\F3-S1-version-3\\As a user, I create and view a post._13.png",
+        "referenceUrl": "C:/Users/ASUS/Desktop/Uniandes/Ciclo 2/PruebasAutomatizadas/repoProyecto/TSDC/kraken/reports/F3-S1-version-3/As a user, I create and view a post._13.png",
         "expect": 0,
         "viewportLabel": "default",
         "diff": {
@@ -149,24 +149,24 @@ report({
             "width": -760,
             "height": -300
           },
-          "rawMisMatchPercentage": 0.5575498575498575,
-          "misMatchPercentage": "0.56",
-          "analysisTime": 223
+          "rawMisMatchPercentage": 0.7908831908831909,
+          "misMatchPercentage": "0.79",
+          "analysisTime": 226
         },
-        "diffImage": "..\\bitmaps_test\\20231201-170641\\failed_diff_backstop_default_As_a_user_I_create_and_view_a_post_13png_0_document_0_default.png"
+        "diffImage": "..\\bitmaps_test\\20231202-103349\\failed_diff_backstop_default_As_a_user_I_create_and_view_a_post_13png_0_document_0_default.png"
       },
       "status": "fail"
     },
     {
       "pair": {
         "reference": "..\\bitmaps_reference\\backstop_default_As_a_user_I_create_and_view_a_post_14png_0_document_0_default.png",
-        "test": "..\\bitmaps_test\\20231201-170641\\backstop_default_As_a_user_I_create_and_view_a_post_14png_0_document_0_default.png",
+        "test": "..\\bitmaps_test\\20231202-103349\\backstop_default_As_a_user_I_create_and_view_a_post_14png_0_document_0_default.png",
         "selector": "document",
         "fileName": "backstop_default_As_a_user_I_create_and_view_a_post_14png_0_document_0_default.png",
         "label": "As a user, I create and view a post._14.png",
         "misMatchThreshold": 0.1,
         "url": "http://127.0.0.1:8080/F3-S1-version-5/As a user, I create and view a post._14.png",
-        "referenceUrl": "C:\\Users\\ASUS\\Desktop\\Uniandes\\Ciclo 2\\PruebasAutomatizadas\\repoProyecto\\TSDC\\kraken\\reports\\F3-S1-version-3\\As a user, I create and view a post._14.png",
+        "referenceUrl": "C:/Users/ASUS/Desktop/Uniandes/Ciclo 2/PruebasAutomatizadas/repoProyecto/TSDC/kraken/reports/F3-S1-version-3/As a user, I create and view a post._14.png",
         "expect": 0,
         "viewportLabel": "default",
         "diff": {
@@ -175,24 +175,24 @@ report({
             "width": -760,
             "height": -300
           },
-          "rawMisMatchPercentage": 0.5575498575498575,
-          "misMatchPercentage": "0.56",
-          "analysisTime": 240
+          "rawMisMatchPercentage": 0.7908831908831909,
+          "misMatchPercentage": "0.79",
+          "analysisTime": 237
         },
-        "diffImage": "..\\bitmaps_test\\20231201-170641\\failed_diff_backstop_default_As_a_user_I_create_and_view_a_post_14png_0_document_0_default.png"
+        "diffImage": "..\\bitmaps_test\\20231202-103349\\failed_diff_backstop_default_As_a_user_I_create_and_view_a_post_14png_0_document_0_default.png"
       },
       "status": "fail"
     },
     {
       "pair": {
         "reference": "..\\bitmaps_reference\\backstop_default_As_a_user_I_create_and_view_a_post_15png_0_document_0_default.png",
-        "test": "..\\bitmaps_test\\20231201-170641\\backstop_default_As_a_user_I_create_and_view_a_post_15png_0_document_0_default.png",
+        "test": "..\\bitmaps_test\\20231202-103349\\backstop_default_As_a_user_I_create_and_view_a_post_15png_0_document_0_default.png",
         "selector": "document",
         "fileName": "backstop_default_As_a_user_I_create_and_view_a_post_15png_0_document_0_default.png",
         "label": "As a user, I create and view a post._15.png",
         "misMatchThreshold": 0.1,
         "url": "http://127.0.0.1:8080/F3-S1-version-5/As a user, I create and view a post._15.png",
-        "referenceUrl": "C:\\Users\\ASUS\\Desktop\\Uniandes\\Ciclo 2\\PruebasAutomatizadas\\repoProyecto\\TSDC\\kraken\\reports\\F3-S1-version-3\\As a user, I create and view a post._15.png",
+        "referenceUrl": "C:/Users/ASUS/Desktop/Uniandes/Ciclo 2/PruebasAutomatizadas/repoProyecto/TSDC/kraken/reports/F3-S1-version-3/As a user, I create and view a post._15.png",
         "expect": 0,
         "viewportLabel": "default",
         "diff": {
@@ -201,24 +201,24 @@ report({
             "width": -400,
             "height": -300
           },
-          "rawMisMatchPercentage": 3.1377777777777776,
-          "misMatchPercentage": "3.14",
-          "analysisTime": 149
+          "rawMisMatchPercentage": 4.40712962962963,
+          "misMatchPercentage": "4.41",
+          "analysisTime": 227
         },
-        "diffImage": "..\\bitmaps_test\\20231201-170641\\failed_diff_backstop_default_As_a_user_I_create_and_view_a_post_15png_0_document_0_default.png"
+        "diffImage": "..\\bitmaps_test\\20231202-103349\\failed_diff_backstop_default_As_a_user_I_create_and_view_a_post_15png_0_document_0_default.png"
       },
       "status": "fail"
     },
     {
       "pair": {
         "reference": "..\\bitmaps_reference\\backstop_default_As_a_user_I_create_and_view_a_post_16png_0_document_0_default.png",
-        "test": "..\\bitmaps_test\\20231201-170641\\backstop_default_As_a_user_I_create_and_view_a_post_16png_0_document_0_default.png",
+        "test": "..\\bitmaps_test\\20231202-103349\\backstop_default_As_a_user_I_create_and_view_a_post_16png_0_document_0_default.png",
         "selector": "document",
         "fileName": "backstop_default_As_a_user_I_create_and_view_a_post_16png_0_document_0_default.png",
         "label": "As a user, I create and view a post._16.png",
         "misMatchThreshold": 0.1,
         "url": "http://127.0.0.1:8080/F3-S1-version-5/As a user, I create and view a post._16.png",
-        "referenceUrl": "C:\\Users\\ASUS\\Desktop\\Uniandes\\Ciclo 2\\PruebasAutomatizadas\\repoProyecto\\TSDC\\kraken\\reports\\F3-S1-version-3\\As a user, I create and view a post._16.png",
+        "referenceUrl": "C:/Users/ASUS/Desktop/Uniandes/Ciclo 2/PruebasAutomatizadas/repoProyecto/TSDC/kraken/reports/F3-S1-version-3/As a user, I create and view a post._16.png",
         "expect": 0,
         "viewportLabel": "default",
         "diff": {
@@ -227,24 +227,24 @@ report({
             "width": -400,
             "height": -300
           },
-          "rawMisMatchPercentage": 3.1168518518518518,
-          "misMatchPercentage": "3.12",
-          "analysisTime": 159
+          "rawMisMatchPercentage": 4.386203703703704,
+          "misMatchPercentage": "4.39",
+          "analysisTime": 144
         },
-        "diffImage": "..\\bitmaps_test\\20231201-170641\\failed_diff_backstop_default_As_a_user_I_create_and_view_a_post_16png_0_document_0_default.png"
+        "diffImage": "..\\bitmaps_test\\20231202-103349\\failed_diff_backstop_default_As_a_user_I_create_and_view_a_post_16png_0_document_0_default.png"
       },
       "status": "fail"
     },
     {
       "pair": {
         "reference": "..\\bitmaps_reference\\backstop_default_As_a_user_I_create_and_view_a_post_17png_0_document_0_default.png",
-        "test": "..\\bitmaps_test\\20231201-170641\\backstop_default_As_a_user_I_create_and_view_a_post_17png_0_document_0_default.png",
+        "test": "..\\bitmaps_test\\20231202-103349\\backstop_default_As_a_user_I_create_and_view_a_post_17png_0_document_0_default.png",
         "selector": "document",
         "fileName": "backstop_default_As_a_user_I_create_and_view_a_post_17png_0_document_0_default.png",
         "label": "As a user, I create and view a post._17.png",
         "misMatchThreshold": 0.1,
         "url": "http://127.0.0.1:8080/F3-S1-version-5/As a user, I create and view a post._17.png",
-        "referenceUrl": "C:\\Users\\ASUS\\Desktop\\Uniandes\\Ciclo 2\\PruebasAutomatizadas\\repoProyecto\\TSDC\\kraken\\reports\\F3-S1-version-3\\As a user, I create and view a post._17.png",
+        "referenceUrl": "C:/Users/ASUS/Desktop/Uniandes/Ciclo 2/PruebasAutomatizadas/repoProyecto/TSDC/kraken/reports/F3-S1-version-3/As a user, I create and view a post._17.png",
         "expect": 0,
         "viewportLabel": "default",
         "diff": {
@@ -253,24 +253,24 @@ report({
             "width": -760,
             "height": -300
           },
-          "rawMisMatchPercentage": 0.6300569800569801,
-          "misMatchPercentage": "0.63",
-          "analysisTime": 204
+          "rawMisMatchPercentage": 0.8977207977207977,
+          "misMatchPercentage": "0.90",
+          "analysisTime": 268
         },
-        "diffImage": "..\\bitmaps_test\\20231201-170641\\failed_diff_backstop_default_As_a_user_I_create_and_view_a_post_17png_0_document_0_default.png"
+        "diffImage": "..\\bitmaps_test\\20231202-103349\\failed_diff_backstop_default_As_a_user_I_create_and_view_a_post_17png_0_document_0_default.png"
       },
       "status": "fail"
     },
     {
       "pair": {
         "reference": "..\\bitmaps_reference\\backstop_default_As_a_user_I_create_and_view_a_post_2png_0_document_0_default.png",
-        "test": "..\\bitmaps_test\\20231201-170641\\backstop_default_As_a_user_I_create_and_view_a_post_2png_0_document_0_default.png",
+        "test": "..\\bitmaps_test\\20231202-103349\\backstop_default_As_a_user_I_create_and_view_a_post_2png_0_document_0_default.png",
         "selector": "document",
         "fileName": "backstop_default_As_a_user_I_create_and_view_a_post_2png_0_document_0_default.png",
         "label": "As a user, I create and view a post._2.png",
         "misMatchThreshold": 0.1,
         "url": "http://127.0.0.1:8080/F3-S1-version-5/As a user, I create and view a post._2.png",
-        "referenceUrl": "C:\\Users\\ASUS\\Desktop\\Uniandes\\Ciclo 2\\PruebasAutomatizadas\\repoProyecto\\TSDC\\kraken\\reports\\F3-S1-version-3\\As a user, I create and view a post._2.png",
+        "referenceUrl": "C:/Users/ASUS/Desktop/Uniandes/Ciclo 2/PruebasAutomatizadas/repoProyecto/TSDC/kraken/reports/F3-S1-version-3/As a user, I create and view a post._2.png",
         "expect": 0,
         "viewportLabel": "default",
         "diff": {
@@ -279,24 +279,24 @@ report({
             "width": -400,
             "height": -300
           },
-          "rawMisMatchPercentage": 35.669074074074075,
-          "misMatchPercentage": "35.67",
-          "analysisTime": 95
+          "rawMisMatchPercentage": 35.9675,
+          "misMatchPercentage": "35.97",
+          "analysisTime": 135
         },
-        "diffImage": "..\\bitmaps_test\\20231201-170641\\failed_diff_backstop_default_As_a_user_I_create_and_view_a_post_2png_0_document_0_default.png"
+        "diffImage": "..\\bitmaps_test\\20231202-103349\\failed_diff_backstop_default_As_a_user_I_create_and_view_a_post_2png_0_document_0_default.png"
       },
       "status": "fail"
     },
     {
       "pair": {
         "reference": "..\\bitmaps_reference\\backstop_default_As_a_user_I_create_and_view_a_post_3png_0_document_0_default.png",
-        "test": "..\\bitmaps_test\\20231201-170641\\backstop_default_As_a_user_I_create_and_view_a_post_3png_0_document_0_default.png",
+        "test": "..\\bitmaps_test\\20231202-103349\\backstop_default_As_a_user_I_create_and_view_a_post_3png_0_document_0_default.png",
         "selector": "document",
         "fileName": "backstop_default_As_a_user_I_create_and_view_a_post_3png_0_document_0_default.png",
         "label": "As a user, I create and view a post._3.png",
         "misMatchThreshold": 0.1,
         "url": "http://127.0.0.1:8080/F3-S1-version-5/As a user, I create and view a post._3.png",
-        "referenceUrl": "C:\\Users\\ASUS\\Desktop\\Uniandes\\Ciclo 2\\PruebasAutomatizadas\\repoProyecto\\TSDC\\kraken\\reports\\F3-S1-version-3\\As a user, I create and view a post._3.png",
+        "referenceUrl": "C:/Users/ASUS/Desktop/Uniandes/Ciclo 2/PruebasAutomatizadas/repoProyecto/TSDC/kraken/reports/F3-S1-version-3/As a user, I create and view a post._3.png",
         "expect": 0,
         "viewportLabel": "default",
         "diff": {
@@ -305,24 +305,24 @@ report({
             "width": -400,
             "height": -300
           },
-          "rawMisMatchPercentage": 3.1216666666666666,
-          "misMatchPercentage": "3.12",
-          "analysisTime": 134
+          "rawMisMatchPercentage": 4.4067592592592595,
+          "misMatchPercentage": "4.41",
+          "analysisTime": 132
         },
-        "diffImage": "..\\bitmaps_test\\20231201-170641\\failed_diff_backstop_default_As_a_user_I_create_and_view_a_post_3png_0_document_0_default.png"
+        "diffImage": "..\\bitmaps_test\\20231202-103349\\failed_diff_backstop_default_As_a_user_I_create_and_view_a_post_3png_0_document_0_default.png"
       },
       "status": "fail"
     },
     {
       "pair": {
         "reference": "..\\bitmaps_reference\\backstop_default_As_a_user_I_create_and_view_a_post_4png_0_document_0_default.png",
-        "test": "..\\bitmaps_test\\20231201-170641\\backstop_default_As_a_user_I_create_and_view_a_post_4png_0_document_0_default.png",
+        "test": "..\\bitmaps_test\\20231202-103349\\backstop_default_As_a_user_I_create_and_view_a_post_4png_0_document_0_default.png",
         "selector": "document",
         "fileName": "backstop_default_As_a_user_I_create_and_view_a_post_4png_0_document_0_default.png",
         "label": "As a user, I create and view a post._4.png",
         "misMatchThreshold": 0.1,
         "url": "http://127.0.0.1:8080/F3-S1-version-5/As a user, I create and view a post._4.png",
-        "referenceUrl": "C:\\Users\\ASUS\\Desktop\\Uniandes\\Ciclo 2\\PruebasAutomatizadas\\repoProyecto\\TSDC\\kraken\\reports\\F3-S1-version-3\\As a user, I create and view a post._4.png",
+        "referenceUrl": "C:/Users/ASUS/Desktop/Uniandes/Ciclo 2/PruebasAutomatizadas/repoProyecto/TSDC/kraken/reports/F3-S1-version-3/As a user, I create and view a post._4.png",
         "expect": 0,
         "viewportLabel": "default",
         "diff": {
@@ -331,24 +331,24 @@ report({
             "width": -400,
             "height": -300
           },
-          "rawMisMatchPercentage": 3.1216666666666666,
-          "misMatchPercentage": "3.12",
-          "analysisTime": 92
+          "rawMisMatchPercentage": 4.4067592592592595,
+          "misMatchPercentage": "4.41",
+          "analysisTime": 201
         },
-        "diffImage": "..\\bitmaps_test\\20231201-170641\\failed_diff_backstop_default_As_a_user_I_create_and_view_a_post_4png_0_document_0_default.png"
+        "diffImage": "..\\bitmaps_test\\20231202-103349\\failed_diff_backstop_default_As_a_user_I_create_and_view_a_post_4png_0_document_0_default.png"
       },
       "status": "fail"
     },
     {
       "pair": {
         "reference": "..\\bitmaps_reference\\backstop_default_As_a_user_I_create_and_view_a_post_5png_0_document_0_default.png",
-        "test": "..\\bitmaps_test\\20231201-170641\\backstop_default_As_a_user_I_create_and_view_a_post_5png_0_document_0_default.png",
+        "test": "..\\bitmaps_test\\20231202-103349\\backstop_default_As_a_user_I_create_and_view_a_post_5png_0_document_0_default.png",
         "selector": "document",
         "fileName": "backstop_default_As_a_user_I_create_and_view_a_post_5png_0_document_0_default.png",
         "label": "As a user, I create and view a post._5.png",
         "misMatchThreshold": 0.1,
         "url": "http://127.0.0.1:8080/F3-S1-version-5/As a user, I create and view a post._5.png",
-        "referenceUrl": "C:\\Users\\ASUS\\Desktop\\Uniandes\\Ciclo 2\\PruebasAutomatizadas\\repoProyecto\\TSDC\\kraken\\reports\\F3-S1-version-3\\As a user, I create and view a post._5.png",
+        "referenceUrl": "C:/Users/ASUS/Desktop/Uniandes/Ciclo 2/PruebasAutomatizadas/repoProyecto/TSDC/kraken/reports/F3-S1-version-3/As a user, I create and view a post._5.png",
         "expect": 0,
         "viewportLabel": "default",
         "diff": {
@@ -357,24 +357,24 @@ report({
             "width": -760,
             "height": -300
           },
-          "rawMisMatchPercentage": 0.6037037037037037,
-          "misMatchPercentage": "0.60",
-          "analysisTime": 170
+          "rawMisMatchPercentage": 0.848005698005698,
+          "misMatchPercentage": "0.85",
+          "analysisTime": 141
         },
-        "diffImage": "..\\bitmaps_test\\20231201-170641\\failed_diff_backstop_default_As_a_user_I_create_and_view_a_post_5png_0_document_0_default.png"
+        "diffImage": "..\\bitmaps_test\\20231202-103349\\failed_diff_backstop_default_As_a_user_I_create_and_view_a_post_5png_0_document_0_default.png"
       },
       "status": "fail"
     },
     {
       "pair": {
         "reference": "..\\bitmaps_reference\\backstop_default_As_a_user_I_create_and_view_a_post_6png_0_document_0_default.png",
-        "test": "..\\bitmaps_test\\20231201-170641\\backstop_default_As_a_user_I_create_and_view_a_post_6png_0_document_0_default.png",
+        "test": "..\\bitmaps_test\\20231202-103349\\backstop_default_As_a_user_I_create_and_view_a_post_6png_0_document_0_default.png",
         "selector": "document",
         "fileName": "backstop_default_As_a_user_I_create_and_view_a_post_6png_0_document_0_default.png",
         "label": "As a user, I create and view a post._6.png",
         "misMatchThreshold": 0.1,
         "url": "http://127.0.0.1:8080/F3-S1-version-5/As a user, I create and view a post._6.png",
-        "referenceUrl": "C:\\Users\\ASUS\\Desktop\\Uniandes\\Ciclo 2\\PruebasAutomatizadas\\repoProyecto\\TSDC\\kraken\\reports\\F3-S1-version-3\\As a user, I create and view a post._6.png",
+        "referenceUrl": "C:/Users/ASUS/Desktop/Uniandes/Ciclo 2/PruebasAutomatizadas/repoProyecto/TSDC/kraken/reports/F3-S1-version-3/As a user, I create and view a post._6.png",
         "expect": 0,
         "viewportLabel": "default",
         "diff": {
@@ -383,24 +383,24 @@ report({
             "width": -760,
             "height": -300
           },
-          "rawMisMatchPercentage": 0.6037037037037037,
-          "misMatchPercentage": "0.60",
-          "analysisTime": 130
+          "rawMisMatchPercentage": 0.8452991452991453,
+          "misMatchPercentage": "0.85",
+          "analysisTime": 192
         },
-        "diffImage": "..\\bitmaps_test\\20231201-170641\\failed_diff_backstop_default_As_a_user_I_create_and_view_a_post_6png_0_document_0_default.png"
+        "diffImage": "..\\bitmaps_test\\20231202-103349\\failed_diff_backstop_default_As_a_user_I_create_and_view_a_post_6png_0_document_0_default.png"
       },
       "status": "fail"
     },
     {
       "pair": {
         "reference": "..\\bitmaps_reference\\backstop_default_As_a_user_I_create_and_view_a_post_7png_0_document_0_default.png",
-        "test": "..\\bitmaps_test\\20231201-170641\\backstop_default_As_a_user_I_create_and_view_a_post_7png_0_document_0_default.png",
+        "test": "..\\bitmaps_test\\20231202-103349\\backstop_default_As_a_user_I_create_and_view_a_post_7png_0_document_0_default.png",
         "selector": "document",
         "fileName": "backstop_default_As_a_user_I_create_and_view_a_post_7png_0_document_0_default.png",
         "label": "As a user, I create and view a post._7.png",
         "misMatchThreshold": 0.1,
         "url": "http://127.0.0.1:8080/F3-S1-version-5/As a user, I create and view a post._7.png",
-        "referenceUrl": "C:\\Users\\ASUS\\Desktop\\Uniandes\\Ciclo 2\\PruebasAutomatizadas\\repoProyecto\\TSDC\\kraken\\reports\\F3-S1-version-3\\As a user, I create and view a post._7.png",
+        "referenceUrl": "C:/Users/ASUS/Desktop/Uniandes/Ciclo 2/PruebasAutomatizadas/repoProyecto/TSDC/kraken/reports/F3-S1-version-3/As a user, I create and view a post._7.png",
         "expect": 0,
         "viewportLabel": "default",
         "diff": {
@@ -409,24 +409,24 @@ report({
             "width": -400,
             "height": -420
           },
-          "rawMisMatchPercentage": 0.8425653594771243,
-          "misMatchPercentage": "0.84",
-          "analysisTime": 137
+          "rawMisMatchPercentage": 1.802369281045752,
+          "misMatchPercentage": "1.80",
+          "analysisTime": 210
         },
-        "diffImage": "..\\bitmaps_test\\20231201-170641\\failed_diff_backstop_default_As_a_user_I_create_and_view_a_post_7png_0_document_0_default.png"
+        "diffImage": "..\\bitmaps_test\\20231202-103349\\failed_diff_backstop_default_As_a_user_I_create_and_view_a_post_7png_0_document_0_default.png"
       },
       "status": "fail"
     },
     {
       "pair": {
         "reference": "..\\bitmaps_reference\\backstop_default_As_a_user_I_create_and_view_a_post_8png_0_document_0_default.png",
-        "test": "..\\bitmaps_test\\20231201-170641\\backstop_default_As_a_user_I_create_and_view_a_post_8png_0_document_0_default.png",
+        "test": "..\\bitmaps_test\\20231202-103349\\backstop_default_As_a_user_I_create_and_view_a_post_8png_0_document_0_default.png",
         "selector": "document",
         "fileName": "backstop_default_As_a_user_I_create_and_view_a_post_8png_0_document_0_default.png",
         "label": "As a user, I create and view a post._8.png",
         "misMatchThreshold": 0.1,
         "url": "http://127.0.0.1:8080/F3-S1-version-5/As a user, I create and view a post._8.png",
-        "referenceUrl": "C:\\Users\\ASUS\\Desktop\\Uniandes\\Ciclo 2\\PruebasAutomatizadas\\repoProyecto\\TSDC\\kraken\\reports\\F3-S1-version-3\\As a user, I create and view a post._8.png",
+        "referenceUrl": "C:/Users/ASUS/Desktop/Uniandes/Ciclo 2/PruebasAutomatizadas/repoProyecto/TSDC/kraken/reports/F3-S1-version-3/As a user, I create and view a post._8.png",
         "expect": 0,
         "viewportLabel": "default",
         "diff": {
@@ -435,24 +435,24 @@ report({
             "width": -400,
             "height": -420
           },
-          "rawMisMatchPercentage": 0.8425653594771243,
-          "misMatchPercentage": "0.84",
-          "analysisTime": 142
+          "rawMisMatchPercentage": 1.802369281045752,
+          "misMatchPercentage": "1.80",
+          "analysisTime": 124
         },
-        "diffImage": "..\\bitmaps_test\\20231201-170641\\failed_diff_backstop_default_As_a_user_I_create_and_view_a_post_8png_0_document_0_default.png"
+        "diffImage": "..\\bitmaps_test\\20231202-103349\\failed_diff_backstop_default_As_a_user_I_create_and_view_a_post_8png_0_document_0_default.png"
       },
       "status": "fail"
     },
     {
       "pair": {
         "reference": "..\\bitmaps_reference\\backstop_default_As_a_user_I_create_and_view_a_post_9png_0_document_0_default.png",
-        "test": "..\\bitmaps_test\\20231201-170641\\backstop_default_As_a_user_I_create_and_view_a_post_9png_0_document_0_default.png",
+        "test": "..\\bitmaps_test\\20231202-103349\\backstop_default_As_a_user_I_create_and_view_a_post_9png_0_document_0_default.png",
         "selector": "document",
         "fileName": "backstop_default_As_a_user_I_create_and_view_a_post_9png_0_document_0_default.png",
         "label": "As a user, I create and view a post._9.png",
         "misMatchThreshold": 0.1,
         "url": "http://127.0.0.1:8080/F3-S1-version-5/As a user, I create and view a post._9.png",
-        "referenceUrl": "C:\\Users\\ASUS\\Desktop\\Uniandes\\Ciclo 2\\PruebasAutomatizadas\\repoProyecto\\TSDC\\kraken\\reports\\F3-S1-version-3\\As a user, I create and view a post._9.png",
+        "referenceUrl": "C:/Users/ASUS/Desktop/Uniandes/Ciclo 2/PruebasAutomatizadas/repoProyecto/TSDC/kraken/reports/F3-S1-version-3/As a user, I create and view a post._9.png",
         "expect": 0,
         "viewportLabel": "default",
         "diff": {
@@ -461,11 +461,11 @@ report({
             "width": -400,
             "height": -300
           },
-          "rawMisMatchPercentage": 3.1222222222222222,
-          "misMatchPercentage": "3.12",
-          "analysisTime": 132
+          "rawMisMatchPercentage": 4.400185185185186,
+          "misMatchPercentage": "4.40",
+          "analysisTime": 206
         },
-        "diffImage": "..\\bitmaps_test\\20231201-170641\\failed_diff_backstop_default_As_a_user_I_create_and_view_a_post_9png_0_document_0_default.png"
+        "diffImage": "..\\bitmaps_test\\20231202-103349\\failed_diff_backstop_default_As_a_user_I_create_and_view_a_post_9png_0_document_0_default.png"
       },
       "status": "fail"
     }

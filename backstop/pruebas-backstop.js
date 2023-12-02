@@ -2,8 +2,8 @@ const Backstop = require('backstopjs');
 const fs = require('fs');
 
 // Directorios que quieres comparar
-const testDir = 'C:\\Users\\ASUS\\Desktop\\Uniandes\\Ciclo 2\\PruebasAutomatizadas\\repoProyecto\\TSDC\\kraken\\reports\\F3-S2-version-5';
-const referenceDir = 'C:\\Users\\ASUS\\Desktop\\Uniandes\\Ciclo 2\\PruebasAutomatizadas\\repoProyecto\\TSDC\\kraken\\reports\\F3-S2-version-3';
+const testDir = 'C:/Users/ASUS/Desktop/Uniandes/Ciclo 2/PruebasAutomatizadas/repoProyecto/TSDC/kraken/reports/F3-S2-version-5';
+const referenceDir = 'C:/Users/ASUS/Desktop/Uniandes/Ciclo 2/PruebasAutomatizadas/repoProyecto/TSDC/kraken/reports/F3-S2-version-3';
 // Rutas para archivos temporales de Backstop
 const referencePath = './backstop_data/bitmaps_reference';
 const testPath = './backstop_data/bitmaps_test';
@@ -25,7 +25,7 @@ fs.readdirSync(referenceDir).forEach(file => {
         });
         scenarios.push({
             "label": file,
-            "referenceUrl": "C:\\Users\\ASUS\\Desktop\\Uniandes\\Ciclo 2\\PruebasAutomatizadas\\repoProyecto\\TSDC\\kraken\\reports\\F3-S2-version-3\\"+file,
+            "referenceUrl": "C:/Users/ASUS/Desktop/Uniandes/Ciclo 2/PruebasAutomatizadas/repoProyecto/TSDC/kraken/reports/F3-S2-version-3/"+file,
             "url": "http://127.0.0.1:8080/F3-S2-version-5/"+file,
             "readyEvent": "",
             "delay": 1000,
